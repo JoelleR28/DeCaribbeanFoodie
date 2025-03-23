@@ -12700,3 +12700,5 @@
 [2025-03-23 04:32:17] [class-ss-archive-creation-job.php:199] This task is done and there are no more tasks, time to complete the job
 [2025-03-23 04:32:17] [class-ss-archive-creation-job.php:244] Completing the job
 [2025-03-23 04:32:17] [class-ss-archive-creation-job.php:371] Status message: [done] Done! Finished in 00:05:35
+[2025-03-23 04:40:02] [class-ss-url-fetcher.php:251] Fetching URL: http://localhost:10028/privacy-policy/
+[2025-03-23 04:40:03] [class-ss-url-fetcher.php:251] Fetching URL: http://localhost:10028/privacy-policy/
