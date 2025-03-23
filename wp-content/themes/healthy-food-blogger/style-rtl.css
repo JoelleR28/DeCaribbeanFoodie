@@ -742,7 +742,7 @@ button[aria-expandd="true"] .wp-block-navigation__submenu-container {
   right: 0;
   top: 7px;
   content: '';
-  background-image: url(https://joeller28.github.io/DeCaribbeanFoodie/wp-content/themes/healthy-food-blogger/assets/images/archieve.svg);
+  background-image: url(/wp-content/themes/healthy-food-blogger/assets/images/archieve.svg);
   background-repeat: no-repeat;
   width: 16px;
   height: 16px;
@@ -754,7 +754,7 @@ button[aria-expandd="true"] .wp-block-navigation__submenu-container {
   right: 0;
   top: 7px;
   content: '';
-  background-image: url(https://joeller28.github.io/DeCaribbeanFoodie/wp-content/themes/healthy-food-blogger/assets/images/folder.svg);
+  background-image: url(/wp-content/themes/healthy-food-blogger/assets/images/folder.svg);
   background-repeat: no-repeat;
   width: 16px;
   height: 16px;
@@ -3854,8 +3854,8 @@ body:not(.home) .wp-block-post-template > li{
   width: 40px;
   height: 40px;
   background-color: #fff;
-  -webkit-mask-image: url(https://joeller28.github.io/DeCaribbeanFoodie/wp-content/themes/healthy-food-blogger/assets/images/up-arrow.svg);
-  mask-image: url(https://joeller28.github.io/DeCaribbeanFoodie/wp-content/themes/healthy-food-blogger/assets/images/up-arrow.svg);
+  -webkit-mask-image: url(/wp-content/themes/healthy-food-blogger/assets/images/up-arrow.svg);
+  mask-image: url(/wp-content/themes/healthy-food-blogger/assets/images/up-arrow.svg);
   mask-repeat: no-repeat;
   mask-position: center center;
   -webkit-mask-repeat: no-repeat;
