@@ -1,7 +1,7 @@
 <?php
 function foodie_post_types(){ 
         register_post_type('recipe',array( 
-                'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
+                'supports' => array('title', 'thumbnail', 'excerpt'),
                 'rewrite'=> array('slug' => 'recipes'), 
                 'has_archive' => true, 
                 'public' => true,  
