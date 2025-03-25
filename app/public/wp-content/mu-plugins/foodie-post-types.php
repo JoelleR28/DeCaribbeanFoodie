@@ -14,7 +14,21 @@ function foodie_post_types(){
               ),
                 'menu_icon' => 'dashicons-food',
          )); 
-    
+         
+         register_post_type('Games',array( 
+          'supports' => array('title', 'thumbnail', 'excerpt'),
+          'rewrite'=> array('slug' => 'recipes'), 
+          'has_archive' => true, 
+          'public' => true,  
+          'labels' => array( 
+          'name' => "Games",
+          'singular_name' => "Recipe",    
+          'add_new_item' => 'Add New Recipe',
+          'edit_item' => 'Edit Recipe',
+          'all_items' => 'All Recipes',
+        ),
+          'menu_icon' => 'dashicons-food',
+   )); 
      } 
     add_action('init', 'foodie_post_types'); 
     
