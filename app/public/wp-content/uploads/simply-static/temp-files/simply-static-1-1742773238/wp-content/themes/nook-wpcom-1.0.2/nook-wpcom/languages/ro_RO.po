@@ -1,0 +1,171 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Nook\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-02-02T03:11:32+00:00\n"
+"PO-Revision-Date: 2024-01-28 11:56:39+0000\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < 20)) ? 1 : 2);\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Extra Large"
+msgstr "Foarte, foarte mare"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Large"
+msgstr "Foarte mare"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr "Mare"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Mediu"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Mic"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "6"
+msgstr "6"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "5"
+msgstr "5"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr "4"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "3"
+msgstr "3"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "2"
+msgstr "2"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "1"
+msgstr "1"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Tertiary"
+msgstr "Terță"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Background"
+msgstr "Fundal"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Foreground"
+msgstr "Prim-plan"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr "Secundară"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr "Principală"
+
+#: patterns/sidebar.php
+msgctxt "Pattern title"
+msgid "Sidebar"
+msgstr "Bară laterală"
+
+#: patterns/post-title.php
+msgctxt "Pattern title"
+msgid "Post title"
+msgstr "Titlu articol"
+
+#: patterns/hidden-no-results-content.php
+msgctxt "Pattern title"
+msgid "Hidden No Results Content"
+msgstr "Conținut ascuns fără rezultate"
+
+#: patterns/header-banner.php
+msgctxt "Pattern title"
+msgid "Header banner"
+msgstr "Banner în antet"
+
+#: patterns/footer.php
+msgctxt "Pattern title"
+msgid "Default footer"
+msgstr "Subsol implicit"
+
+#: patterns/404.php
+msgctxt "Pattern title"
+msgid "A 404 page"
+msgstr "O pagină 404"
+
+#. Description of the theme
+msgid "Nook is a classic blogging theme offering a delightful canvas for your DIY projects, delicious recipes, and creative inspirations."
+msgstr "Nook este o temă clasică de blogging care oferă o pânză încântătoare pentru proiecte personale, rețete delicioase și inspirații creative."
+
+#: patterns/sidebar.php:74
+msgid "Recent posts"
+msgstr "Articole recente"
+
+#: patterns/sidebar.php:65
+msgid "Stay updated with our latest tutorials and ideas by joining our newsletter."
+msgstr "Înregistrează-te la buletinul nostru de știri ca să fii la curent cu ultimele tutoriale, idei și alte noutăți."
+
+#: patterns/sidebar.php:61
+msgid "Join the fun!"
+msgstr "Participă la distracție!"
+
+#: patterns/sidebar.php:35
+msgid "Let's connect"
+msgstr "Hai să ne conectăm"
+
+#: patterns/sidebar.php:19
+msgid "I'm Emily"
+msgstr "Sunt Emily"
+
+#: patterns/sidebar.php:15
+msgid "Hello,"
+msgstr "Bună,"
+
+#: patterns/post-title.php:22
+msgctxt "Preposition: Refers to the post publish date"
+msgid "on"
+msgstr "pe"
+
+#: patterns/hidden-no-results-content.php:10
+msgctxt "Message explaining that there are no results returned from a search"
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Regret, dar nu s-a potrivit nimic cu termenii tăi de căutare. Te rog încearcă din nou cu alte cuvinte cheie."
+
+#: patterns/footer.php:35
+msgid "Designed with %1$s"
+msgstr "Proiectat cu %1$s"
+
+#. Translators: WordPress link.
+#: patterns/footer.php:33
+msgid "https://wordpress.org"
+msgstr "https://wordpress.org"
