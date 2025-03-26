@@ -29,7 +29,19 @@ function foodie_post_types(){
         ),
           'menu_icon' => 'dashicons-food',
    )); 
-     } 
-    add_action('init', 'foodie_post_types'); 
+   
+      register_post_type('Food',array(
+        'public' => true,
+        'labels' => array('name' => "Food", 'add_new_item' => 'Add New Food Item'),
+        'menu_icon' => 'dashicons-carrot'
+        )); 
+
+      register_post_type('Meal Plan',array(
+        'public' => true,
+        'labels' => array('name' => "Food", 'add_new_item' => 'Add New Food Item'),
+        'menu_icon' => 'dashicons-carrot'
+        )); 
+}
+        add_action('init', 'foodie_post_types'); 
     
 ?>
