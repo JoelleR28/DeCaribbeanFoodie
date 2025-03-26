@@ -15,7 +15,7 @@ function foodie_post_types(){
               ),
                 'menu_icon' => 'dashicons-food',
          )); 
-     } 
+        }
     add_action('init', 'foodie_post_types'); 
     
 ?>
