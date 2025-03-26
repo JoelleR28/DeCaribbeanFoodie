@@ -1,0 +1,503 @@
+{
+    "settings": {
+        "options": {
+            "show_on_front": "posts",
+            "featured-content": {
+                "tag-id": 35890,
+                "tag-name": "featured",
+                "hide-tag": 0,
+                "show-all": 0
+            },
+            "jetpack_global_styles": false
+        },
+        "theme_mods": {
+            "0": false,
+            "header_image": "https:\/\/dyad2demo.files.wordpress.com\/2017\/02\/cropped-photo-1445705330452-33b2b7353006.jpeg",
+            "header_image_data": {
+                "attachment_id": 347,
+                "url": "https:\/\/dyad2demo.files.wordpress.com\/2017\/02\/cropped-photo-1445705330452-33b2b7353006.jpeg",
+                "thumbnail_url": "https:\/\/dyad2demo.files.wordpress.com\/2017\/02\/cropped-photo-1445705330452-33b2b7353006.jpeg",
+                "height": 720,
+                "width": 1800
+            },
+            "nav_menu_locations": {
+                "menu-1": "primary-menu",
+                "social-menu": "social-links-menu"
+            },
+            "colors_manager": {
+                "0": false,
+                "cached": false
+            },
+            "custom_css_post_id": -1
+        },
+        "headstart": {
+            "mapped_id_options": [],
+            "mapped_id_theme_mods": [],
+            "keep_submenu_items": true
+        }
+    },
+    "widgets": [
+        {
+            "id": "categories-3",
+            "id_base": "categories",
+            "settings": {
+                "title": "Categories",
+                "count": 0,
+                "hierarchical": 0,
+                "dropdown": 0
+            },
+            "sidebar": "sidebar-1",
+            "position": 0
+        },
+        {
+            "id": "wp_tag_cloud-3",
+            "id_base": "wp_tag_cloud",
+            "settings": [],
+            "sidebar": "sidebar-1",
+            "position": 1
+        },
+        {
+            "id": "archives-3",
+            "id_base": "archives",
+            "settings": {
+                "title": "Archives",
+                "count": 0,
+                "dropdown": 0
+            },
+            "sidebar": "sidebar-1",
+            "position": 2
+        },
+        {
+            "id": "recent-posts-3",
+            "id_base": "recent-posts",
+            "settings": {
+                "title": "Recent Posts",
+                "number": 5,
+                "show_date": false
+            },
+            "sidebar": "sidebar-1",
+            "position": 3
+        }
+    ],
+    "content": [
+        {
+            "post_type": "page",
+            "post_title": "A Page with a Featured Image",
+            "post_content": "This is an example of a page with a Featured Image. You can read more about Pages <a href=\"https:\/\/en.support.wordpress.com\/pages\/\">here<\/a>.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris purus urna, vulputate at convallis hendrerit, mattis id mi. Nulla mauris justo, sodales vitae sodales nec, fermentum at elit. Proin condimentum risus sed venenatis mollis. Donec auctor euismod sodales. Donec sodales congue metus, sit amet tempor odio maximus in. Ut vestibulum nisl a maximus scelerisque. Donec aliquam eleifend metus, eget iaculis ante vestibulum id. Nulla facilisi. Nullam interdum sagittis accumsan. Phasellus egestas elementum enim nec condimentum. Sed mattis purus odio. Curabitur vehicula rutrum porttitor. Phasellus tempus dui id turpis fermentum, auctor dictum mauris mollis.\r\n\r\nCurabitur orci ipsum, sodales vel ullamcorper sit amet, porta sed leo. Curabitur mattis lorem lectus, eu auctor felis mattis sit amet. Aliquam nibh justo, pharetra vel gravida sit amet, dictum vel massa. Sed pulvinar ante turpis, at lobortis urna pharetra in. Nulla facilisi. Mauris neque magna, gravida nec consequat sit amet, sagittis nec neque. Duis et faucibus arcu. Duis ultricies pharetra mauris, sed volutpat nulla dignissim vel. Aenean et viverra urna. Aenean condimentum leo sed pharetra lobortis. Mauris finibus erat vel ultricies pharetra. Suspendisse mollis a diam quis dignissim. Curabitur lacinia dolor et rhoncus facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis, ipsum quis rutrum sodales, dui ex venenatis nisi, et gravida turpis libero a enim.\r\n\r\nNullam placerat nulla quis tortor fermentum, vitae ornare sem finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi in eros interdum, convallis justo in, ultricies est. In neque felis, sollicitudin quis massa vitae, vehicula mattis dolor. Aliquam erat volutpat. Integer iaculis aliquet diam sed luctus. In a libero efficitur, aliquet neque quis, vehicula neque. Suspendisse potenti. Nullam ac lobortis quam, id efficitur massa. Aenean ornare faucibus ornare. Pellentesque vitae ultricies orci. Aliquam sit amet dolor ac orci consectetur cursus. Nunc faucibus fermentum nisl sit amet viverra. Aliquam nisi libero, cursus sit amet purus ac, luctus sodales urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis ac ante tincidunt, egestas enim at, efficitur magna.",
+            "post_name": "a-page-with-a-featured-image",
+            "post_excerpt": "",
+            "menu_order": 0,
+            "post_status": "publish",
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "_starter_page_template": "",
+            "hs_old_id": 443,
+            "hs_post_parent": 0,
+            "hs_taxonomies": [],
+            "hs_custom_meta": "_hs_extra",
+            "attachment_url": "https:\/\/dyad2demo.files.wordpress.com\/2016\/06\/photo-1445451983996-ac6b92ffb1fb.jpeg"
+        },
+        {
+            "post_type": "post",
+            "post_title": "Heirloom tomato salsa",
+            "post_content": "Salsa is the Italian and Spanish term for sauce, and in English-speaking countries usually refers to the sauces typical of Mexican cuisine known as salsa picante, particularly those used as dips.\n\nSalsa is often a tomato based sauce or dip which is heterogeneous and includes additional components such as (but not limited to) onions, peppers, beans, corn, and various spices. They are typically piquant, ranging from mild to extremely hot.\n\nMost jarred, canned, and bottled salsa and picante sauces sold in the United States in grocery stores are forms of salsa cruda or pico de gallo, and typically have a semi-liquid texture. To increase their shelf lives, these salsas have been cooked to a temperature of 175 \u00b0F (79 \u00b0C). Some have added vinegar, and some use pickled peppers instead of fresh ones. Tomatoes are strongly acidic by nature, which, along with the heat processing, is enough to stabilize the product for grocery distribution.\n\nPicante sauce of the American type is often thinner in consistency than what is labelled as \"salsa\". Picante is a Spanish adjective meaning \"piquant\", which derives from picar (\"to sting\"), referring to the feeling caused by salsas on one's tongue.\n\nMany grocery stores in the United States and Canada also sell \"fresh\" refrigerated salsa, usually in plastic containers. Fresh salsa is usually more expensive and has a shorter shelf life than canned or jarred salsa. It may or may not contain vinegar.\n\nTaco sauce is a condiment sold in American grocery stores and fast food Tex-Mex outlets. Taco sauce is similar to its Mexican counterpart in that it is smoothly blended, having the consistency of thin ketchup. It is made from tomato paste instead of whole tomatoes and lacks the seeds and chunks of vegetables found in picante sauce.\n\nWhile some salsa fans do not consider jarred products to be real salsa cruda, their widespread availability and long shelf life have been credited with much of salsa's enormous popularity in states outside of the southwest, especially in areas where salsa is not a traditional part of the cuisine. In 1992, the dollar total of salsa sales in the United States exceeded those of tomato ketchup.\n\n<em>From <a href=\"https:\/\/en.wikipedia.org\/wiki\/Salsa_(sauce)\">Wikipedia<\/a>.<\/em>",
+            "post_name": "heirloom-tomato-salsa",
+            "post_excerpt": "",
+            "menu_order": 0,
+            "post_status": "publish",
+            "comment_status": "closed",
+            "ping_status": "closed",
+            "_starter_page_template": "",
+            "hs_old_id": 236,
+            "hs_post_parent": 0,
+            "hs_taxonomies": {
+                "category_name": [
+                    "Recipe"
+                ],
+                "post_tag_name": [
+                    "condiment",
+                    "howto",
+                    "salsa"
+                ]
+            },
+            "hs_custom_meta": "_hs_extra",
+            "attachment_url": "https:\/\/dyad2demo.files.wordpress.com\/2016\/06\/photo-1445451983996-ac6b92ffb1fb.jpeg"
+        },
+        {
+            "post_type": "post",
+            "post_title": "Almond lemon cookies",
+            "post_content": "In the United States and Canada a cookie is a small, flat, sweet baked treat, usually containing flour, eggs, sugar, and either butter, cooking oil or another oil or fat, and often including ingredients such as raisins, oats, chocolate chips or nuts. Cookies may be mass-produced, made in small bakeries or home-made. Cookie variants include using two thin cookies with a creme filling (e.g., Oreos) and dipping the cookie in chocolate or another sweet coating. Cookies are often served with beverages such as milk, coffee or tea.\n\nIn most other English-speaking countries cookies are called biscuits.<span id=\"Terminology\" class=\"mw-headline\"><\/span>\n<div class=\"thumb tright\">\n<div class=\"thumbinner\">\n<div class=\"thumbcaption\">Chip Cookies -&nbsp;In most English-speaking countries outside North America, including the United Kingdom, the most common word for this type of treat is biscuit and the term cookie is often used to describe only certain types of biscuits. However, in many regions both terms are used.In Scotland the term cookie is sometimes used to describe a plain bun.<\/div>\n<div class=\"thumbcaption\"><\/div>\n<\/div>\n<\/div>\n<span id=\"Etymology\" class=\"mw-headline\"><\/span>According to the Scottish National Dictionary, its Scottish name derives from the diminutive form (+ suffix <i>-ie<\/i>) of the word <i>cook<\/i>, giving the Middle Scots <i>cookie<\/i>, <i>cooky<\/i> or <i>cu(c)kie<\/i>. It also gives an alternative etymology, from the Dutch word <i>koekje<\/i>, the diminutive of <i>koek<\/i>, a cake. There was much trade and cultural contact across the North Sea between the Low Countries and Scotland during the Middle Ages, which can also be seen in the history of curling and, perhaps, golf.\n\n<span id=\"Description\" class=\"mw-headline\"><\/span>A dish full of cookies -&nbsp;Cookies are most commonly baked until crisp or just long enough that they remain soft, but some kinds of cookies are not baked at all. Cookies are made in a wide variety of styles, using an array of ingredients including sugars, spices, chocolate, butter, peanut butter, nuts, or dried fruits. The softness of the cookie may depend on how long it is baked.\n\nA general theory of cookies may be formulated this way. Despite its descent from cakes and other sweetened breads, the cookie in almost all its forms has abandoned water as a medium for cohesion. Water in cakes serves to make the base (in the case of cakes called \"batter\") as thin as possible, which allows the bubbles \u2013 responsible for a cake's fluffiness \u2013 to better form. In the cookie, the agent of cohesion has become some form of oil. Oils, whether they be in the form of butter, egg yolks, vegetable oils, or lard, are much more viscous than water and evaporate freely at a much higher temperature than water. Thus a cake made with butter or eggs instead of water is far denser after removal from the oven.\n\nOils in baked cakes do not behave as soda tends to in the finished result. Rather than evaporating and thickening the mixture, they remain, saturating the bubbles of escaped gases from what little water there might have been in the eggs, if added, and the carbon dioxide released by heating the baking powder. This saturation produces the most texturally attractive feature of the cookie, and indeed all fried foods: crispness saturated with a moisture (namely oil) that does not sink into it.\n\n<em>From <a href=\"https:\/\/en.wikipedia.org\/wiki\/Cookie\">Wikipedia<\/a>.<\/em>",
+            "post_name": "fresh-ingredients-this-season",
+            "post_excerpt": "",
+            "menu_order": 0,
+            "post_status": "publish",
+            "comment_status": "open",
+            "ping_status": "open",
+            "_starter_page_template": "",
+            "hs_old_id": 61,
+            "hs_post_parent": 0,
+            "hs_taxonomies": {
+                "category_name": [
+                    "Recipe"
+                ],
+                "post_tag_name": [
+                    "cookies",
+                    "featured"
+                ]
+            },
+            "tags_input": [
+                "cookies",
+                "featured"
+            ],
+            "hs_custom_meta": "_hs_extra",
+            "attachment_url": "https:\/\/dyad2demo.files.wordpress.com\/2015\/10\/lemon-cookies-flowers.jpg"
+        },
+        {
+            "post_type": "post",
+            "post_title": "Helpful hosting tips",
+            "post_content": "<div class=\"unindent\"><span class=\"u\"><b>On Methods of Cooking -\u00a0<\/b><\/span>Water <i>boiling<\/i> slowly has the same temperature as when boiling rapidly, and will do just the same amount of work; there is, therefore, no object in wasting fuel to keep water boiling violently.<\/div>\n<i>Stewing<\/i> is the most economical method of cooking the cheaper and tougher cuts of meats, fowl, etc. This method consists in cooking the food a long time in sufficient water to cover it\u2014at a temperature slightly below the boiling point.\n\n<i>Braising.<\/i> In this method of cooking, drippings or fat salt pork are melted or tried out in the kettle and a bed of mixed vegetables, fine herbs and seasoning placed therein. The article being cooked is placed on this bed of vegetables, moisture is added and the meat cooked until tender at a low temperature. The last half hour of cooking the cover is removed, so that the meat may brown richly.\n\nIn <i>broiling<\/i> and <i>grilling<\/i>, the object is first to sear the surface over as quickly as possible, to retain the rich juices, then turn constantly until the food is richly browned. <i>Pan-broiling<\/i> is cooking the article in a greased, hissing-hot, cast-iron skillet, turning often and drawing off the fat as it dries out.\n\n<i>Saut\u00e9ing<\/i> is practically the same as pan-broiling, except that the fat is allowed to remain in the skillet. The article is cooked in a small amount of fat, browning the food on one side and then turning and browning on the other side.\n\n<i>Frying.<\/i> While this term is sometimes used in the sense of saut\u00e9ing it usually consists of cooking by means of immersion in deep, hot fat. When frying meats or fish it is best to keep them in a warm room a short time before cooking, then wipe dry as possible. As soon as the food has finished frying, it should be carefully removed from the fat and drained on brown paper.\n<div class=\"unindent\"><span class=\"u\"><strong>Egging and Crumbing Food<\/strong> -\u00a0<\/span>Use for this dry bread crumbs, grated and sifted, crackers rolled and sifted, or soft stale bread broken in pieces and gently rubbed through croquette basket; the eggs should be broken into a shallow plate and slightly beaten with a fork to mix the white thoroughly. Dilute the eggs in the proportion of two tablespoons cold milk or water to every egg. The crumbs should be dusted on the board; the food to be fried should be lightly crumbed all over, then dipped into egg so as to cover the article entirely, then rolled again in bread crumbs. Sometimes, as in cooking fish, flour is used for the first coating in place of the crumbs, the article being then dipped into the egg mixture, then with crumbs and then fried.<\/div>\n<div class=\"unindent\"><\/div>\n<div class=\"unindent\"><span class=\"u\"><b>Larding <\/b>-<b>\u00a0<\/b><\/span>Consists of introducing small strips of fat, salt pork or bacon through uncooked meat. To lard, introduce one end of the lardoon (the small strip of fat) into a larding needle and with the pointed end take up a stitch one-half inch deep and one-half inch wide. Draw the needle through carefully so that the ends of the lardoon may project evenly over the surface of the meat. Oftentimes, however, thin slices of fat, salt pork or bacon are placed over the meat as a substitute for larding, although it does not give quite the same delicious flavor or look so attractive.<\/div>\n<div class=\"unindent\"><\/div>\n<div class=\"unindent\"><span class=\"u\"><b>Marinating <\/b>-\u00a0<\/span>Consists of adding a pickle, composed of vinegar and oil, to the ingredients of some combination used in salad making.<\/div>\n<div class=\"unindent\"><\/div>\n<div class=\"unindent\"><span class=\"u\"><b>Cleaning Cooking Utensils <\/b>-\u00a0<\/span>For washing dishes and cleaning pots and pans use a solution made by dissolving a teaspoonful or so of Gold Dust Washing Powder in a dish-pan full of water. If the cooking utensils have become charred or stained in cooking, sprinkle some Polly Prim Cleaner on a damp cloth and rub utensil thoroughly. After scouring, rinse the article well in hot water, and wipe dry. Use Polly Prim Cleaner also, for cleaning cutlery and for keeping the refrigerator clean and sweet.<\/div>",
+            "post_name": "helpful-hosting-tips",
+            "post_excerpt": "",
+            "menu_order": 0,
+            "post_status": "publish",
+            "comment_status": "open",
+            "ping_status": "open",
+            "_starter_page_template": "",
+            "hs_old_id": 81,
+            "hs_post_parent": 0,
+            "hs_taxonomies": {
+                "category_name": [
+                    "Hosting"
+                ],
+                "post_tag_name": [
+                    "dining",
+                    "guests",
+                    "hosting"
+                ]
+            },
+            "hs_custom_meta": "_hs_extra",
+            "attachment_url": "https:\/\/dyad2demo.files.wordpress.com\/2016\/06\/photo-1416453072034-c8dbfa2856b5.jpeg"
+        },
+        {
+            "post_type": "post",
+            "post_title": "Tricks to plating like a pro",
+            "post_content": "Food presentation is the art of modifying, processing, arranging, or decorating food to enhance its aesthetic appeal.\n\nThe visual presentation of foods is often considered by chefs at many different stages of food preparation, from the manner of tying or sewing meats, to the type of cut used in chopping and slicing meats or vegetables, to the style of mold used in a poured dish. The food itself may be decorated as in elaborately iced cakes, topped with ornamental sometimes sculptural consumables, drizzled with sauces, sprinkled with seeds, powders, or other toppings, or it may be accompanied by edible or inedible garnishes.\n\nThe arrangement and overall styling of food upon bringing it to the plate is termed plating. Some common styles of plating include a 'classic' arrangement of the main item in the front of the plate with vegetables or starches in the back, a 'stacked' arrangement of the various items, or the main item leaning or 'shingled' upon a vegetable bed or side item. Item location on the plate is often referenced as for the face of a clock, with six o'clock the position closest to the diner.\n\nA basic rule of thumb upon plating, and even in some cases prepping, is to make sure you have the 5 components to a dish; protein, traditionally at a 6 o'clock position, vegetable, at a 2 o'clock position, starch at an 11 o'clock position, sauce and garnish.\n\n<i>From <a href=\"https:\/\/en.wikipedia.org\/wiki\/Food_presentation\">Wikipedia<\/a>.<\/i>",
+            "post_name": "tricks-to-plating-like-a-pro",
+            "post_excerpt": "",
+            "menu_order": 0,
+            "post_status": "publish",
+            "comment_status": "open",
+            "ping_status": "open",
+            "_starter_page_template": "",
+            "hs_old_id": 69,
+            "hs_post_parent": 0,
+            "hs_taxonomies": {
+                "category_name": [
+                    "Photos"
+                ],
+                "post_tag_name": [
+                    "plating",
+                    "presentation",
+                    "professional"
+                ]
+            },
+            "hs_custom_meta": "_hs_extra",
+            "attachment_url": "https:\/\/dyad2demo.files.wordpress.com\/2016\/06\/photo-1414235077428-338989a2e8c0.jpeg"
+        },
+        {
+            "post_type": "post",
+            "post_title": "Review: Thug Kitchen",
+            "post_content": "The earliest cookbooks on record seem to be mainly lists of recipes for what would now be called haute cuisine, and were often written primarily to either provide a record of the author's favorite dishes or to train professional cooks for banquets and upper-class, private homes. Many of these cookbooks, therefore, provide only limited sociological or culinary value, as they leave out significant sections of ancient cuisine such as peasant food, breads, and preparations such as vegetable dishes too simple to warrant a recipe.\n\nThe earliest collection of recipes that has survived in Europe is De re coquinaria, written in Latin. An early version was first compiled sometime in the 1st century and has often been attributed to the Roman gourmet Marcus Gavius Apicius, though this has been cast in doubt by modern research. An Apicius came to designate a book of recipes. The current text appears to have been compiled in the late 4th or early 5th century; the first print edition is from 1483. It records a mix of ancient Greek and Roman cuisine, but with few details on preparation and cooking.\n\nAn abbreviated epitome entitled Apici Excerpta a Vinidario, a \"pocket Apicius\" by Vinidarius, \"an illustrious man\", was made in the Carolingian era. In spite of its late date it represents the last manifestation of the cuisine of Antiquity.\n\nThe earliest cookbooks known in Arabic are those of al-Warraq (an early 10th-century compendium of recipes from the 9th and 10th centuries) and al-Baghdadi (13th century).\n\nChinese recipe books are known from the Tang Dynasty, but most were lost.[citation needed] One of the earliest surviving Chinese-language cookbooks is Hu Sihui's \"Yinshan Zhengyao\" (Important Principles of Food and Drink), believed to be from 1330. Hu Sihui, Buyantu Khan's dietitian and therapist, recorded a Chinese-inflected Central Asian cuisine as eaten by the Yuan court; his recipes were adapted from foods eaten all over the Mongol Empire.\n\nAfter a long interval, the first recipe books to be compiled in Europe since Late Antiquity started to appear in the late thirteenth century. About a hundred are known to have survived, some fragmentary, from the age before printing. The earliest genuinely medieval recipes have been found in a Danish manuscript dating from around 1300, which in turn are copies of older texts that date back to the early 13th century or perhaps earlier.\n\nLow and High German manuscripts are among the most numerous. Among them is Daz buch von guter spise (\"The Book of Good Food\") written c. 1350 in W\u00fcrzberg and Kuchenmeysterey (\"Kitchen Mastery\"), the first printed German cookbook from 1485. Two French collections are probably the most famous: Le Viandier (\"The Provisioner\") was compiled in the late 14th century by Guillaume Tirel, master chef for two French kings; and Le Menagier de Paris (\"The Householder of Paris\"), a household book written by an anonymous middle class Parisian in the 1390s.\n\nFrom Southern Europe there is the 14th century Valencian manuscript Llibre de Sent Sov\u00ed(1324), the Catalan Llibre de totes maneres de potatges de menjar (\"The book of all recipes of dishes) and several Italian collections, notably the Venetian mid-14th century Libro per Cuoco,[11] with its 135 recipes alphabetically arranged. The printed De honesta voluptate (\"On honourable pleasure\"), first published in 1475, is one of the first cookbooks based on Renaissance ideals, and, though it is as much a series of moral essays as a cookbook, has been described as \"the anthology that closed the book on medieval Italian cooking\".\n\nRecipes originating in England include the earliest recorded recipe for ravioli (1390s) and Forme of Cury, a late 14th-century manuscript written by chefs of Richard II of England.",
+            "post_name": "review-thug-kitchen",
+            "post_excerpt": "",
+            "menu_order": 0,
+            "post_status": "publish",
+            "comment_status": "open",
+            "ping_status": "open",
+            "_starter_page_template": "",
+            "hs_old_id": 63,
+            "hs_post_parent": 0,
+            "hs_taxonomies": {
+                "category_name": [
+                    "Book Review"
+                ],
+                "post_tag_name": [
+                    "recipes",
+                    "review",
+                    "thug kitchen"
+                ]
+            },
+            "hs_custom_meta": "_hs_extra",
+            "attachment_url": "https:\/\/dyad2demo.files.wordpress.com\/2015\/10\/photo-1428259067396-2d6bd3827878.jpeg"
+        },
+        {
+            "post_type": "post",
+            "post_title": "Rising to the occasion",
+            "post_content": "Bread is a <a title=\"Staple food\" href=\"https:\/\/en.wikipedia.org\/wiki\/Staple_food\">staple food<\/a> prepared from a <a title=\"Dough\" href=\"https:\/\/en.wikipedia.org\/wiki\/Dough\">dough<\/a> of <a title=\"Flour\" href=\"https:\/\/en.wikipedia.org\/wiki\/Flour\">flour<\/a> and <a title=\"Water\" href=\"https:\/\/en.wikipedia.org\/wiki\/Water\">water<\/a>, usually by <a title=\"Baking\" href=\"https:\/\/en.wikipedia.org\/wiki\/Baking\">baking<\/a>. Throughout recorded history it has been popular around the world and is one of the oldest artificial foods, having been of importance since the dawn of <a title=\"Agriculture\" href=\"https:\/\/en.wikipedia.org\/wiki\/Agriculture#History\">agriculture<\/a>.\n\nThere are many combinations and proportions of types of flour and other ingredients, and also of different traditional recipes and modes of preparation of bread. As a result, there are wide varieties of types, shapes, sizes, and textures of breads in various regions. Bread may be <a class=\"mw-redirect\" title=\"Leaven\" href=\"https:\/\/en.wikipedia.org\/wiki\/Leaven\">leavened<\/a> by many different processes ranging from the use of naturally occurring microbes (for example in <a title=\"Sourdough\" href=\"https:\/\/en.wikipedia.org\/wiki\/Sourdough\">sourdough<\/a> recipes) to high-pressure artificial aeration methods during preparation or baking. However, some products are left unleavened, either for preference, or for traditional or religious reasons. Many non-cereal ingredients may be included, ranging from fruits and nuts to various fats. Commercial bread in particular, commonly contains additives, some of them non-nutritional, to improve flavor, texture, color, shelf life, or ease of manufacturing.\n<blockquote>Many non-cereal ingredients may be included, ranging from fruits and nuts to various fats. Commercial bread in particular, commonly contains additives, some of them non-nutritional, to improve flavor, texture, color, shelf life, or ease of manufacturing.<\/blockquote>\nDepending on local custom and convenience, bread may be served in various forms at any meal of the day. It also is eaten as a snack, or used as an ingredient in other culinary preparations, such as fried items coated in crumbs to prevent sticking, or the bland main component of a <a title=\"Bread pudding\" href=\"https:\/\/en.wikipedia.org\/wiki\/Bread_pudding\">bread pudding<\/a>, or <a title=\"Stuffing\" href=\"https:\/\/en.wikipedia.org\/wiki\/Stuffing\">stuffings<\/a> designed to fill cavities or retain juices that otherwise might drip away.\n\nPartly because of its importance as a basic foodstuff, bread has a social and emotional significance beyond its importance in nutrition; it plays essential roles in religious rituals and secular culture. Its prominence in daily life is reflected in language, where it appears in proverbs, colloquial expressions (\"He stole the bread from my mouth\"), in prayer (\"Give us this day our daily bread\") and even in the etymology of words, such as \"<a class=\"extiw\" title=\"wiktionary:companion\" href=\"https:\/\/en.wiktionary.org\/wiki\/companion\">companion<\/a>\" and \"<a class=\"extiw\" title=\"wiktionary:company\" href=\"https:\/\/en.wiktionary.org\/wiki\/company\">company<\/a>\" (literally those who eat\/share bread with you).\n\n<em>From <a href=\"https:\/\/en.wikipedia.org\/wiki\/Bread\">Wikipedia<\/a>.<\/em>",
+            "post_name": "rising-to-the-occasion",
+            "post_excerpt": "",
+            "menu_order": 0,
+            "post_status": "publish",
+            "comment_status": "open",
+            "ping_status": "open",
+            "_starter_page_template": "",
+            "hs_old_id": 59,
+            "hs_post_parent": 0,
+            "hs_taxonomies": {
+                "category_name": [
+                    "Baking"
+                ],
+                "post_tag_name": [
+                    "announcement"
+                ]
+            },
+            "hs_custom_meta": "_hs_extra",
+            "attachment_url": "https:\/\/dyad2demo.files.wordpress.com\/2015\/10\/photo-1441122365457-1ae2aba6235c.jpeg"
+        },
+        {
+            "post_type": "page",
+            "post_title": "About",
+            "post_content": "\"I'm sure I'm not Ada,\" she said, \"for her hair goes in such long ringlets, and mine doesn't go in ringlets at all; and I'm sure I can't be Mabel, for I know all sorts of things, and she, oh! she knows such a very little! Besides, SHE'S she, and I'm I, and\u2014oh dear, how puzzling it all is! I'll try if I know all the things I used to know. Let me see: four times five is twelve, and four times six is thirteen, and four times seven is\u2014oh dear! I shall never get to twenty at that rate! However, the Multiplication Table doesn't signify: let's try Geography. London is the capital of Paris, and Paris is the capital of Rome, and Rome\u2014no, THAT'S all wrong, I'm certain! I must have been changed for Mabel! I'll try and say 'How doth the little\u2014'\" and she crossed her hands on her lap as if she were saying lessons, and began to repeat it, but her voice sounded hoarse and strange, and the words did not come the same as they used to do:\n\n<blockquote>\n    \"How doth the little crocodile\n      Improve his shining tail,\n     And pour the waters of the Nile\n      On every golden scale!\n\n     \"How cheerfully he seems to grin,\n      How neatly spread his claws,\n     And welcome little fishes in\n      With gently smiling jaws!\"\n<\/blockquote>\n\n\"I'm sure those are not the right words,\" said poor Alice, and her eyes filled with tears again as she went on, \"I must be Mabel after all, and I shall have to go and live in that poky little house, and have next to no toys to play with, and oh! ever so many lessons to learn! No, I've made up my mind about it; if I'm Mabel, I'll stay down here! It'll be no use their putting their heads down and saying 'Come up again, dear!' I shall only look up and say 'Who am I then? Tell me that first, and then, if I like being that person, I'll come up: if not, I'll stay down here till I'm somebody else'\u2014but, oh dear!\" cried Alice, with a sudden burst of tears, \"I do wish they WOULD put their heads down! I am so VERY tired of being all alone here!\"",
+            "post_name": "about",
+            "post_excerpt": "",
+            "menu_order": 0,
+            "post_status": "publish",
+            "comment_status": "open",
+            "ping_status": "open",
+            "_starter_page_template": "",
+            "hs_old_id": 32,
+            "hs_post_parent": 0,
+            "hs_taxonomies": [],
+            "hs_custom_meta": "_hs_extra"
+        },
+        {
+            "post_type": "page",
+            "post_title": "Contact",
+            "post_content": "This page is filled with sample content illustrating what various image types look like. Text is lorem ipsum filler; look at <a title=\"Readability\" href=\"\/readability\/\">the Readability page<\/a> for sample content that you can actually read.\r\n\r\n<hr \/>\r\n\r\n<h2>Right-aligned medium<\/h2>\r\n<a href=\"http:\/\/dyad2demo.files.wordpress.com\/2011\/07\/mcm_6965.jpg\"><img class=\"alignright size-medium wp-image-38\" title=\"mcm_6965\" src=\"http:\/\/dyad2demo.files.wordpress.com\/2011\/07\/mcm_6965.jpg?w=300\" alt=\"\" width=\"300\" height=\"199\" \/><\/a>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vel ultricies sapien. Proin eu accumsan metus. Pellentesque varius aliquet sapien, sed laoreet diam viverra vel. Phasellus condimentum congue ante. Donec porttitor eleifend erat eget faucibus. Vivamus mattis imperdiet sem a volutpat. Cras ultrices tincidunt hendrerit. Nulla facilisi. Morbi id lorem et sapien luctus eleifend. Vestibulum eleifend dapibus ornare. Ut at dui metus, in accumsan nibh. Nam ultricies turpis sit amet erat elementum nec mollis tellus vehicula. Phasellus mollis faucibus odio, id malesuada justo venenatis in. Sed ultricies, augue quis ullamcorper condimentum, diam turpis laoreet risus, quis pretium urna diam et nibh. Nunc molestie mauris vel est hendrerit tempus. Nam elit enim, pellentesque sit amet fringilla quis, bibendum at tellus. Nunc at tortor sapien. Nam feugiat libero ut nisl sodales eleifend. Nulla laoreet metus in dolor mattis vitae interdum massa.\r\n\r\n<hr \/>\r\n\r\n<h2>Left-aligned Medium<\/h2>\r\n<a href=\"http:\/\/dyad2demo.files.wordpress.com\/2011\/07\/mcm_2432-e1264268646918.jpg\"><img class=\"alignleft size-medium wp-image-39\" title=\"mcm_2432-e1264268646918\" src=\"http:\/\/dyad2demo.files.wordpress.com\/2011\/07\/mcm_2432-e1264268646918.jpg?w=225\" alt=\"\" width=\"225\" height=\"300\" \/><\/a>Duis nec elit dui, sit amet feugiat urna. Aenean interdum laoreet pellentesque. Nullam neque magna, euismod nec varius et, aliquet a neque. Ut ac vestibulum odio. Aenean non lobortis nulla. Nulla facilisi. In cursus, sem eu ultricies elementum, nulla lacus pretium diam, ac congue mauris velit ut velit. Fusce ante odio, adipiscing eu interdum sit amet, laoreet id lacus. Nam ante nulla, gravida a placerat eu, fermentum vel sem. Praesent eros augue, congue et congue a, varius sit amet ipsum.\r\n\r\nVivamus iaculis mollis fringilla. Sed convallis consectetur tincidunt. Aenean a nunc odio, a commodo elit. In quis risus id dolor porta iaculis. Sed vel felis eu neque molestie eleifend vitae et sem. Aliquam magna est, sodales et rutrum ac, ullamcorper at ipsum. Sed volutpat accumsan tortor vulputate pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sit amet elit a augue bibendum tempus. Praesent auctor mauris vel purus mattis vel imperdiet arcu pulvinar. Nunc est nisi, viverra in tincidunt vitae, sodales vitae mi. Quisque nisl elit, luctus viverra venenatis eget, auctor pharetra turpis. Nam vel justo arcu, sollicitudin blandit quam.\r\n\r\n<hr \/>\r\n\r\n<h2>Full-Width<\/h2>\r\nAenean eu urna felis. Vivamus placerat neque ac diam imperdiet eget sollicitudin nisl ornare. Ut adipiscing neque non sapien malesuada ullamcorper. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce non tincidunt dui.\r\n\r\n<a href=\"http:\/\/dyad2demo.files.wordpress.com\/2011\/07\/mcm_3162.jpg\"><img class=\"aligncenter size-large wp-image-40\" title=\"mcm_3162\" src=\"http:\/\/dyad2demo.files.wordpress.com\/2011\/07\/mcm_3162.jpg?w=1024\" alt=\"\" width=\"1024\" height=\"681\" \/><\/a>\r\n\r\nSuspendisse convallis pretium varius. Duis vitae sem ut quam dignissim pellentesque at id dolor. Etiam mi est, scelerisque sed viverra et, sollicitudin eget orci. Donec felis erat, ultrices sit amet molestie quis, ultrices nec libero. Donec eu odio neque, luctus laoreet urna. Integer eget augue ante, a facilisis dolor. Morbi non dui at lectus dignissim pulvinar. Nullam condimentum egestas feugiat. Aliquam elementum pharetra nibh id suscipit. Nam viverra tristique turpis.\r\n\r\n<hr \/>\r\n\r\n<h2>Images with captions<\/h2>\r\n[caption id=\"attachment_42\" align=\"alignright\" width=\"300\"]<a href=\"http:\/\/dyad2demo.files.wordpress.com\/2011\/07\/img_0429.jpg\"><img class=\"size-medium wp-image-42\" title=\"img_0429\" src=\"http:\/\/dyad2demo.files.wordpress.com\/2011\/07\/img_0429.jpg?w=300\" alt=\"\" width=\"300\" height=\"200\" \/><\/a> Jellyfish[\/caption]\r\n\r\nFusce molestie erat vel augue lobortis sit amet ultrices eros interdum. Suspendisse lobortis gravida sapien, in mattis velit rutrum a. Vivamus condimentum neque scelerisque arcu cursus id viverra tellus adipiscing. In leo justo, gravida in suscipit lacinia, euismod non ligula. Nullam non cursus nisi. Pellentesque eu lectus lectus, sit amet imperdiet mauris. Phasellus leo metus, vulputate at tincidunt id, dictum sit amet purus. Praesent at nisi tortor, et consequat elit. Phasellus gravida velit tempus eros aliquam porttitor. Vivamus tempor ultrices ligula eu molestie. Donec eu enim nibh, nec pellentesque elit. Nam a ultricies felis. Duis cursus, massa ut mollis faucibus, enim ligula pulvinar felis, vitae bibendum diam sem non erat. In fringilla nisi vitae tortor varius at sagittis enim condimentum. Aliquam id leo at mi varius dictum et nec quam. Pellentesque tortor nunc, dignissim at scelerisque a, adipiscing non neque. Aliquam erat volutpat.\r\n<h2>Thumbnails<\/h2>\r\n<a href=\"http:\/\/dyad2demo.files.wordpress.com\/2011\/07\/mcm_2160.jpg\"><img class=\"alignright size-thumbnail wp-image-44\" title=\"mcm_2160\" src=\"http:\/\/dyad2demo.files.wordpress.com\/2011\/07\/mcm_2160.jpg?w=150\" alt=\"\" width=\"150\" height=\"99\" \/><\/a>Aenean interdum laoreet eros, ut sollicitudin velit tempor et. Aliquam sit amet euismod ante. Quisque orci orci, scelerisque et iaculis nec, interdum at erat. Cras eget risus nec orci mollis pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec non risus nisl, eu feugiat nulla. Etiam congue ornare dui rhoncus tincidunt.\r\n\r\n<a href=\"http:\/\/dyad2demo.files.wordpress.com\/2011\/07\/mcm_7007.jpg\"><img class=\"alignleft size-thumbnail wp-image-45\" title=\"mcm_7007\" src=\"http:\/\/dyad2demo.files.wordpress.com\/2011\/07\/mcm_7007.jpg?w=150\" alt=\"\" width=\"150\" height=\"99\" \/><\/a>Donec tristique orci sed mi ullamcorper elementum. Sed elit magna, blandit et porttitor nec, sollicitudin dictum diam. Nullam sed mattis mi. Proin sagittis purus at sapien facilisis pretium. Curabitur ac ullamcorper mi. Phasellus tristique, justo non tincidunt commodo, libero sapien gravida urna, eget commodo purus mi eu nisi. Nam risus sem, euismod at pretium vel, tincidunt eu eros. Maecenas fringilla, tortor sed feugiat rhoncus, purus arcu vestibulum odio, quis commodo justo purus non ligula.",
+            "post_name": "contact",
+            "post_excerpt": "",
+            "menu_order": 0,
+            "post_status": "publish",
+            "comment_status": "open",
+            "ping_status": "open",
+            "_starter_page_template": "",
+            "hs_old_id": 30,
+            "hs_post_parent": 0,
+            "hs_taxonomies": [],
+            "hs_custom_meta": "_hs_extra",
+            "attachment_url": "https:\/\/dyad2demo.files.wordpress.com\/2017\/02\/photo-1445705330452-33b2b7353006.jpeg"
+        }
+    ],
+    "menus": {
+        "primary-menu": {
+            "name": "Primary Menu",
+            "items": [
+                {
+                    "menu-item-title": "Home",
+                    "menu-item-db-id": 105,
+                    "menu-item-object-id": "105",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 1,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "\/"
+                },
+                {
+                    "menu-item-title": "A Parent Page",
+                    "menu-item-db-id": 312,
+                    "menu-item-object-id": "5",
+                    "menu-item-object": "page",
+                    "menu-item-type": "post_type",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 2,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": ""
+                },
+                {
+                    "menu-item-title": "First Child",
+                    "menu-item-db-id": 320,
+                    "menu-item-object-id": "7",
+                    "menu-item-object": "page",
+                    "menu-item-type": "post_type",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 3,
+                    "menu-item-parent-id": "312",
+                    "menu-item-description": ""
+                },
+                {
+                    "menu-item-title": "Second Child",
+                    "menu-item-db-id": 315,
+                    "menu-item-object-id": "9",
+                    "menu-item-object": "page",
+                    "menu-item-type": "post_type",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 4,
+                    "menu-item-parent-id": "312",
+                    "menu-item-description": ""
+                },
+                {
+                    "menu-item-title": "A Spoiled Grandchild Page",
+                    "menu-item-db-id": 316,
+                    "menu-item-object-id": "20",
+                    "menu-item-object": "page",
+                    "menu-item-type": "post_type",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 5,
+                    "menu-item-parent-id": "315",
+                    "menu-item-description": ""
+                },
+                {
+                    "menu-item-title": "Another Grandchild Page",
+                    "menu-item-db-id": 317,
+                    "menu-item-object-id": "18",
+                    "menu-item-object": "page",
+                    "menu-item-type": "post_type",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 6,
+                    "menu-item-parent-id": "315",
+                    "menu-item-description": ""
+                },
+                {
+                    "menu-item-title": "A Wee Little Baby Page",
+                    "menu-item-db-id": 318,
+                    "menu-item-object-id": "22",
+                    "menu-item-object": "page",
+                    "menu-item-type": "post_type",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 7,
+                    "menu-item-parent-id": "317",
+                    "menu-item-description": ""
+                },
+                {
+                    "menu-item-title": "A Grandchild Page",
+                    "menu-item-db-id": 319,
+                    "menu-item-object-id": "16",
+                    "menu-item-object": "page",
+                    "menu-item-type": "post_type",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 8,
+                    "menu-item-parent-id": "315",
+                    "menu-item-description": ""
+                },
+                {
+                    "menu-item-title": "Third Child",
+                    "menu-item-db-id": 314,
+                    "menu-item-object-id": "11",
+                    "menu-item-object": "page",
+                    "menu-item-type": "post_type",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 9,
+                    "menu-item-parent-id": "312",
+                    "menu-item-description": ""
+                },
+                {
+                    "menu-item-title": "Fourth Child",
+                    "menu-item-db-id": 313,
+                    "menu-item-object-id": "13",
+                    "menu-item-object": "page",
+                    "menu-item-type": "post_type",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 10,
+                    "menu-item-parent-id": "312",
+                    "menu-item-description": ""
+                },
+                {
+                    "menu-item-title": "Readability",
+                    "menu-item-db-id": 106,
+                    "menu-item-object-id": "32",
+                    "menu-item-object": "page",
+                    "menu-item-type": "post_type",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 11,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": ""
+                },
+                {
+                    "menu-item-title": "Image Alignment and Styles",
+                    "menu-item-db-id": 107,
+                    "menu-item-object-id": "30",
+                    "menu-item-object": "page",
+                    "menu-item-type": "post_type",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 12,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": ""
+                },
+                {
+                    "menu-item-title": "HTML Elements",
+                    "menu-item-db-id": 108,
+                    "menu-item-object-id": "25",
+                    "menu-item-object": "page",
+                    "menu-item-type": "post_type",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 13,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": ""
+                }
+            ]
+        },
+        "social-links-menu": {
+            "name": "Social Links Menu",
+            "items": [
+                {
+                    "menu-item-title": "Facebook",
+                    "menu-item-db-id": 118,
+                    "menu-item-object-id": "118",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 1,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http:\/\/www.facebook.com"
+                },
+                {
+                    "menu-item-title": "LinkedIn",
+                    "menu-item-db-id": 119,
+                    "menu-item-object-id": "119",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 2,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http:\/\/www.linkedin.com"
+                },
+                {
+                    "menu-item-title": "Twitter",
+                    "menu-item-db-id": 120,
+                    "menu-item-object-id": "120",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 3,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http:\/\/www.twitter.com"
+                },
+                {
+                    "menu-item-title": "Instagram",
+                    "menu-item-db-id": 121,
+                    "menu-item-object-id": "121",
+                    "menu-item-object": "custom",
+                    "menu-item-type": "custom",
+                    "menu-item-status": "publish",
+                    "menu-item-position": 4,
+                    "menu-item-parent-id": "0",
+                    "menu-item-description": "",
+                    "menu-item-url": "http:\/\/instagram.com"
+                }
+            ]
+        }
+    },
+    "images": [
+    ],
+    "meta": {
+        "blog_id": 124508236,
+        "url": "https:\/\/dyad2demo.wordpress.com",
+        "update_date": "May 19, 2021, 6:24 pm",
+        "update_timestamp": 1621448695
+    }
+}

@@ -1,0 +1,224 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Dyad-2\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-05-12T01:16:31+00:00\n"
+"PO-Revision-Date: 2021-05-12 01:16:12+0000\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+
+#: inc/customizer.php:17
+msgid "Display Site Title"
+msgstr "Display Site Title"
+
+#: functions.php:146
+msgid "White"
+msgstr "White"
+
+#: functions.php:141
+msgid "Dark Gray-Blue"
+msgstr "Dark Grey-Blue"
+
+#: functions.php:136
+msgid "Dark Gray"
+msgstr "Dark Grey"
+
+#: functions.php:131
+msgid "Medium Gray"
+msgstr "Medium Gray"
+
+#: functions.php:126
+msgid "Light Gray-Blue"
+msgstr "Light Grey-Blue"
+
+#: functions.php:121
+msgid "Yellow"
+msgstr "Yellow"
+
+#: functions.php:116
+msgid "Bright Blue"
+msgstr "Bright Blue"
+
+#. translators: number of items in the mini cart.
+#: inc/woocommerce.php:298
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d item"
+msgstr[1] "%d items"
+
+#: inc/woocommerce.php:296
+msgid "View your shopping cart"
+msgstr "View your shopping basket"
+
+#. Description of the theme
+msgid "Dyad pairs your written content and images together in perfect balance. The theme is geared towards photographers, foodies, artists, and anyone who is looking for a strong photographic presence on their website."
+msgstr "Dyad pairs your written content and images together in perfect balance. The theme is geared towards photographers, foodies, artists, and anyone who is looking for a strong photographic presence on their website."
+
+#: template-parts/content.php:25
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: template-parts/content-page.php:34
+#: template-parts/content-single.php:41
+#: template-parts/content.php:32
+msgid "Pages:"
+msgstr "Pages:"
+
+#: template-parts/content-none.php:32
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+
+#: template-parts/content-none.php:27
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+
+#: template-parts/content-none.php:23
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+
+#: template-parts/content-none.php:17
+msgid "Nothing Found"
+msgstr "Nothing Found"
+
+#: template-parts/content-featured-post.php:32
+msgid "Featured"
+msgstr "Featured"
+
+#: template-parts/content-author.php:34
+msgid "View all posts by %s"
+msgstr "View all posts by %s"
+
+#: template-parts/content-author.php:28
+msgid "Published by %s"
+msgstr "Published by %s"
+
+#: single.php:19
+msgid "Next Post"
+msgstr "Next Post"
+
+#: single.php:18
+msgid "Previous Post"
+msgstr "Previous Post"
+
+#: search.php:14
+msgid "Search Results for: %s"
+msgstr "Search Results for: %s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:59
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:45
+#: template-parts/content-blocks.php:34
+#: template-parts/content-page.php:27
+msgid "Edit"
+msgstr "Edit"
+
+#: inc/template-tags.php:43
+msgctxt "date published"
+msgid "on"
+msgstr "on"
+
+#: inc/template-tags.php:27
+msgid "Posted by"
+msgstr "Posted by"
+
+#: header.php:37
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:23
+msgid "Skip to content"
+msgstr "Skip to content"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Noto Serif, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:277
+msgctxt "Noto Serif font: on or off"
+msgid "on"
+msgstr "on"
+
+#. Translators: If there are characters in your language that are not supported
+#. by Lato, translate this to 'off'. Do not translate into your own language.
+#: functions.php:271
+msgctxt "Lato font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:193
+msgid "Displays in footer area."
+msgstr "Displays in footer area."
+
+#: functions.php:191
+msgid "Footer"
+msgstr "Footer"
+
+#: functions.php:176
+msgid "Read More"
+msgstr "Read More"
+
+#: functions.php:58
+msgid "Primary Menu"
+msgstr "Primary Menu"
+
+#: footer.php:33
+msgid "Theme: %1$s by %2$s."
+msgstr "Theme: %1$s by %2$s."
+
+#: footer.php:31
+msgid "Proudly powered by %s"
+msgstr "Proudly powered by %s"
+
+#: footer.php:31
+msgid "http://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr "Comments are closed."
+
+#: comments.php:47
+#: comments.php:63
+msgid "Newer Comments"
+msgstr "Newer Comments"
+
+#: comments.php:46
+#: comments.php:62
+msgid "Older Comments"
+msgstr "Older Comments"
+
+#: comments.php:43
+#: comments.php:59
+msgid "Comment navigation"
+msgstr "Comment navigation"
+
+#: comments.php:37
+msgid "Add yours"
+msgstr "Add yours"
+
+#: comments.php:31
+msgctxt "comments title"
+msgid "One Comment"
+msgid_plural "%1$s Comments"
+msgstr[0] "One Comment"
+msgstr[1] "%1$s Comments"
+
+#: 404.php:31
+msgid "Most Used Categories"
+msgstr "Most Used Categories"
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+
+#: 404.php:15
+msgid "Oops! That page can't be found."
+msgstr "Oops! That page can't be found."
