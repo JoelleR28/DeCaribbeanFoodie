@@ -575,6 +575,99 @@ a,
 
 
 /**
+ * 4.1 Navigation: Breadcrumbs
+ * ----------------------------------------------------------------------------
+ *
+ * Updated Stylesheet for breadcrumbs stying
+ */
+
+/* Style the breadcrumbs container */
+.metabox__blog-home-link {
+    background-color: #333; /* Black/Grey background for breadcrumbs */
+    color: #FFA500; /* Orange text */
+    padding: 15px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; 
+}
+
+/* Change the color on hover */
+.metabox__blog-home-link:hover {
+    background-color: #555; /* Darker grey background on hover */
+    color: #00ffaa;
+}
+
+/* Style the current page title */
+.metabox__main {
+	background-color: #000000; 
+    color: #FFA500; 
+    font-size: 18px;
+    margin-top: 10px;
+	padding: 15px 20px;
+	border-radius: 5px;
+	font-weight: bold;
+    display: inline-block; 
+}
+
+/* Style the container for the page links */
+.page-links {
+    border-radius: 5px;
+	margin-top:2px;
+	width: 39vh;
+	display: inline-block;
+	margin-left: 3.5vw;
+	margin-bottom: 20px;
+}
+
+.page-links__title{
+	background-color: #090909; 
+	padding:25px;
+	width:39vh;
+	border-radius: 5px;
+	text-align: center;
+}
+
+/* Style the parent page link title */
+.page-links__title a {
+    color: #FFA500; /* Orange text for the parent page link */
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.page-links__title a:hover {
+    color: #00ffd5; /* Slightly darker orange on hover */
+    text-decoration: underline; /* Add an underline on hover */
+}
+
+/* Style the list of child pages */
+.min-list {
+    list-style-type: none; /* Remove the default list styling */
+    padding-left: 0;
+}
+
+.min-list li {
+	border:1px solid;
+	padding:25px;
+	background-color: white;
+	text-align: center;
+}
+
+/* Style each list item (child pages) */
+.min-list li a {
+    color: #f7792b; /* Grey color for child page links */
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.min-list li a:hover {
+    color: #00ffb7; /* Orange color on hover for child pages */
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+/**
  * 4. Navigation
  * ----------------------------------------------------------------------------
  *
@@ -2722,6 +2815,32 @@ body.single .content.center {
     width: 36px;
 }
 
+
+/**
+ * Styling Recipe fields
+ * ----------------------------------------------------------------------------
+ *
+ */
+
+ /* .recipe-ingredients{
+	justify-content: center;
+}
+
+.recipe-instructions{
+	justify-content: center;
+} */
+
+.recipe-subtitle{
+	font-weight: bold;
+	font-size: 4vh;
+	color: #000000;
+	text-align: center;
+}
+
+.recipe-list{
+	margin-left: 5vw;
+}
+
 /**
  * 8. Comments
  * ----------------------------------------------------------------------------
@@ -3470,7 +3589,7 @@ body:not(.search-results) .page .post-edit-link {
 }
 
 .post.no-results p {
-
+	text-align: justify;
 }
 
 /**

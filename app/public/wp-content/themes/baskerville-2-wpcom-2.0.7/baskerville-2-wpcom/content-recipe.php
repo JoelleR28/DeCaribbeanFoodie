@@ -42,9 +42,9 @@
 
 		<div class="recipe-ingredients">
 			</br> </br>
-			<h3 class="post-title entry-title">Ingredients</h3>
+			<h3 class="recipe-subtitle">Ingredients</h3>
 			</br></br>
-			<ul>
+			<ul class="recipe-list">
 				<?php
 				// Get the ingredients from ACF
 				$ingredients = get_field('recipe_ingredients');
@@ -65,18 +65,31 @@
 
 		<div class="recipe-instructions">
 		</br></br></br>
-			<h3 class="post-title entry-title">Instructions</h3>
-			<?php
-			// ACF Fields: Recipe Ingredients and Instructions
-			echo get_field('recipe_instructions'); // ACF custom field for instructions
-			?>
-		</div>
+			<h3 class="recipe-subtitle">Instructions</h3>
+			<ul class="recipe-list">
+				<?php
+				// Get the ingredients from ACF
+				$ingredients = get_field('recipe_instructions');
 
+				// Check if ingredients are not empty
+				if ($ingredients) {
+					// Split the ingredients by new lines (assuming they are entered this way)
+					$ingredients_list = explode("\n", $ingredients);
 
+					// Loop through the array and output each ingredient as an <li>
+					foreach ($ingredients_list as $ingredient) {
+						echo $ingredient;
+					}
+				}
+				?>
+			</ul>
+
+			</br></br>
 		<?php
 		/**
 		 * Post Meta
 		 */
+		
 		if (is_single()) { ?>
 
 			<footer class="post-meta-container clear">

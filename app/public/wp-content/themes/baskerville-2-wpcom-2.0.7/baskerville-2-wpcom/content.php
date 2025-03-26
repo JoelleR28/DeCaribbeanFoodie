@@ -40,13 +40,15 @@
 		 */ ?>
 			<div class="post-content clear">
 				<?php
-				the_content( sprintf(
-					/* translators: %s: Name of current post. */
-					wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'baskerville-2' ), array( 'span' => array( 'class' => array() ) ) ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				) );
+				// the_content( sprintf(
+				// 	/* translators: %s: Name of current post. */
+				// 	wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'baskerville-2' ), array( 'span' => array( 'class' => array() ) ) ),
+				// 	the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				// ) );
 				wp_link_pages();
 				?>
+				<?php the_excerpt()?>
+				<a href="<?php the_permalink(); ?>">Continue reading >></a>
 			</div><!--/.post-content-->
 		<?php
 		/**

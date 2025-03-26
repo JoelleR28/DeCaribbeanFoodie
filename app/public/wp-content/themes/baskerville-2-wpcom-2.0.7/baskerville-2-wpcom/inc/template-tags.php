@@ -78,7 +78,7 @@ if ( ! function_exists( 'baskerville_2_flexslider' ) ) :
  * see http://www.woothemes.com/flexslider/
  */
 function baskerville_2_flexslider( $size = 'thumbnail' ) {
-
+	global $post;
 	if ( is_page() ) :
 		$attachment_parent = $post->ID;
 	else :

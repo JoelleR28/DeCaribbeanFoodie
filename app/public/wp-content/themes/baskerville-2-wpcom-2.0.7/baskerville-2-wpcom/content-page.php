@@ -38,7 +38,7 @@
 		) );
 		wp_link_pages();
 		?>
-
+		
 		<?php edit_post_link(
 				sprintf(
 					/* translators: %1$s: Pencil icon, %2$s: Name of current post */
@@ -50,6 +50,7 @@
 				'</span>'
 		); ?>
 	</div> <!-- /post-content -->
+	
 
 	<?php comments_template( '', true ); ?>
 
