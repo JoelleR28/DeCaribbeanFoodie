@@ -10,14 +10,10 @@
 
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 		<?php
-			$thumb = dyad_2_get_attachment_image_src( $post->ID, get_post_thumbnail_id( $post->ID ), 'dyad-2-thumbnails' );
-			$thumb2 = dyad_2_get_attachment_image_src( $post->ID, get_post_thumbnail_id( $post->ID ), 'dyad-2-thumbnails-horz' );
+			$thumb2 = dyad_2_get_attachment_image_src( $post->ID, the_post_thumbnail( $post->ID ), 'dyad-2-thumbnails-horz' );
 		?>
-		<div class="entry-media" style="background-image: url(<?php echo esc_url( $thumb ); ?>);">
 			<div class="entry-media-thumb" style="background-image: url(<?php echo esc_url( $thumb2 ); ?>); "></div>
-		</div>
 
 	<div class="entry-inner">
 		<div class="entry-inner-content">

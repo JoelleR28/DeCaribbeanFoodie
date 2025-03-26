@@ -57,24 +57,24 @@ add_action( 'after_setup_theme', 'dyad_2_jetpack' );
 /**
  * Custom render function for Infinite Scroll.
  */
-function dyad_2_infinite_scroll_render() {
-	if ( class_exists( 'WooCommerce' ) && ( dyad_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
-		dyad_2_woocommerce_product_columns_wrapper();
-		woocommerce_product_loop_start();
-	}
-	while ( have_posts() ) {
-		the_post();
-		if ( class_exists( 'WooCommerce' ) && ( dyad_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) :
-			wc_get_template_part( 'content', 'product' );
-		else :
-			get_template_part( 'template-parts/content', 'blocks' );
-		endif;
-	}
-	if ( class_exists( 'WooCommerce' ) && ( dyad_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
-		woocommerce_product_loop_end();
-		dyad_2_woocommerce_product_columns_wrapper_close();
-	}
-} // end function dyad_2_infinite_scroll_render
+// function dyad_2_infinite_scroll_render() {
+// 	if ( class_exists( 'WooCommerce' ) && ( dyad_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+// 		dyad_2_woocommerce_product_columns_wrapper();
+// 		woocommerce_product_loop_start();
+// 	}
+// 	while ( have_posts() ) {
+// 		the_post();
+// 		if ( class_exists( 'WooCommerce' ) && ( dyad_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) :
+// 			wc_get_template_part( 'content', 'product' );
+// 		else :
+// 			get_template_part( 'template-parts/content', 'blocks' );
+// 		endif;
+// 	}
+// 	if ( class_exists( 'WooCommerce' ) && ( dyad_2_woocommerce_is_shop_page() || is_product_taxonomy() || is_product_category() || is_product_tag() ) ) {
+// 		woocommerce_product_loop_end();
+// 		dyad_2_woocommerce_product_columns_wrapper_close();
+// 	}
+// } // end function dyad_2_infinite_scroll_render
 
 /**
 * Getter function for Featured Content.
@@ -174,9 +174,10 @@ function dyad_2_has_post_thumbnail( $post = null ) {
 function dyad_2_get_attachment_image_src( $post_id, $post_thumbnail_id, $size ) {
 	if ( function_exists( 'jetpack_featured_images_fallback_get_image_src' ) ) {
 		return jetpack_featured_images_fallback_get_image_src( $post_id, $post_thumbnail_id, $size );
-	} else {
-		$attachment = wp_get_attachment_image_src( $post_thumbnail_id, $size ); // Attachment array
-		$url = $attachment[0]; // Attachment URL
-		return $url;
-	}
+	 } 
+	//  else {
+	// 	$attachment = wp_get_attachment_image_src( $post_thumbnail_id, $size ); // Attachment array
+	// 	$url = $attachment[0]; // Attachment URL
+	// 	return $url;
+	// }
 }

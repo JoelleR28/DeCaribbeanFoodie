@@ -11,9 +11,9 @@ get_header(); ?>
 	<main id="primary" class="content-area" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-
+		
 			<?php get_template_part( 'template-parts/content', 'single' ); ?>
-
+			
 			<?php
 			the_post_navigation( array(
 				'prev_text' => '<div class="nav-previous"><span class="nav-subtitle">' . esc_html__( 'Previous Post', 'dyad-2' ) . '</span> <span class="nav-title">%title</span></div>',

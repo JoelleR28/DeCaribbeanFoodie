@@ -11,12 +11,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( dyad_2_has_post_thumbnail() && 'image' != get_post_format() ) : ?>
 		<?php
-		$thumb = dyad_2_get_attachment_image_src( $post->ID, get_post_thumbnail_id( $post->ID ), 'dyad-2-featured-image' );
-		$thumb2 = dyad_2_get_attachment_image_src( $post->ID, get_post_thumbnail_id( $post->ID ), 'dyad-2-featured-image-horz' );
+		$thumb = dyad_2_get_attachment_image_src( $post->ID, the_post_thumbnail( $post->ID ), 'dyad-2-featured-image' );
 		?>
 
-		<div class="entry-media" style="background-image: url(<?php echo esc_url( $thumb ); ?>)">
-			<div class="entry-media-thumb" style="background-image: url(<?php echo esc_url( $thumb2 ); ?>); "></div>
+<div class="entry-media" style="background-image: url(<?php echo esc_url( $thumb ); ?>)">
 		</div><!-- .entry-media -->
 	<?php endif; ?>
 

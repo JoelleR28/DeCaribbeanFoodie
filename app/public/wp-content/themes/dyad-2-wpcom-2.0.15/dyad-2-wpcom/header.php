@@ -25,8 +25,8 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
-			<?php dyad_2_the_custom_logo(); ?>
-			<h1 class="site-title">
+			
+			<h1 class="site-title" ><?php dyad_2_the_custom_logo(); ?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<?php bloginfo( 'name' ); ?>
 				</a>

@@ -5,7 +5,6 @@ function foodie_post_types(){
                 'rewrite'=> array('slug' => 'recipes'), 
                 'has_archive' => true, 
                 'public' => true,  
-                'show_in_rest' => true,
                 'labels' => array( 
                 'name' => "Recipes",
                 'singular_name' => "Recipe",    

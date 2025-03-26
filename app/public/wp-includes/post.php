@@ -6561,9 +6561,9 @@ function wp_delete_attachment( $post_id, $force_delete = false ) {
 		return false;
 	}
 
-	if ( ! $force_delete && EMPTY_TRASH_DAYS && MEDIA_TRASH && 'trash' !== $post->post_status ) {
-		return wp_trash_post( $post_id );
-	}
+	// if ( ! $force_delete && EMPTY_TRASH_DAYS && MEDIA_TRASH && 'trash' !== $post->post_status ) {
+	// 	return wp_trash_post( $post_id );
+	// }
 
 	/**
 	 * Filters whether an attachment deletion should take place.

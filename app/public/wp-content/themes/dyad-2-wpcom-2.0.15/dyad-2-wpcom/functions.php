@@ -35,6 +35,8 @@ if ( ! function_exists( 'dyad_2_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
+		//add feature-image support for posts
+		add_theme_support('post-thumbnails'); 
 		/**
 		 * Add custom logo support
 		 */
@@ -97,7 +99,7 @@ if ( ! function_exists( 'dyad_2_setup' ) ) :
 		add_theme_support( 'wp-block-styles' );
 
 		// Add support for full and wide align images.
-		add_theme_support( 'align-wide' );
+		add_theme_support( 'align-wide' ); 
 
 		// Add support for responsive embeds.
 		add_theme_support( 'responsive-embeds' );
