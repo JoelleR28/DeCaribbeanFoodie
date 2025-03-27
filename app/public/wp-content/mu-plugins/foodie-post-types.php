@@ -2,6 +2,8 @@
 function foodie_post_types()
 {
   register_post_type('recipe', array(
+    'capability_type' => 'recipe', 
+    'map_meta_cap'=> true,
     'supports' => array('title', 'thumbnail', 'excerpt', 'comments'),
     'taxonomies' => array('category', 'post_tag'), 
     'rewrite' => array('slug' => 'recipes'),
@@ -12,7 +14,7 @@ function foodie_post_types()
     'labels' => array(
       'name' => "Recipes",
       'singular_name' => "Recipe",
-      'add_new_item' => 'Add New Recipe',
+      'add_new_item' => 'Add New Recipe', 
       'edit_item' => 'Edit Recipe',
       'all_items' => 'All Recipes',
     ),

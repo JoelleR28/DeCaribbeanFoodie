@@ -8,93 +8,165 @@ Author URI: ----
 License: GPL2 
 */
 
-// Hook to add custom message to the footer
-function my_custom_footer_message()
-{
-    echo '<p style="text-align: center;">This is my custom plugin footer message!</p>';
-}
-add_action('wp_footer', 'my_custom_footer_message');
-
-// Hook to add settings page to the admin menu
-function my_custom_plugin_menu()
-{
-    add_options_page(
-        'My Custom Plugin Settings',    // Page title
-        'Custom Plugin',                // Menu title
-        'manage_options',               // Capability required to access
-        'my-custom-plugin',             // Menu slug
-        'my_custom_plugin_settings_page' // Callback function to display the settings page
-    );
-}
-add_action('admin_menu', 'my_custom_plugin_menu');
-
-// Register settings and fields
-function my_custom_plugin_register_settings()
-{
-    // Register the settings group and individual settings
-    register_setting('my_custom_plugin_options', 'my_footer_message'); // 'my_footer_message' is the option name
-
-    // Add a settings section to the settings page
-    add_settings_section(
-        'my_custom_plugin_section',       // Section ID
-        'Custom Footer Settings',         // Section Title
-        'my_custom_plugin_section_callback', // Callback function
-        'my-custom-plugin'                // Page slug
-    );
-
-    // Add a settings field to the section
-    add_settings_field(
-        'my_footer_message',             // Field ID
-        'Footer Message',                // Field Title
-        'my_custom_plugin_field_callback', // Callback function to render the field
-        'my-custom-plugin',              // Page slug
-        'my_custom_plugin_section'       // Section ID
-    );
-}
-add_action('admin_init', 'my_custom_plugin_register_settings');
-
-// Callback function for the section (optional)
-function my_custom_plugin_section_callback()
-{
-    echo '<p>Enter the custom footer message that will be displayed on your website.</p>';
+// Prevent direct access to the plugin file
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
 }
 
-// Callback function to render the footer message field
-function my_custom_plugin_field_callback()
-{
-    ?>
-    <input type="text" id="my_footer_message" name="my_footer_message"
-        value="<?php echo esc_attr(get_option('my_footer_message')); ?>" class="regular-text" />
-    <?php
+function foodie_enqueue_script() {
+    // Enqueue the like button script
+    wp_enqueue_script('like-button', plugin_dir_url(__FILE__) . 'js/like-button.js', array('jquery'), null, true);
+
+    // Enqueue the save recipe button script
+    wp_enqueue_script('save-recipe-button', plugin_dir_url(__FILE__) . 'js/save-recipe-button.js', array('jquery'), null, true);
+
+    // Localize the like button script
+    wp_localize_script('like-button', 'like_button_obj', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+    ));
+
+    // Localize the save recipe button script
+    wp_localize_script('save-recipe-button', 'save_recipe_button_obj', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+    ));
+
+    // Enqueue the stylesheet
+    wp_enqueue_style('foodie-like-button', plugin_dir_url(__FILE__) . 'css/style.css');
 }
+add_action('wp_enqueue_scripts', 'foodie_enqueue_script');
 
-?>
 
-<?php function my_custom_plugin_settings_page()
-{ ?>
-
-    <div class="wrap">
-        <h1>My Custom Plugin Settings</h1>
-        <form method="post" action="options.php">
-            <?php
-            // Output the settings fields and sections 
-// This is the settings group 
-            settings_fields('my_custom_plugin_options');
-            // This will display the plugin's settings section 
-            do_settings_sections('my-custom-plugin');
-            ?>
-            <table class="form-table">
-                <tr valign="top">
-                    <th scope="row">Footer Message:</th>
-                    <td><input type="text" name="my_footer_message"
-                            value="<?php echo esc_attr(get_option('my_footer_message')); ?>" />
-                    </td>
-                </tr>
-            </table>
-            <?php submit_button(); ?>
-        </form>
-    </div>
-<?php
+// Register the like button shortcode
+function foodie_recipe_like_button_shortcode($atts) {
+    // Get the current post ID
+    $post_id = get_the_ID();
+    
+    // Get the current like count, or set to 0 if not set
+    $like_count = get_post_meta($post_id, '_like_count', true);
+    $like_count = $like_count ? $like_count : 0;
+    
+    // Output the like button and like count
+    $output = '<div class="like-button-container">';
+    $output .= '<button class="like-button" data-post-id="' . $post_id . '">Like</button>';
+    $output .= '<p class="like-count">' . $like_count . ' Likes</p>';
+    $output .= '</div>';
+    
+    return $output;
 }
-?>
-<?php
+add_shortcode('recipe_like_button', 'foodie_recipe_like_button_shortcode');
+
+// Handle the AJAX request to update the like count
+function foodie_handle_like_button_click() {
+    if (isset($_POST['post_id'])) {
+        $post_id = intval($_POST['post_id']);
+        $like_count = get_post_meta($post_id, '_like_count', true);
+        $like_count = $like_count ? $like_count : 0;
+        $like_count++;
+
+        // Update the like count in the post meta
+        update_post_meta($post_id, '_like_count', $like_count);
+
+        // Return the updated like count
+        echo $like_count;
+    }
+    wp_die(); // required for proper AJAX response
+}
+add_action('wp_ajax_like_button_click', 'foodie_handle_like_button_click');
+add_action('wp_ajax_nopriv_like_button_click', 'foodie_handle_like_button_click');
+
+// Register the Save Recipe button shortcode
+function foodie_save_recipe_button_shortcode($atts) {
+    $post_id = get_the_ID(); // Get the current post ID
+    $user_id = get_current_user_id(); // Get the current user ID
+    
+
+    // Check if the recipe is already saved by the user
+    $saved_recipes = get_user_meta($user_id, '_saved_recipes', true);
+    $saved_recipes = $saved_recipes ? $saved_recipes : array();
+
+    // Check if the recipe is already in the saved list
+    $is_saved = in_array($post_id, $saved_recipes);
+    
+    // Output the save button
+    if ($user_id) {
+        $button_text = $is_saved ? 'Remove from Favorites' : 'Save to Favorites';
+        $output = '<div class="save-recipe-button-container">';
+        $output .= '<button class="save-recipe-button" data-post-id=" ' . $post_id . '" data-user-id="' . $user_id . '">' . $button_text . '</button>';
+        $output .= '</div>';
+    } else if ( !current_user_can( 'subscriber' )){
+        $output = '<p>Hello Guest, please log in to save recipes to your favorites.</p>';
+        }
+
+    return $output;
+}
+add_shortcode('recipe_save_button', 'foodie_save_recipe_button_shortcode');
+
+// Handle the Save/Remove Recipe button click
+function foodie_handle_save_recipe_button_click() {
+    if (isset($_POST['post_id']) && isset($_POST['user_id'])) {
+        $post_id = intval($_POST['post_id']);
+        $user_id = intval($_POST['user_id']);
+        
+        // Get the current list of saved recipes for the user
+        $saved_recipes = get_user_meta($user_id, '_saved_recipes', true);
+        $saved_recipes = $saved_recipes ? $saved_recipes : array();
+        
+        // Toggle the recipe in the saved list
+        if (in_array($post_id, $saved_recipes)) {
+            // Remove the recipe from favorites
+            $saved_recipes = array_diff($saved_recipes, array($post_id));
+        } else {
+            // Add the recipe to favorites
+            $saved_recipes[] = $post_id;
+        }
+
+        // Update the user meta with the new saved recipes list
+        update_user_meta($user_id, '_saved_recipes', $saved_recipes);
+
+        // Return the new button text
+        $button_text = in_array($post_id, $saved_recipes) ? 'Remove from Favorites' : 'Save to Favorites';
+        echo $button_text;
+    }
+    wp_die(); // required for proper AJAX response
+}
+add_action('wp_ajax_save_recipe_button_click', 'foodie_handle_save_recipe_button_click');
+add_action('wp_ajax_nopriv_save_recipe_button_click', 'foodie_handle_save_recipe_button_click');
+
+// Register the shortcode for displaying saved recipes
+function foodie_saved_recipes_shortcode() {
+    $user_id = get_current_user_id();
+    $output = '';
+   
+    if ($user_id) {
+        $saved_recipes = get_user_meta($user_id, '_saved_recipes', true);
+        
+        if (!empty($saved_recipes)) {
+            $args = array(
+                'post_type' => 'recipe', // Assuming 'recipe' is the custom post type
+                'post__in' => $saved_recipes,
+                'posts_per_page' => -1
+            );
+            
+            $saved_recipes_query = new WP_Query($args);
+            
+            if ($saved_recipes_query->have_posts()) {
+                $output .= '<ul>';
+                while ($saved_recipes_query->have_posts()) {
+                    $saved_recipes_query->the_post();
+                    $output .= '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+                }
+                $output .= '</ul>';
+            } else {
+                $output .= '<p>No saved recipes found.</p>';
+            }
+        } else {
+            $output .= '<p>You have no saved recipes.</p>';
+        }
+    } else {
+        $output .= '<p>Please log in to see your saved recipes.</p>';
+    }
+
+    return $output;
+}
+add_shortcode('recipe_saved_list', 'foodie_saved_recipes_shortcode');
+
