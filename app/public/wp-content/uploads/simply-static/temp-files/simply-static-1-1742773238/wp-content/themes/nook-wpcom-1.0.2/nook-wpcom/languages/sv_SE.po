@@ -1,0 +1,162 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Nook\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-01-24T03:30:08+00:00\n"
+"PO-Revision-Date: 2024-01-23 11:04:19+0000\n"
+"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Large"
+msgstr "Extra stor"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Extra Extra Large"
+msgstr "Extra extra stor"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Medium"
+msgstr "Medium"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Large"
+msgstr "Stor"
+
+#: patterns/404.php
+msgctxt "Pattern title"
+msgid "A 404 page"
+msgstr "En 404-sida"
+
+#: patterns/footer.php
+msgctxt "Pattern title"
+msgid "Default footer"
+msgstr "Standardsidfot"
+
+#: patterns/hidden-no-results-content.php
+msgctxt "Pattern title"
+msgid "Hidden No Results Content"
+msgstr "Dolt innehåll utan resultat"
+
+#: patterns/sidebar.php
+msgctxt "Pattern title"
+msgid "Sidebar"
+msgstr "Sidopanel"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Primary"
+msgstr "Primär"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Secondary"
+msgstr "Sekundär"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Foreground"
+msgstr "Förgrund"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Background"
+msgstr "Bakgrund"
+
+#: theme.json
+msgctxt "Color name"
+msgid "Tertiary"
+msgstr "Tertiär"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "1"
+msgstr "1"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "2"
+msgstr "2"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "3"
+msgstr "3"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "4"
+msgstr "4"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "5"
+msgstr "5"
+
+#: theme.json
+msgctxt "Space size name"
+msgid "6"
+msgstr "6"
+
+#: theme.json
+msgctxt "Font size name"
+msgid "Small"
+msgstr "Liten"
+
+#: patterns/post-title.php
+msgctxt "Pattern title"
+msgid "Post title"
+msgstr "Inläggsrubrik"
+
+#: patterns/sidebar.php:74
+msgid "Recent posts"
+msgstr "Senaste inläggen"
+
+#: patterns/sidebar.php:19
+msgid "I'm Emily"
+msgstr "jag är Emily"
+
+#: patterns/sidebar.php:65
+msgid "Stay updated with our latest tutorials and ideas by joining our newsletter."
+msgstr "Håll dig uppdaterad med våra senaste handledningar och idéer genom att gå med i vårt nyhetsbrev."
+
+#: patterns/sidebar.php:61
+msgid "Join the fun!"
+msgstr "Gå med i det roliga!"
+
+#: patterns/sidebar.php:35
+msgid "Let's connect"
+msgstr "Låt oss ansluta"
+
+#. Translators: WordPress link.
+#: patterns/footer.php:33
+msgid "https://wordpress.org"
+msgstr "https://sv.wordpress.org"
+
+#: patterns/footer.php:35
+msgid "Designed with %1$s"
+msgstr "Designad med %1$s"
+
+#: patterns/hidden-no-results-content.php:10
+msgctxt "Message explaining that there are no results returned from a search"
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "Inget matchade dina söktermer. Försök igen med några andra nyckelord."
+
+#: patterns/post-title.php:22
+msgctxt "Preposition: Refers to the post publish date"
+msgid "on"
+msgstr "den"
+
+#: patterns/sidebar.php:15
+msgid "Hello,"
+msgstr "Hej,"
