@@ -17,9 +17,13 @@ function dc_display_challenges() {
     $query = new WP_Query($args);
 
     if ($query->have_posts()) {
-        $output = '<div class="challenges-grid">'; // Start card container
+        $output = '<div class="challenges-grid">';
         while ($query->have_posts()) {
             $query->the_post();
+            $post_id = get_the_ID();
+            $user_id = get_current_user_id();
+            $completed = get_post_meta($post_id, 'completed_by_' . $user_id, true);
+
             $output .= '<div class="challenge-card">';
             if (has_post_thumbnail()) {
                 $output .= '<div class="challenge-img">' . get_the_post_thumbnail(null, 'medium') . '</div>';
@@ -27,10 +31,19 @@ function dc_display_challenges() {
             $output .= '<div class="challenge-content">';
             $output .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
             $output .= '<p>' . get_the_excerpt() . '</p>';
-            $output .= '<a href="' . get_permalink() . '" class="btn">View Challenge</a>';
-            $output .= '</div></div>'; // Close challenge-card
+            
+            if ($completed) {
+                $output .= '<p style="color:green;"> Completed</p>';
+            } else {
+                $output .= '<form method="post">
+                    <input type="hidden" name="challenge_id" value="' . $post_id . '">
+                    <button type="submit" name="complete_challenge" class="btn">Mark as Completed</button>
+                </form>';
+            }
+            
+            $output .= '</div></div>';
         }
-        $output .= '</div>'; // Close challenges-grid
+        $output .= '</div>';
         wp_reset_postdata();
         return $output;
     } else {
@@ -68,3 +81,15 @@ function dc_publish_daily_challenge() {
     }
 }
 add_action('dc_publish_challenge', 'dc_publish_daily_challenge');
+
+function dc_mark_challenge_completed() {
+    if (isset($_POST['complete_challenge'])) {
+        $user_id = get_current_user_id();
+        $challenge_id = intval($_POST['challenge_id']);
+
+        if ($user_id && $challenge_id) {
+            update_post_meta($challenge_id, 'completed_by_' . $user_id, true);
+        }
+    }
+}
+add_action('init', 'dc_mark_challenge_completed');
