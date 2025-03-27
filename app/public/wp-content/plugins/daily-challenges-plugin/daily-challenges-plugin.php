@@ -17,7 +17,7 @@ function dc_display_challenges() {
     $query = new WP_Query($args);
 
     if ($query->have_posts()) {
-        $output = '<div class="challenges-grid">'; 
+        $output = '<div class="challenges-grid">'; // Start card container
         while ($query->have_posts()) {
             $query->the_post();
             $output .= '<div class="challenge-card">';
@@ -28,9 +28,9 @@ function dc_display_challenges() {
             $output .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
             $output .= '<p>' . get_the_excerpt() . '</p>';
             $output .= '<a href="' . get_permalink() . '" class="btn">View Challenge</a>';
-            $output .= '</div></div>'; 
+            $output .= '</div></div>'; // Close challenge-card
         }
-        $output .= '</div>';
+        $output .= '</div>'; // Close challenges-grid
         wp_reset_postdata();
         return $output;
     } else {
