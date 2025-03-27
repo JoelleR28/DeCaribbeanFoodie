@@ -3,7 +3,10 @@ function foodie_post_types()
 {
   register_post_type('recipe', array(
     'supports' => array('title', 'thumbnail', 'excerpt', 'comments'),
+    'taxonomies' => array('category', 'post_tag'), 
     'rewrite' => array('slug' => 'recipes'),
+    'show_ui' => true,  // Ensure the UI is available in the admin
+    'show_in_rest' => true,  // Enable for Gutenberg editor
     'has_archive' => true,
     'public' => true,
     'labels' => array(
