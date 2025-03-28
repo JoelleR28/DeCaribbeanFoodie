@@ -8,7 +8,7 @@ Author URI: N/A
 License: GPL2
 */
 
-// Shortcode to Display Challenges
+// Display Challenges
 function dc_display_challenges() {
     $args = array(
         'post_type' => 'challenge',
@@ -20,6 +20,10 @@ function dc_display_challenges() {
         $output = '<div class="challenges-grid">';
         while ($query->have_posts()) {
             $query->the_post();
+            $post_id = get_the_ID();
+            $user_id = get_current_user_id();
+            $completed = get_post_meta($post_id, 'completed_by_' . $user_id, true);
+
             $output .= '<div class="challenge-card">';
             if (has_post_thumbnail()) {
                 $output .= '<div class="challenge-img">' . get_the_post_thumbnail(null, 'medium') . '</div>';
@@ -27,7 +31,16 @@ function dc_display_challenges() {
             $output .= '<div class="challenge-content">';
             $output .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
             $output .= '<p>' . get_the_excerpt() . '</p>';
-            $output .= '<a href="' . get_permalink() . '" class="btn">View Challenge</a>';
+            
+            if ($completed) {
+                $output .= '<p style="color:green;"> Completed</p>';
+            } else {
+                $output .= '<form method="post">
+                    <input type="hidden" name="challenge_id" value="' . $post_id . '">
+                    <button type="submit" name="complete_challenge" class="btn">Mark as Completed</button>
+                </form>';
+            }
+            
             $output .= '</div></div>';
         }
         $output .= '</div>';
