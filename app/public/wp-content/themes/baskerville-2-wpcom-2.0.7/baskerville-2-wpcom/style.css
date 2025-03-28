@@ -2675,6 +2675,38 @@ body.single .content.center {
 	float: right;
 }
 
+/* General styling for the note */
+.notes {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-left: 15vw;
+	margin-right: 15vw;
+    border-radius: 5px;
+}
+
+.note-text {
+    font-size: 16px;
+    color: #333;
+}
+
+.edit-note, .delete-note {
+    padding: 5px 10px;
+    margin-top: 4vw;
+    cursor: pointer;
+    font-size: 14px;
+    color: #0073aa;
+    transition: color 0.3s;
+}
+
+.edit-note:hover, .delete-note:hover {
+    color: #005177;
+}
+
+.edit-note i, .delete-note i {
+    margin-right: 5px;
+}
+
 /* post navigation */
 
 .post-navigation {

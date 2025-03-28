@@ -28,19 +28,25 @@
 					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
 						<?php the_post_thumbnail('baskerville-2-post-thumbnail'); ?>
 					</a>
-				<?php 
+				<?php
 				} else {
 					the_post_thumbnail('baskerville-2-post-image');
 				} ?>
 			</div> <!-- /featured-media -->
 		<?php }
-		echo do_shortcode('[recipe_like_button]');
-		echo do_shortcode('[recipe_save_button]')
+		// echo 'edit my recipe functionality'
 		/**
 		 * Post Content / Excerpt
 		 */
 		?>
-
+		<div class="notes">
+		<span class="edit-note"><i class="fa fa-pencil" aria-hidden="true"></i>
+			Edit
+		</span>
+		<span class="delete-note"><i class="fa fa-trash-o" aria-hidden="true"></i>
+			Delete
+		</span>
+		</div>
 		<div class="recipe-ingredients">
 			</br> </br>
 			<h3 class="recipe-subtitle">Ingredients</h3>
@@ -65,7 +71,7 @@
 		</div>
 
 		<div class="recipe-instructions">
-		</br></br></br>
+			</br></br></br>
 			<h3 class="recipe-subtitle">Instructions</h3>
 			<ul class="recipe-list">
 				<?php
@@ -86,35 +92,35 @@
 			</ul>
 
 			</br></br>
-		<?php
-		/**
-		 * Post Meta
-		 */
-		
-		if (is_single()) { ?>
+			<?php
+			/**
+			 * Post Meta
+			 */
 
-			<footer class="post-meta-container clear">
-				<?php baskerville_2_author_bio(); ?>
+			if (is_single()) { ?>
 
-				<div class="post-meta clear">
-					<?php baskerville_2_single_post_meta(); ?>
-					<?php the_post_navigation(); ?>
-					<?php edit_post_link(
-						sprintf(
-							esc_html__('%1$s Edit %2$s', 'baskerville-2'),
-							'<i class="fa fa-pencil-square-o"></i>',
-							the_title('<span class="screen-reader-text">"', '"</span>', false)
-						),
-						'<span class="edit-link">',
-						'</span>'
-					); ?>
-				</div>
-			</footer> <!-- /post-meta-container -->
-			<?php comments_template('', true);
+				<footer class="post-meta-container clear">
+					<?php baskerville_2_author_bio(); ?>
 
-		} else {
-			baskerville_2_post_meta();
-		} ?>
+					<div class="post-meta clear">
+						<?php baskerville_2_single_post_meta(); ?>
+						<?php the_post_navigation(); ?>
+						<?php edit_post_link(
+							sprintf(
+								esc_html__('%1$s Edit %2$s', 'baskerville-2'),
+								'<i class="fa fa-pencil-square-o"></i>',
+								the_title('<span class="screen-reader-text">"', '"</span>', false)
+							),
+							'<span class="edit-link">',
+							'</span>'
+						); ?>
+					</div>
+				</footer> <!-- /post-meta-container -->
+				<?php comments_template('', true);
+
+			} else {
+				baskerville_2_post_meta();
+			} ?>
 
 	</article> <!-- /post -->
 
