@@ -39,3 +39,32 @@ function dc_display_challenges() {
 }
 add_shortcode('daily_challenges', 'dc_display_challenges');
 
+function dc_schedule_daily_challenge() {
+    if (!wp_next_scheduled('dc_publish_challenge')) {
+        wp_schedule_event(time(), 'daily', 'dc_publish_challenge');
+    }
+}
+add_action('wp', 'dc_schedule_daily_challenge');
+
+function dc_publish_daily_challenge() {
+    $args = array(
+        'post_type' => 'challenge',
+        'post_status' => 'draft',
+        'orderby' => 'date',
+        'order' => 'ASC',
+        'posts_per_page' => 1
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        $query->the_post();
+        $post_id = get_the_ID();
+
+        wp_update_post(array(
+            'ID' => $post_id,
+            'post_status' => 'publish'
+        ));
+    }
+}
+add_action('dc_publish_challenge', 'dc_publish_daily_challenge');
