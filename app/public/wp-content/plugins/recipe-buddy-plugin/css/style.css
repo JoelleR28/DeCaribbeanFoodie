@@ -1,0 +1,47 @@
+.like-button-container {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.like-button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.like-button:hover {
+    background-color: #be5809;
+}
+
+.like-count {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.save-recipe-button-container {
+    display: flex;
+    flex-direction: row;  
+    align-items: center;     
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.save-recipe-button {
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.save-recipe-button:hover {
+    background-color: #005bb5;
+}
+
