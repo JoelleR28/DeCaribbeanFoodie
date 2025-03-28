@@ -68,3 +68,15 @@ function dc_publish_daily_challenge() {
     }
 }
 add_action('dc_publish_challenge', 'dc_publish_daily_challenge');
+
+function dc_mark_challenge_completed() {
+    if (isset($_POST['complete_challenge'])) {
+        $user_id = get_current_user_id();
+        $challenge_id = intval($_POST['challenge_id']);
+
+        if ($user_id && $challenge_id) {
+            update_post_meta($challenge_id, 'completed_by_' . $user_id, true);
+        }
+    }
+}
+add_action('init', 'dc_mark_challenge_completed');
