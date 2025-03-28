@@ -39,6 +39,7 @@ function dc_display_challenges() {
 }
 add_shortcode('daily_challenges', 'dc_display_challenges');
 
+// Scedule a daily event
 function dc_schedule_daily_challenge() {
     if (!wp_next_scheduled('dc_publish_challenge')) {
         wp_schedule_event(time(), 'daily', 'dc_publish_challenge');
@@ -46,6 +47,7 @@ function dc_schedule_daily_challenge() {
 }
 add_action('wp', 'dc_schedule_daily_challenge');
 
+// Upload the oldest draft challenge
 function dc_publish_daily_challenge() {
     $args = array(
         'post_type' => 'challenge',
@@ -69,6 +71,7 @@ function dc_publish_daily_challenge() {
 }
 add_action('dc_publish_challenge', 'dc_publish_daily_challenge');
 
+// Tracks a user's completion
 function dc_mark_challenge_completed() {
     if (isset($_POST['complete_challenge'])) {
         $user_id = get_current_user_id();
