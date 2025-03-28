@@ -215,3 +215,13 @@ function foodie_saved_recipes_shortcode()
     return $output;
 }
 add_shortcode('recipe_saved_list', 'foodie_saved_recipes_shortcode');
+
+//allow archive to show recipe cpt
+function include_cpt_in_all_archives($query) {
+    // Ensure we're modifying the main query and not a secondary query
+    if (!is_admin() && $query->is_main_query() && (is_date() || is_category() || is_tag())) {
+        // Modify the query to include both posts and custom post types (replace 'recipe' with your CPT slug)
+        $query->set('post_type', 'recipe'); 
+    }
+}
+add_action('pre_get_posts', 'include_cpt_in_all_archives');

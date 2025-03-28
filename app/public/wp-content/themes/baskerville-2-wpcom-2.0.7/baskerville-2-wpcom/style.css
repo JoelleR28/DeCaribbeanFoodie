@@ -614,7 +614,7 @@ a,
 .page-links {
     border-radius: 5px;
 	margin-top:2px;
-	width: 39vh;
+	width: 40.5vh;
 	display: inline-block;
 	margin-left: 3.5vw;
 	margin-bottom: 20px;
@@ -623,7 +623,7 @@ a,
 .page-links__title{
 	background-color: #090909; 
 	padding:25px;
-	width:39vh;
+	width:40.5vh;
 	border-radius: 5px;
 	text-align: center;
 }

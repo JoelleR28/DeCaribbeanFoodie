@@ -24,7 +24,7 @@ function foodie_post_types()
   register_post_type('saved_recipe', array(
     'capability_type' => 'saved_recipe', 
     'map_meta_cap'=> true,
-    'supports' => array('title', 'thumbnail', 'excerpt', 'comments'),
+    'supports' => array('title', 'thumbnail', 'excerpt'),
     'taxonomies' => array('category', 'post_tag'), 
     'rewrite' => array('slug' => 'saved_recipes'),
     'show_ui' => true,  

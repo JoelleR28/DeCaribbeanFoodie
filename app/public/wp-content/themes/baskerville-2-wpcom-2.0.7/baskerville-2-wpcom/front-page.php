@@ -45,7 +45,7 @@ get_header(); ?>
 				endwhile;
 				?>
 			</div> <!-- /posts -->
-			<div style=" color: white;"><p>More</p></div>
+			<div style=" color: white;"><a href="http://localhost:10028/recipes/" ><p>More</p></a></div>
 
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
