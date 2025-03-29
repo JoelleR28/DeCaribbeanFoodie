@@ -614,7 +614,11 @@ a,
 .page-links {
     border-radius: 5px;
 	margin-top:2px;
+<<<<<<< HEAD
 	width: 39vh;
+=======
+	width: 40.5vh;
+>>>>>>> 2f7f059909147a3aac29f23f9cd7fc3773ec2d06
 	display: inline-block;
 	margin-left: 3.5vw;
 	margin-bottom: 20px;
@@ -623,7 +627,11 @@ a,
 .page-links__title{
 	background-color: #090909; 
 	padding:25px;
+<<<<<<< HEAD
 	width:39vh;
+=======
+	width:40.5vh;
+>>>>>>> 2f7f059909147a3aac29f23f9cd7fc3773ec2d06
 	border-radius: 5px;
 	text-align: center;
 }
@@ -2675,6 +2683,41 @@ body.single .content.center {
 	float: right;
 }
 
+<<<<<<< HEAD
+=======
+/* General styling for the note */
+.notes {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-left: 15vw;
+	margin-right: 15vw;
+    border-radius: 5px;
+}
+
+.note-text {
+    font-size: 16px;
+    color: #333;
+}
+
+.edit-note, .delete-note {
+    padding: 5px 10px;
+    margin-top: 4vw;
+    cursor: pointer;
+    font-size: 14px;
+    color: #0073aa;
+    transition: color 0.3s;
+}
+
+.edit-note:hover, .delete-note:hover {
+    color: #005177;
+}
+
+.edit-note i, .delete-note i {
+    margin-right: 5px;
+}
+
+>>>>>>> 2f7f059909147a3aac29f23f9cd7fc3773ec2d06
 /* post navigation */
 
 .post-navigation {
