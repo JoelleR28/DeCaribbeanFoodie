@@ -8,6 +8,10 @@ Author URI: N/A
 License: GPL2
 */
 
+
+require_once plugin_dir_path(__FILE__) . 'includes/leaderboard.php';
+
+
 // Display Challenges
 function dc_display_challenges() {
     $args = array(
