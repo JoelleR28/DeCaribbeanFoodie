@@ -22,6 +22,7 @@ function foodie_post_types()
     'menu_icon' => 'dashicons-food',
   ));
 
+  
   register_post_type('saved_recipe', array(
     'capability_type' => 'saved_recipe', 
     'map_meta_cap'=> true,

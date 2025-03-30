@@ -614,6 +614,10 @@ a,
 .page-links {
     border-radius: 5px;
 	margin-top:2px;
+<<<<<<< HEAD
+=======
+	width: 39vh;
+>>>>>>> b485a845c4044376b5634a282db2d6536e7ec128
 	width: 40.5vh;
 	display: inline-block;
 	margin-left: 3.5vw;
@@ -623,6 +627,10 @@ a,
 .page-links__title{
 	background-color: #090909; 
 	padding:25px;
+<<<<<<< HEAD
+=======
+	width:39vh;
+>>>>>>> b485a845c4044376b5634a282db2d6536e7ec128
 	width:40.5vh;
 	border-radius: 5px;
 	text-align: center;
@@ -2675,7 +2683,10 @@ body.single .content.center {
 	float: right;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b485a845c4044376b5634a282db2d6536e7ec128
 /* General styling for the note */
 .notes {
     background-color: #f9f9f9;
@@ -2708,7 +2719,10 @@ body.single .content.center {
     margin-right: 5px;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b485a845c4044376b5634a282db2d6536e7ec128
 /* post navigation */
 
 .post-navigation {
