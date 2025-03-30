@@ -10,6 +10,17 @@ jQuery(document).ready(function($) {
     let selectedSlot = null;
     let isEditing = false;
     
+    // Function to update total calories display
+    function updateTotalCalories() {
+        let totalCalories = 0;
+        $('.meal-slot').each(function() {
+            const caloriesText = $(this).find('.calories-per-serving').text();
+            const calories = parseInt(caloriesText) || 0;
+            totalCalories += calories;
+        });
+        $('.total-calories').text(totalCalories);
+    }
+    
     // Edit mode toggle
     editBtn.on('click', function() {
         isEditing = !isEditing;
@@ -69,6 +80,7 @@ jQuery(document).ready(function($) {
         // Get the recipe title and thumbnail from the clicked option
         const recipeTitle = $(this).find('h4').text();
         const recipeThumbnail = $(this).find('.recipe-thumbnail').html();
+        const recipeExcerpt = $(this).find('.recipe-excerpt').text();
         
         $.ajax({
             url: mealPlannerAjax.ajaxurl,
@@ -93,10 +105,12 @@ jQuery(document).ready(function($) {
                             </div>
                             <div class="recipe-details">
                                 <h5>${recipeTitle}</h5>
+                                <div class="calories-per-serving">${recipeExcerpt}</div>
                             </div>
                         </div>
                     `);
                     
+                    updateTotalCalories();
                     modal.hide();
                 } else {
                     alert('Failed to add recipe. Please try again.');
@@ -115,4 +129,7 @@ jQuery(document).ready(function($) {
             selectedSlot = null;
         }
     });
+    
+    // Initialize total calories display
+    updateTotalCalories();
 }); 
