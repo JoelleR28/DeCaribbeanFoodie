@@ -41,6 +41,12 @@ function dc_display_challenges() {
                 </form>';
             }
             
+            $user_points = get_user_meta($user_id, 'user_points', true);
+            $user_badge = get_user_meta($user_id, 'user_badge', true);
+            $output .= '<div class="user-progress">';
+            $output .= '<p>Your Points: ' . ($user_points ? $user_points : 0) . '</p>';
+            $output .= '<p>Your Badge: ' . ($user_badge ? $user_badge : "No Badge Yet") . '</p>';
+            $output .= '</div>';
             $output .= '</div></div>';
         }
         $output .= '</div>';
@@ -94,7 +100,21 @@ function dc_mark_challenge_completed() {
         $challenge_id = intval($_POST['challenge_id']);
 
         if ($user_id && $challenge_id) {
-            update_post_meta($challenge_id, 'completed_by_' . $user_id, true);
+            $already_completed = get_post_meta($challenge_id, 'completed_by_' . $user_id, true);
+            
+            if (!$already_completed) {
+                update_post_meta($challenge_id, 'completed_by_' . $user_id, true);
+
+                $current_points = get_user_meta($user_id, 'user_points', true);
+                $new_points = intval($current_points) + 1;
+                update_user_meta($user_id, 'user_points', $new_points);
+
+                // Assign badge based on points
+                $badge = "Beginner"; // Default
+                if ($new_points >= 5) $badge = "Champion";
+                if ($new_points >= 10) $badge = "Master";
+                update_user_meta($user_id, 'user_badge', $badge);
+            }
         }
     }
 }
