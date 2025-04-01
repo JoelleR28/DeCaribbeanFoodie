@@ -21,6 +21,10 @@ function foodie_enqueue_script()
     // Enqueue the save recipe button script
     wp_enqueue_script('save-recipe-button', plugin_dir_url(__FILE__) . 'js/save-recipe-button.js', array('jquery'), null, true);
 
+
+    // Enqueue the recipe editor script
+    wp_enqueue_script('recipe-editor', plugin_dir_url(__FILE__) . 'js/edit-saved-recipe.js', array('jquery'), null, true);
+
     // Localize the like button script
     wp_localize_script('like-button', 'like_button_obj', array(
         'ajax_url' => admin_url('admin-ajax.php'),
@@ -29,6 +33,12 @@ function foodie_enqueue_script()
     // Localize the save recipe button script
     wp_localize_script('save-recipe-button', 'save_recipe_button_obj', array(
         'ajax_url' => admin_url('admin-ajax.php'),
+    ));
+    // Localize the recipe editor script to pass the AJAX URL and nonce
+    wp_localize_script('recipe-editor', 'recipeEditorParams', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'security' => wp_create_nonce('edit_saved_recipe_nonce'), // Pass the nonce here
+        'post_type' => 'saved-recipe' // Add the custom post type name
     ));
 
     // Enqueue the stylesheet
@@ -121,12 +131,12 @@ function foodie_handle_save_recipe_button_click()
 
     $post_id = intval($_POST['post_id']);
     $user_id = get_current_user_id();
-    $original_ingredients = get_field('recipe_ingredients', $post_id); 
-    $original_instructions = get_field('recipe_instructions', $post_id); 
+    $original_ingredients = get_field('recipe_ingredients', $post_id);
+    $original_instructions = get_field('recipe_instructions', $post_id);
     $excerpt = get_the_excerpt($post_id); // Get the excerpt of the original recipe
     $thumbnail_id = get_post_thumbnail_id($post_id); // Get the attachment ID of the featured image
-    
-    
+
+
     // Check if the recipe is already saved
     $args = [
         'post_type' => 'saved_recipe',
@@ -159,7 +169,7 @@ function foodie_handle_save_recipe_button_click()
             'post_excerpt' => $excerpt,
         ]);
 
-        
+
         if ($new_saved_recipe_id) {
             // Store the original recipe ID and the user who saved it
             update_post_meta($new_saved_recipe_id, '_original_recipe_id', $post_id);
@@ -168,10 +178,10 @@ function foodie_handle_save_recipe_button_click()
             // Set the custom fields from the original recipe to the new saved recipe post
             update_post_meta($new_saved_recipe_id, 'recipe_ingredients', $original_ingredients);
             update_post_meta($new_saved_recipe_id, 'recipe_instructions', $original_instructions);
-            
+
             // Set the excerpt and featured image
             set_post_thumbnail($new_saved_recipe_id, $thumbnail_id); // Use the image ID, not the URL
-           
+
             wp_send_json_success(['button_text' => 'Remove from Favorites']);
         } else {
             wp_send_json_error(['message' => 'Failed to save recipe.']);
@@ -182,7 +192,8 @@ add_action('wp_ajax_save_recipe_button_click', 'foodie_handle_save_recipe_button
 add_action('wp_ajax_nopriv_save_recipe_button_click', 'foodie_handle_save_recipe_button_click');
 
 // Register the shortcode for displaying saved recipes
-function foodie_saved_recipes_shortcode() {
+function foodie_saved_recipes_shortcode()
+{
     $user_id = get_current_user_id();
     $output = '';
 
@@ -237,17 +248,19 @@ add_shortcode('recipe_saved_list', 'foodie_saved_recipes_shortcode');
 
 
 //allow archive to show recipe cpt
-function include_cpt_in_all_archives($query) {
+function include_cpt_in_all_archives($query)
+{
     // Ensure we're modifying the main query and not a secondary query
     if (!is_admin() && $query->is_main_query() && (is_date() || is_category() || is_tag())) {
         // Modify the query to include both posts and custom post types (replace 'recipe' with your CPT slug)
-        $query->set('post_type', 'recipe'); 
+        $query->set('post_type', 'recipe');
     }
 }
 add_action('pre_get_posts', 'include_cpt_in_all_archives');
 
 // Handle saved recipe deletion
-function handle_saved_recipe_deletion() {
+function handle_saved_recipe_deletion()
+{
     if (isset($_GET['action']) && $_GET['action'] === 'delete_recipe' && isset($_GET['saved-recipe_id'])) {
         // Get the saved recipe ID from the URL
         $recipe_id = intval($_GET['saved-recipe_id']);
@@ -277,3 +290,75 @@ function handle_saved_recipe_deletion() {
 }
 add_action('init', 'handle_saved_recipe_deletion');
 
+add_action('wp_ajax_get_recipe_details', 'get_recipe_details_callback');
+add_action('wp_ajax_nopriv_get_recipe_details', 'get_recipe_details_callback'); // For non-logged-in users, if needed
+
+function get_recipe_details_callback() {
+    if ( !isset($_GET['security']) || !wp_verify_nonce($_GET['security'], 'edit_saved_recipe_nonce') ) {
+        wp_send_json_error('Invalid nonce');
+        exit;
+    }
+
+    if ( isset($_GET['recipe_id']) && is_numeric($_GET['recipe_id']) ) {
+        $recipe_id = intval($_GET['recipe_id']);
+        $recipe = get_post($recipe_id); // Get the post object
+        
+        if ($recipe && $recipe->post_type === 'saved_recipe') {
+            // Fetch custom fields (ingredients and instructions) associated with the recipe
+            $ingredients = get_post_meta($recipe_id, 'recipe_ingredients', true);
+            $instructions = get_post_meta($recipe_id, 'recipe_instructions', true);
+            
+            // Return the recipe details as a JSON response
+            wp_send_json_success(array(
+                'title' => $recipe->post_title,
+                'ingredients' => $ingredients,
+                'instructions' => $instructions,
+            ));
+        } else {
+            wp_send_json_error('Recipe not found or invalid post type');
+        }
+    } else {
+        wp_send_json_error('Invalid recipe ID');
+    }
+
+    exit;
+}
+
+add_action('wp_ajax_update_recipe', 'update_recipe_callback');
+
+function update_recipe_callback() {
+    // Verify the nonce
+    if ( !isset($_POST['security']) || !wp_verify_nonce($_POST['security'], 'edit_saved_recipe_nonce') ) {
+        wp_send_json_error('Invalid nonce');
+        exit;
+    }
+
+    // Check if we have the required data
+    if ( isset($_POST['recipe_id']) && isset($_POST['recipe_title']) && isset($_POST['recipe_ingredients']) && isset($_POST['recipe_instructions']) ) {
+        $recipe_id = intval($_POST['recipe_id']);
+        $title = sanitize_text_field($_POST['recipe_title']);
+       // Use wp_kses_post to preserve allowed HTML tags (e.g., <ul>, <li>, <p>, etc.)
+       $ingredients = wp_kses_post($_POST['recipe_ingredients']);
+       $instructions = wp_kses_post($_POST['recipe_instructions']);
+        
+       // Update the post title and custom fields in one go
+       $updated = wp_update_post(array(
+        'ID' => $recipe_id,
+        'post_title' => $title
+    ));
+
+    if ($updated) {
+        // Update custom fields (ingredients and instructions) immediately after the post update
+        update_post_meta($recipe_id, 'recipe_ingredients', $ingredients);
+        update_post_meta($recipe_id, 'recipe_instructions', $instructions);
+
+        wp_send_json_success('Recipe updated successfully!');
+    } else {
+        wp_send_json_error('Failed to update recipe');
+    }
+} else {
+    wp_send_json_error('Missing required fields');
+}
+
+exit;
+}
