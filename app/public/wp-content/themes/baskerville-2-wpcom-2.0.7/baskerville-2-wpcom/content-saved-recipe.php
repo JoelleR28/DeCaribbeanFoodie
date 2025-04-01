@@ -28,7 +28,7 @@
 					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
 						<?php the_post_thumbnail('baskerville-2-post-thumbnail'); ?>
 					</a>
-				<?php
+					<?php
 				} else {
 					the_post_thumbnail('baskerville-2-post-image');
 				} ?>
@@ -39,13 +39,15 @@
 		 * Post Content / Excerpt
 		 */
 		?>
-		<div class="notes">
-		<span class="edit-note"><i class="fa fa-pencil" aria-hidden="true"></i>
-			Edit
-		</span>
-		<span class="delete-note"><i class="fa fa-trash-o" aria-hidden="true"></i>
-			Delete
-		</span>
+		<div class="saved-recipe-actions">
+			<a href="<?php echo get_edit_post_link(get_the_ID()); ?>" class="edit-recipe">
+				<i class="fa fa-pencil" aria-hidden="true"></i> Edit
+			</a>
+			<a href="<?php echo add_query_arg(array('action' => 'delete_recipe', 'saved-recipe_id' => get_the_ID()), get_permalink()); ?>"
+				class="delete-recipe" onclick="return confirm('Are you sure you want to delete this recipe?');">
+				<i class="fa fa-trash-o" aria-hidden="true"></i> Delete
+			</a>
+
 		</div>
 		<div class="recipe-ingredients">
 			</br> </br>

@@ -2677,8 +2677,9 @@ body.single .content.center {
 	float: right;
 }
 
-/* General styling for the note */
-.notes {
+/* General styling for saved recipe actions */
+
+.saved-recipe-actions {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     padding: 15px;
@@ -2687,12 +2688,12 @@ body.single .content.center {
     border-radius: 5px;
 }
 
-.note-text {
+.saved-recipe-actions-text {
     font-size: 16px;
     color: #333;
 }
 
-.edit-note, .delete-note {
+.edit-recipe, .delete-recipe {
     padding: 5px 10px;
     margin-top: 4vw;
     cursor: pointer;
@@ -2701,11 +2702,11 @@ body.single .content.center {
     transition: color 0.3s;
 }
 
-.edit-note:hover, .delete-note:hover {
-    color: #005177;
+.edit-recipe:hover, .delete-recipe:hover {
+    color: #e76e03;
 }
 
-.edit-note i, .delete-note i {
+.edit-recipe i, .delete-recipe i {
     margin-right: 5px;
 }
 

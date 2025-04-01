@@ -4,7 +4,7 @@ Plugin Name: Recipe Buddy
 Description: Save recipes and edit them, receive suggestions based on ingredients inputted by the user. 
 Version: 1.0 
 Author: Joelle Ramchandar 
-Author URI: ----
+Author URI: N/A
 License: GPL2 
 */
 
@@ -182,8 +182,7 @@ add_action('wp_ajax_save_recipe_button_click', 'foodie_handle_save_recipe_button
 add_action('wp_ajax_nopriv_save_recipe_button_click', 'foodie_handle_save_recipe_button_click');
 
 // Register the shortcode for displaying saved recipes
-function foodie_saved_recipes_shortcode()
-{
+function foodie_saved_recipes_shortcode() {
     $user_id = get_current_user_id();
     $output = '';
 
@@ -198,12 +197,32 @@ function foodie_saved_recipes_shortcode()
         $saved_recipes_query = new WP_Query($args);
 
         if ($saved_recipes_query->have_posts()) {
-            $output .= '<ul>';
+            $output .= '<div class="saved-recipe-grid">';  // Start the grid container
+
             while ($saved_recipes_query->have_posts()) {
                 $saved_recipes_query->the_post();
-                $output .= '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a>' . '</br>' . get_the_excerpt() . '</li>';
+                $output .= '<div class="saved-recipe-card">';  // Start each card
+
+                // Check if the recipe has a featured image
+                if (has_post_thumbnail()) {
+                    $output .= '<div class="saved-recipe-img">';
+                    $output .= get_the_post_thumbnail(get_the_ID(), 'medium');  // Featured image
+                    $output .= '</div>';
+                }
+
+                // Content within the card
+                $output .= '<div class="saved-recipe-content">';
+                $output .= '<h2>' . get_the_title() . '</h2>';  // Title of the recipe
+                $output .= '<p>' . get_the_excerpt() . '</p>';  // Short excerpt of the recipe
+
+                // Add button with a link to the recipe
+                $output .= '<a href="' . get_permalink() . '" class="btn">View Recipe</a>';
+                $output .= '</div>';  // End content
+
+                $output .= '</div>';  // End card
             }
-            $output .= '</ul>';
+
+            $output .= '</div>';  // End grid container
         } else {
             $output .= '<p>You have no saved recipes.</p>';
         }
@@ -216,6 +235,7 @@ function foodie_saved_recipes_shortcode()
 }
 add_shortcode('recipe_saved_list', 'foodie_saved_recipes_shortcode');
 
+
 //allow archive to show recipe cpt
 function include_cpt_in_all_archives($query) {
     // Ensure we're modifying the main query and not a secondary query
@@ -225,3 +245,35 @@ function include_cpt_in_all_archives($query) {
     }
 }
 add_action('pre_get_posts', 'include_cpt_in_all_archives');
+
+// Handle saved recipe deletion
+function handle_saved_recipe_deletion() {
+    if (isset($_GET['action']) && $_GET['action'] === 'delete_recipe' && isset($_GET['saved-recipe_id'])) {
+        // Get the saved recipe ID from the URL
+        $recipe_id = intval($_GET['saved-recipe_id']);
+
+        // Ensure the post exists and is of type 'saved_recipe'
+        $post = get_post($recipe_id);
+        if ($post && $post->post_type === 'saved_recipe') {
+            // Ensure the user is logged in and is the author of the recipe or an administrator
+            if (get_post_field('post_author', $recipe_id) === get_current_user_id() || current_user_can('subscriber')) {
+                // Delete the saved recipe permanently
+                $deleted = wp_delete_post($recipe_id, true); // true means permanent deletion
+
+                if ($deleted) {
+                    // Redirect to a page after deleting
+                    wp_redirect(home_url('/saved-recipes'));  // Change '/saved-recipes' to your desired page
+                    exit;
+                } else {
+                    wp_die('Error deleting saved recipe');
+                }
+            } else {
+                wp_die('You do not have permission to delete this saved recipe.');
+            }
+        } else {
+            wp_die('Saved recipe not found.');
+        }
+    }
+}
+add_action('init', 'handle_saved_recipe_deletion');
+
