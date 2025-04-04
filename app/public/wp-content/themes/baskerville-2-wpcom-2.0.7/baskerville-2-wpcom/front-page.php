@@ -47,6 +47,52 @@ get_header(); ?>
 			</div> <!-- /posts -->
 			<div style=" color: white;"><a href="http://localhost:10028/recipes/" ><p>More</p></a></div>
 
+			<!-- Latest Challenges Section -->
+			<div style=" color: black; margin-top: 40px; font-size: 40px;"><p>Latest Daily Challenges</p></div>
+
+			<?php
+			$challenge_query = new WP_Query(array(
+				'post_type' => 'challenge',
+				'posts_per_page' => 3,
+				'orderby' => 'date',
+				'order' => 'DESC',
+			));
+
+			if ( $challenge_query->have_posts() ) : ?>
+				<div class="posts" id="challenges">
+					<?php while ( $challenge_query->have_posts() ) : $challenge_query->the_post(); ?>
+					<div class="challenge-card" style="
+						background: #fff; 
+						padding: 10px; 
+						margin-bottom: 15px; 
+						border-radius: 10px; 
+						display: flex; 
+						align-items: center;
+						gap: 15px;
+						box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+					">
+					<?php if (has_post_thumbnail()) : ?>
+						<div style="flex-shrink: 0;">
+						<?php the_post_thumbnail('thumbnail', ['style' => 'border-radius: 8px; width: 100px; height: auto;']); ?>
+						</div>
+					<?php endif; ?>
+
+					<div>
+						<h3 style="margin: 0;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+					</div>
+					</div>
+					<?php endwhile; ?>
+				</div>
+				<div style=" color: white;"><a href="<?php echo site_url('/challenges'); ?>"><p>More</p></a></div>
+			<?php else : ?>
+				<p style="color:white;">No challenges available yet.</p>
+			<?php endif;
+
+			wp_reset_postdata();
+			?>
+
+
+
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
