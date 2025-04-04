@@ -2854,13 +2854,13 @@ body.single .content.center {
  *
  */
 
- /* .recipe-ingredients{
-	justify-content: center;
-}
 
-.recipe-instructions{
+/* .recipe-ingredients{
+	width: 40vh;
 	justify-content: center;
 } */
+
+
 
 .recipe-subtitle{
 	font-weight: bold;
@@ -2871,6 +2871,7 @@ body.single .content.center {
 
 .recipe-list{
 	margin-left: 5vw;
+	width: 40vh;
 }
 
 /**
@@ -5466,4 +5467,107 @@ img#wpstats {
 
 .challenge-content .btn:hover {
     background: #e65500;
+}
+
+/*Custom background color for the login page*/
+body.login {
+    background-color: #f1ba83; 
+	z-index: 1;
+}
+
+/* Custom background image for the login page
+body.login {
+    background-image: url('http://localhost:10028/wp-content/themes/baskerville-2-wpcom-2.0.7/baskerville-2-wpcom/images/Jerk-Chicken.jp');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+} */
+
+/* Hover effect - Apply orange tint to the logo */
+#login h1 a:hover {
+    filter: sepia(1) saturate(8) hue-rotate(-50deg); /* Stronger sepia + higher saturation + more hue rotation */
+}
+/* Customising text links for the login page*/
+
+/* Style for the login page 'Register' and 'Lost your password?' links */
+body.login #nav {
+    text-align: center; /* Center the links */
+}
+
+body.login #nav a {
+    color: #ffd5b6; /* Change text color to orange (you can change this to any color you prefer) */
+    text-decoration: none; 
+}
+
+body.login #nav a:hover {
+    color: #cc3300; /* Darker color on hover (you can customize this) */
+    text-decoration: underline; /* Underline the link on hover */
+}
+
+/* Optional: Styling the separator '|' between the links */
+body.login #nav a + span {
+    color: #ff6600; /* Color of the separator */
+    padding: 0 5px;
+}
+
+/* Style for the 'Go to DeCaribbeanfoodie' link */
+body.login #backtoblog {
+    text-align: center; /* Center the text */
+}
+
+body.login #backtoblog a {
+    color: #ffd5b6; /* Set the link color */
+}
+
+/* Hover effect for the link */
+body.login #backtoblog a:hover {
+    color: #cc3300; /* Change the color on hover */
+}
+
+/* Style the submit button */
+body.login .submit input#wp-submit {
+    background-color: #000000; /* Background color (blue) */
+    color: #fff; /* Text color (white) */
+    cursor: pointer; /* Change the cursor to a pointer when hovering */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Hover effect for the button */
+body.login .submit input#wp-submit:hover {
+    background-color: #f46122; /* Darker blue background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+/* Style the input text field with a lighter orange color */
+#user_login {
+    background-color: #ffdeac; /* Light orange background */
+    border: 1px solid #ff9800; /* Darker orange border */
+    color: #333; /* Dark text color for better readability */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition when focus is applied */
+}
+
+/* Style the input text field with a lighter orange color */
+#user_pass {
+    background-color: #ffdeac; /* Light orange background */
+    border: 1px solid #ff9800; /* Darker orange border */
+    color: #333; /* Dark text color for better readability */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition when focus is applied */
+}
+
+/* Style the input text field with a lighter orange color */
+#user_email {
+    background-color: #ffdeac; /* Light orange background */
+    border: 1px solid #ff9800; /* Darker orange border */
+    color: #333; /* Dark text color for better readability */
+    border-radius: 4px; /* Optional: Add rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition when focus is applied */
+}
+
+/* Style the messages */
+.message {
+    text-align: center;
+    border-radius: 5px;
 }
