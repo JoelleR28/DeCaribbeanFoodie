@@ -1,5 +1,25 @@
 <?php
 /**
+<<<<<<< HEAD
+ * This is the main generic template file of the theme
+ *
+ * @package Baskerville 2
+ */
+get_header(); ?>
+
+<div class="wrapper section medium-padding clear">
+
+	<main class="content section-inner" id="content" role="main">
+		<?php if ( have_posts() ) :
+
+			if ( is_home() && ! is_front_page() ) : ?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
+
+			<?php
+			endif; ?>
+=======
  * This template is used for recipe blog page.
  *
  * @package Baskerville 2
@@ -32,6 +52,7 @@ get_header(); ?>
 				</header>
 			<?php endif; ?>
 
+>>>>>>> 2f7f059909147a3aac29f23f9cd7fc3773ec2d06
 			<div class="posts" id="posts">
 
 				<div class="spinner-container">
@@ -41,6 +62,22 @@ get_header(); ?>
 					</div>
 				</div>
 
+<<<<<<< HEAD
+				<?php while ( have_posts() ) : the_post();
+					get_template_part( 'content', get_post_format() );
+				endwhile; ?>
+			</div> <!-- /posts -->
+			<?php the_posts_navigation(); ?>
+			<?php else :
+				get_template_part( 'content', 'none' );
+			?>
+		<?php endif; ?>
+
+	</main> <!-- /content -->
+</div> <!-- /wrapper -->
+
+<?php get_footer(); ?>
+=======
 				<?php
 				// Loop through the recipe posts
 				while ( $recipe_query->have_posts() ) : $recipe_query->the_post();
@@ -62,3 +99,4 @@ get_header(); ?>
 </div> <!-- /wrapper -->
 
 <?php get_footer(); ?>
+>>>>>>> 2f7f059909147a3aac29f23f9cd7fc3773ec2d06

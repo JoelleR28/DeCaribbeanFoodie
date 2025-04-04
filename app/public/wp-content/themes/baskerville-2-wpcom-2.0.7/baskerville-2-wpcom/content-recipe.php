@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This template is used in the Loop to display recipe content
  *
@@ -28,18 +29,23 @@
 					<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
 						<?php the_post_thumbnail('baskerville-2-post-thumbnail'); ?>
 					</a>
+
 				<?php 
 				} else {
+
 					the_post_thumbnail('baskerville-2-post-image');
 				} ?>
 			</div> <!-- /featured-media -->
 		<?php }
+
 		echo do_shortcode('[recipe_like_button]');
 		echo do_shortcode('[recipe_save_button]')
+
 		/**
 		 * Post Content / Excerpt
 		 */
 		?>
+
 
 		<div class="recipe-ingredients">
 			</br> </br>
@@ -56,8 +62,10 @@
 					$ingredients_list = explode("\n", $ingredients);
 
 					// Loop through the array and output each ingredient as an <li>
+
 					foreach ($ingredients_list as $ingredients) {
 						echo $ingredients;
+
 					}
 				}
 				?>
@@ -70,6 +78,7 @@
 			<ul class="recipe-list">
 				<?php
 				// Get the ingredients from ACF
+
 				$instructions = get_field('recipe_instructions');
 
 				// Check if ingredients are not empty

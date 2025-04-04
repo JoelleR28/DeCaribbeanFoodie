@@ -2,6 +2,7 @@
 function foodie_post_types()
 {
   register_post_type('recipe', array(
+
     'capability_type' => 'recipe', 
     'map_meta_cap'=> true,
     'supports' => array('title', 'thumbnail', 'excerpt', 'comments'),
