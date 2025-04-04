@@ -47,6 +47,8 @@ function foodie_post_types()
       'map_meta_cap'=> true,
       'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
       'rewrite' => array('slug' => 'challenges'),
+      'show_ui' => true,
+      'show_in_rest' => true,
       'has_archive' => true,
       'public' => true,
       'labels' => array(
