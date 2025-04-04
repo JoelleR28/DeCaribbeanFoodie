@@ -46,7 +46,6 @@
 		 */
 		?>
 
-
 		<div class="recipe-ingredients">
 			</br> </br>
 			<h3 class="recipe-subtitle">Ingredients</h3>
@@ -95,6 +94,10 @@
 			</ul>
 
 			</br></br>
+			<div class = "how-to-guide">
+			<h3 class="recipe-subtitle">How To Cooking Guide</h3>
+			<?php echo get_field('how_to_cooking_guide') ?>
+			</div>
 		<?php
 		/**
 		 * Post Meta

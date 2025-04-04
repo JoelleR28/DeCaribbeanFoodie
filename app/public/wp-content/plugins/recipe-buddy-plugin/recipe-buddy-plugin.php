@@ -196,11 +196,13 @@ function foodie_saved_recipes_shortcode()
 {
     $user_id = get_current_user_id();
     $output = '';
-
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    
     if ($user_id) {
         $args = array(
             'post_type' => 'saved_recipe',
-            'posts_per_page' => -1,
+            'posts_per_page' => 2,
+            'paged' => $paged,
             'post_status' => 'publish',
             'author' => $user_id,
         );
@@ -233,6 +235,23 @@ function foodie_saved_recipes_shortcode()
                 $output .= '</div>';  // End card
             }
 
+            // Add pagination
+            $output .= '<div class="pagination">'; 
+            $total_pages =  $saved_recipes_query->max_num_pages;
+    
+            if ($total_pages > 1){
+        
+                $current_page = max(1, get_query_var('paged'));
+        
+                echo paginate_links(array(
+                    'format' => '/page/%#%',
+                    'current' => $current_page,
+                    'total' => $total_pages,
+                    'prev_text'    => __('« Previous'),
+                    'next_text'    => __('Next »'),
+                ));
+            }
+            $output .= '</div>';  // End pagination
             $output .= '</div>';  // End grid container
         } else {
             $output .= '<p>You have no saved recipes.</p>';

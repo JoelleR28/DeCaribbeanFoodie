@@ -351,8 +351,6 @@ add_action('login_enqueue_scripts', 'ourLoginCSS');
 function ourLoginCSS()
 {
 	wp_enqueue_style('baskerville-2-style', get_stylesheet_uri());
-	wp_enqueue_style('custom-google-font', 'https://fonts.googleapis.com/css?
- family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
 }
 
 //load custom header on the login screen dynamically 
