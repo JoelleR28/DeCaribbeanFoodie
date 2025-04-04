@@ -59,12 +59,31 @@ class Meal_Planner {
     
     public function get_meal_plan_items($meal_plan_id) {
         $items = array();
+        $total_calories = 0;
+        
         for ($i = 1; $i <= 5; $i++) {
             $recipe_id = get_post_meta($meal_plan_id, 'recipe_slot_' . $i, true);
             if ($recipe_id) {
-                $items[$i] = get_post($recipe_id);
+                $recipe = get_post($recipe_id);
+                $recipe_calories = get_post_meta($recipe_id, 'recipe_calories', true);
+                $serving_size = get_post_meta($recipe_id, 'serving_size', true);
+                
+                // Calculate calories per serving
+                $calories_per_serving = 0;
+                if (!empty($recipe_calories) && !empty($serving_size) && $serving_size > 0) {
+                    $calories_per_serving = round($recipe_calories / $serving_size);
+                }
+                
+                $total_calories += $calories_per_serving;
+                
+                $items[$i] = array(
+                    'recipe' => $recipe,
+                    'calories_per_serving' => $calories_per_serving
+                );
             }
         }
+        
+        $items['total_calories'] = $total_calories;
         return $items;
     }
     

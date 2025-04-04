@@ -43,13 +43,14 @@ class Meal_Planner_Shortcode {
                     $recipe = isset($meal_plan_items[$i]) ? $meal_plan_items[$i] : null;
                     if ($recipe) {
                         echo '<div class="recipe-item">';
-                        if (has_post_thumbnail($recipe->ID)) {
+                        if (has_post_thumbnail($recipe['recipe']->ID)) {
                             echo '<div class="recipe-thumbnail">';
-                            echo get_the_post_thumbnail($recipe->ID, 'thumbnail');
+                            echo get_the_post_thumbnail($recipe['recipe']->ID, 'thumbnail');
                             echo '</div>';
                         }
                         echo '<div class="recipe-details">';
-                        echo '<h5>' . esc_html($recipe->post_title) . '</h5>';
+                        echo '<h5>' . esc_html($recipe['recipe']->post_title) . '</h5>';
+                        echo '<div class="calories-per-serving">' . esc_html($recipe['calories_per_serving']) . ' calories per serving</div>';
                         echo '</div>';
                         echo '</div>';
                     } else {
@@ -59,6 +60,11 @@ class Meal_Planner_Shortcode {
                     echo '</div>';
                 }
                 ?>
+            </div>
+            
+            <!-- Total Calories Display -->
+            <div class="total-calories-container">
+                Total Calories: <span class="total-calories"><?php echo esc_html($meal_plan_items['total_calories']); ?></span>
             </div>
             
             <!-- Recipe Selection Modal -->
@@ -86,6 +92,18 @@ class Meal_Planner_Shortcode {
                                 }
                                 echo '<div class="recipe-info">';
                                 echo '<h4>' . esc_html(get_the_title()) . '</h4>';
+                                
+                                // Get recipe calories and serving size
+                                $recipe_calories = get_post_meta(get_the_ID(), 'recipe_calories', true);
+                                $serving_size = get_post_meta(get_the_ID(), 'serving_size', true);
+                                
+                                // Calculate calories per serving
+                                $calories_per_serving = 0;
+                                if (!empty($recipe_calories) && !empty($serving_size) && $serving_size > 0) {
+                                    $calories_per_serving = round($recipe_calories / $serving_size);
+                                }
+                                
+                                echo '<div class="recipe-excerpt">' . esc_html($calories_per_serving) . ' calories per serving</div>';
                                 echo '</div>';
                                 echo '</div>';
                             }
