@@ -2,6 +2,7 @@
 function foodie_post_types()
 {
   register_post_type('recipe', array(
+
     'capability_type' => 'recipe', 
     'map_meta_cap'=> true,
     'supports' => array('title', 'thumbnail', 'excerpt', 'comments'),
@@ -21,6 +22,7 @@ function foodie_post_types()
     'menu_icon' => 'dashicons-food',
   ));
 
+  
   register_post_type('saved_recipe', array(
     'capability_type' => 'saved_recipe', 
     'map_meta_cap'=> true,
@@ -34,7 +36,6 @@ function foodie_post_types()
       'name' => "Saved Recipes",
       'singular_name' => "Saved Recipe",
       'add_new_item' => 'Add New Saved Recipe', 
-      'edit_item' => 'Edit Saved Recipe',
       'all_items' => 'All Saved Recipes',
     ),
     'menu_icon' => 'dashicons-star-filled',
@@ -42,8 +43,12 @@ function foodie_post_types()
 
   // Register the Challenge Custom Post Type
     register_post_type('challenge', array(
+      'capability_type' => 'challenges', 
+      'map_meta_cap'=> true,
       'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
       'rewrite' => array('slug' => 'challenges'),
+      'show_ui' => true,
+      'show_in_rest' => true,
       'has_archive' => true,
       'public' => true,
       'labels' => array(

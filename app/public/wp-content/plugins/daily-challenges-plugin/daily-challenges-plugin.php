@@ -2,11 +2,36 @@
 /*
 Plugin Name: Daily Challenges
 Description: A plugin to add and display daily challenges for the users.
-Version: 1.0
+Version: 1.1
 Author: Deepthi Valachery
 Author URI: N/A
 License: GPL2
 */
+
+require_once plugin_dir_path(__FILE__) . 'includes/leaderboard.php';
+
+function dc_enqueue_styles() {
+    wp_enqueue_style('dc-custom-style', plugin_dir_url(__FILE__) . 'assets/css/style.css');
+}
+add_action('wp_enqueue_scripts', 'dc_enqueue_styles');
+
+
+// Assign Badge Based on Points
+function dc_assign_badge($user_id) {
+    $points = intval(get_user_meta($user_id, 'user_points', true));
+
+    $champion = get_option('dc_champion_threshold', 5);
+    $master = get_option('dc_master_threshold', 10);
+
+    $badge = "Beginner";
+    if ($points >= $master) {
+        $badge = "Master";
+    } elseif ($points >= $champion) {
+        $badge = "Champion";
+    }
+
+    update_user_meta($user_id, 'user_badge', $badge);
+}
 
 // Display Challenges
 function dc_display_challenges() {
@@ -17,33 +42,38 @@ function dc_display_challenges() {
     $query = new WP_Query($args);
 
     if ($query->have_posts()) {
-        $output = '<div class="challenges-grid">';
+        $output = '<div class="dc-challenge-wrapper">';
         while ($query->have_posts()) {
             $query->the_post();
             $post_id = get_the_ID();
             $user_id = get_current_user_id();
             $completed = get_post_meta($post_id, 'completed_by_' . $user_id, true);
 
-            $output .= '<div class="challenge-card">';
+            $output .= '<div class="dc-challenge-card">';
             if (has_post_thumbnail()) {
-                $output .= '<div class="challenge-img">' . get_the_post_thumbnail(null, 'medium') . '</div>';
+                $output .= '<div class="dc-challenge-img">' . get_the_post_thumbnail(null, 'medium') . '</div>';
             }
-            $output .= '<div class="challenge-content">';
+            $output .= '<div class="dc-challenge-content">';
             $output .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
             $output .= '<p>' . get_the_excerpt() . '</p>';
             
             if ($completed) {
-                $output .= '<p style="color:green;"> Completed</p>';
+                $output .= '<p class="dc-completed">✅ Completed</p>';
             } else {
-                $output .= '<form method="post">
+                $output .= '<form method="post" class="dc-complete-form">
                     <input type="hidden" name="challenge_id" value="' . $post_id . '">
-                    <button type="submit" name="complete_challenge" class="btn">Mark as Completed</button>
+                    <button type="submit" name="complete_challenge" class="dc-btn">Mark as Completed</button>
                 </form>';
             }
             
-            $output .= '</div></div>';
+            $user_points = get_user_meta($user_id, 'user_points', true);
+            $user_badge = get_user_meta($user_id, 'user_badge', true);
+            $output .= '<div class="dc-user-progress">';
+            $output .= '<p>🎯 Your Points: ' . ($user_points ? $user_points : 0) . '</p>';
+            $output .= '<p>🏆 Your Badge: ' . ($user_badge ? $user_badge : "No Badge Yet") . '</p>';
+            $output .= '</div></div></div>';
         }
-        $output .= '</div>';
+        $output .= '</div>'; 
         wp_reset_postdata();
         return $output;
     } else {
@@ -52,7 +82,7 @@ function dc_display_challenges() {
 }
 add_shortcode('daily_challenges', 'dc_display_challenges');
 
-// Scedule a daily event
+// Schedule Daily Challenge Upload
 function dc_schedule_daily_challenge() {
     if (!wp_next_scheduled('dc_publish_challenge')) {
         wp_schedule_event(time(), 'daily', 'dc_publish_challenge');
@@ -60,7 +90,7 @@ function dc_schedule_daily_challenge() {
 }
 add_action('wp', 'dc_schedule_daily_challenge');
 
-// Upload the oldest draft challenge
+// Upload the Oldest Draft Challenge
 function dc_publish_daily_challenge() {
     $args = array(
         'post_type' => 'challenge',
@@ -84,15 +114,71 @@ function dc_publish_daily_challenge() {
 }
 add_action('dc_publish_challenge', 'dc_publish_daily_challenge');
 
-// Tracks a user's completion
+// Mark Challenge as Completed
 function dc_mark_challenge_completed() {
     if (isset($_POST['complete_challenge'])) {
         $user_id = get_current_user_id();
         $challenge_id = intval($_POST['challenge_id']);
 
         if ($user_id && $challenge_id) {
-            update_post_meta($challenge_id, 'completed_by_' . $user_id, true);
+            $already_completed = get_post_meta($challenge_id, 'completed_by_' . $user_id, true);
+            
+            if (!$already_completed) {
+                update_post_meta($challenge_id, 'completed_by_' . $user_id, true);
+
+                $current_points = get_user_meta($user_id, 'user_points', true);
+                $new_points = intval($current_points) + 1;
+                update_user_meta($user_id, 'user_points', $new_points);
+
+                // Assign Badge
+                dc_assign_badge($user_id);
+            }
         }
     }
 }
 add_action('init', 'dc_mark_challenge_completed');
+
+// Add Admin Settings Page
+function dc_add_settings_page() {
+    add_options_page(
+        'Daily Challenge Settings',
+        'Daily Challenge',
+        'manage_options',
+        'dc-settings',
+        'dc_render_settings_page'
+    );
+}
+add_action('admin_menu', 'dc_add_settings_page');
+
+// Register Settings
+function dc_register_settings() {
+    register_setting('dc-settings-group', 'dc_champion_threshold');
+    register_setting('dc-settings-group', 'dc_master_threshold');
+}
+add_action('admin_init', 'dc_register_settings');
+
+// Render Settings Page
+function dc_render_settings_page() {
+    ?>
+    <div class="wrap">
+        <h1>Daily Challenge Settings</h1>
+        <form method="post" action="options.php">
+            <?php settings_fields('dc-settings-group'); ?>
+            <?php do_settings_sections('dc-settings-group'); ?>
+            
+            <table class="form-table">
+                <tr valign="top">
+                    <th scope="row">Champion Badge Threshold</th>
+                    <td><input type="number" name="dc_champion_threshold" value="<?php echo esc_attr(get_option('dc_champion_threshold', 5)); ?>" /></td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">Master Badge Threshold</th>
+                    <td><input type="number" name="dc_master_threshold" value="<?php echo esc_attr(get_option('dc_master_threshold', 10)); ?>" /></td>
+                </tr>
+            </table>
+            
+            <?php submit_button(); ?>
+        </form>
+    </div>
+    <?php
+}
