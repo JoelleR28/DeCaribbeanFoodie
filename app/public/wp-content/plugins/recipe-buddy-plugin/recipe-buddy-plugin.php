@@ -57,35 +57,69 @@ function foodie_recipe_like_button_shortcode($atts)
     $like_count = get_post_meta($post_id, '_like_count', true);
     $like_count = $like_count ? $like_count : 0;
 
-    // Output the like button and like count
-    $output = '<div class="like-button-container">';
-    $output .= '<button class="like-button" data-post-id="' . $post_id . '">Like</button>';
-    $output .= '<p class="like-count">' . $like_count . ' Likes</p>';
-    $output .= '</div>';
+    if (is_user_logged_in()) {
+        // Output the like button and like count
+        $output = '<div class="like-button-container">';
+        $output .= '<button class="like-button" data-post-id="' . $post_id . '">Like</button>';
+        $output .= '<p class="like-count">' . $like_count . ' Likes</p>';
+        $output .= '</div>';
+    } else
+
+        // If the user is not logged in, display a message to log in
+        $output = '<p>Please <a href="' . wp_login_url() . '">log in</a> to like this post.</p>';
 
     return $output;
 }
 add_shortcode('recipe_like_button', 'foodie_recipe_like_button_shortcode');
-
 // Handle the AJAX request to update the like count
 function foodie_handle_like_button_click()
 {
     if (isset($_POST['post_id'])) {
         $post_id = intval($_POST['post_id']);
         $like_count = get_post_meta($post_id, '_like_count', true);
-        $like_count = $like_count ? $like_count : 0;
-        $like_count++;
+        
+        // Ensure like count is initialized if not set
+        if (!$like_count) {
+            $like_count = 0;
+        }
 
-        // Update the like count in the post meta
-        update_post_meta($post_id, '_like_count', $like_count);
+        if (is_user_logged_in()) {
+            $user_id = get_current_user_id();
+            $liked_posts = get_user_meta($user_id, 'liked_posts', true);
 
-        // Return the updated like count
-        echo $like_count;
+            // If no likes exist, initialize the array
+            if (!$liked_posts) {
+                $liked_posts = [];
+            }
+
+            // If the post hasn't been liked by the user, like it now
+            if (!in_array($post_id, $liked_posts)) {
+                // Add post ID to the liked posts list
+                $liked_posts[] = $post_id;
+                update_user_meta($user_id, 'liked_posts', $liked_posts);
+
+                // Increment the like count
+                $like_count++;
+
+                // Update the like count in the post meta
+                update_post_meta($post_id, '_like_count', $like_count);
+
+                // Return the updated like count in the success response
+                wp_send_json_success(['like_count' => $like_count]);
+            } else {
+                // Return an error message if the user has already liked the post
+                wp_send_json_error(['message' => 'You have already liked this post.']);
+            }
+        } else {
+            // Return an error message if the user is not logged in
+            wp_send_json_error(['message' => 'You need to be logged in to like this post.']);
+        }
     }
     wp_die(); // required for proper AJAX response
 }
 add_action('wp_ajax_like_button_click', 'foodie_handle_like_button_click');
 add_action('wp_ajax_nopriv_like_button_click', 'foodie_handle_like_button_click');
+
 
 // Register the Save Recipe button shortcode
 function foodie_save_recipe_button_shortcode($atts)
@@ -197,7 +231,7 @@ function foodie_saved_recipes_shortcode()
     $user_id = get_current_user_id();
     $output = '';
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    
+
     if ($user_id) {
         $args = array(
             'post_type' => 'saved_recipe',
@@ -236,19 +270,19 @@ function foodie_saved_recipes_shortcode()
             }
 
             // Add pagination
-            $output .= '<div class="pagination">'; 
-            $total_pages =  $saved_recipes_query->max_num_pages;
-    
-            if ($total_pages > 1){
-        
+            $output .= '<div class="pagination">';
+            $total_pages = $saved_recipes_query->max_num_pages;
+
+            if ($total_pages > 1) {
+
                 $current_page = max(1, get_query_var('paged'));
-        
+
                 echo paginate_links(array(
                     'format' => '/page/%#%',
                     'current' => $current_page,
                     'total' => $total_pages,
-                    'prev_text'    => __('« Previous'),
-                    'next_text'    => __('Next »'),
+                    'prev_text' => __('« Previous'),
+                    'next_text' => __('Next »'),
                 ));
             }
             $output .= '</div>';  // End pagination
@@ -312,21 +346,22 @@ add_action('init', 'handle_saved_recipe_deletion');
 add_action('wp_ajax_get_recipe_details', 'get_recipe_details_callback');
 add_action('wp_ajax_nopriv_get_recipe_details', 'get_recipe_details_callback'); // For non-logged-in users, if needed
 
-function get_recipe_details_callback() {
-    if ( !isset($_GET['security']) || !wp_verify_nonce($_GET['security'], 'edit_saved_recipe_nonce') ) {
+function get_recipe_details_callback()
+{
+    if (!isset($_GET['security']) || !wp_verify_nonce($_GET['security'], 'edit_saved_recipe_nonce')) {
         wp_send_json_error('Invalid nonce');
         exit;
     }
 
-    if ( isset($_GET['recipe_id']) && is_numeric($_GET['recipe_id']) ) {
+    if (isset($_GET['recipe_id']) && is_numeric($_GET['recipe_id'])) {
         $recipe_id = intval($_GET['recipe_id']);
         $recipe = get_post($recipe_id); // Get the post object
-        
+
         if ($recipe && $recipe->post_type === 'saved_recipe') {
             // Fetch custom fields (ingredients and instructions) associated with the recipe
             $ingredients = get_post_meta($recipe_id, 'recipe_ingredients', true);
             $instructions = get_post_meta($recipe_id, 'recipe_instructions', true);
-            
+
             // Return the recipe details as a JSON response
             wp_send_json_success(array(
                 'title' => $recipe->post_title,
@@ -345,39 +380,40 @@ function get_recipe_details_callback() {
 
 add_action('wp_ajax_update_recipe', 'update_recipe_callback');
 
-function update_recipe_callback() {
+function update_recipe_callback()
+{
     // Verify the nonce
-    if ( !isset($_POST['security']) || !wp_verify_nonce($_POST['security'], 'edit_saved_recipe_nonce') ) {
+    if (!isset($_POST['security']) || !wp_verify_nonce($_POST['security'], 'edit_saved_recipe_nonce')) {
         wp_send_json_error('Invalid nonce');
         exit;
     }
 
     // Check if we have the required data
-    if ( isset($_POST['recipe_id']) && isset($_POST['recipe_title']) && isset($_POST['recipe_ingredients']) && isset($_POST['recipe_instructions']) ) {
+    if (isset($_POST['recipe_id']) && isset($_POST['recipe_title']) && isset($_POST['recipe_ingredients']) && isset($_POST['recipe_instructions'])) {
         $recipe_id = intval($_POST['recipe_id']);
         $title = sanitize_text_field($_POST['recipe_title']);
-       // Use wp_kses_post to preserve allowed HTML tags (e.g., <ul>, <li>, <p>, etc.)
-       $ingredients = wp_kses_post($_POST['recipe_ingredients']);
-       $instructions = wp_kses_post($_POST['recipe_instructions']);
-        
-       // Update the post title and custom fields in one go
-       $updated = wp_update_post(array(
-        'ID' => $recipe_id,
-        'post_title' => $title
-    ));
+        // Use wp_kses_post to preserve allowed HTML tags (e.g., <ul>, <li>, <p>, etc.)
+        $ingredients = wp_kses_post($_POST['recipe_ingredients']);
+        $instructions = wp_kses_post($_POST['recipe_instructions']);
 
-    if ($updated) {
-        // Update custom fields (ingredients and instructions) immediately after the post update
-        update_post_meta($recipe_id, 'recipe_ingredients', $ingredients);
-        update_post_meta($recipe_id, 'recipe_instructions', $instructions);
+        // Update the post title and custom fields in one go
+        $updated = wp_update_post(array(
+            'ID' => $recipe_id,
+            'post_title' => $title
+        ));
 
-        wp_send_json_success('Recipe updated successfully!');
+        if ($updated) {
+            // Update custom fields (ingredients and instructions) immediately after the post update
+            update_post_meta($recipe_id, 'recipe_ingredients', $ingredients);
+            update_post_meta($recipe_id, 'recipe_instructions', $instructions);
+
+            wp_send_json_success('Recipe updated successfully!');
+        } else {
+            wp_send_json_error('Failed to update recipe');
+        }
     } else {
-        wp_send_json_error('Failed to update recipe');
+        wp_send_json_error('Missing required fields');
     }
-} else {
-    wp_send_json_error('Missing required fields');
-}
 
-exit;
+    exit;
 }
