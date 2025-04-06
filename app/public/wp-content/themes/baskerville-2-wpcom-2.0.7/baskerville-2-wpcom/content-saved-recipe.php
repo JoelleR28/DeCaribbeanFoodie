@@ -30,7 +30,7 @@
 					} ?>
 				</div> <!-- /featured-media -->
 			<?php }
-			// echo 'edit my recipe functionality'
+
 			/**
 			 * Post Content / Excerpt
 			 */

@@ -1,8 +1,18 @@
 
-/**
+/*
+ *
  * Saved Recipe button customisation
  * ----------------------------------------------------------------------------
  */
+
+ p{
+    text-align: center;
+ }
+
+ .link {
+        justify-content: center;
+        text-align: center;
+ }
 
 .like-button-container {
     display: flex;
@@ -51,7 +61,8 @@
     background-color: #005bb5;
 }
 
-/**
+/*
+ *
  * Saved Recipe Content customisation
  * ----------------------------------------------------------------------------
  */
@@ -102,11 +113,20 @@
 .saved-recipe-content .btn:hover {
     background: #e65500;
 }
+
 .saved-recipe-actions {
     display: flex; /* Enable Flexbox */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically (optional) */
 }
+
+/*
+ *
+ * Saved Recipe Edit form customisation
+ * ----------------------------------------------------------------------------
+ */
+
+
 /* Modal Styles */
 #recipe-modal {
     display: none; /* Hidden by default */
@@ -220,3 +240,60 @@ button[type="submit"]:hover {
     }
 }
 
+#recipe-buddy {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#recipe-buddy h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#recipe-buddy p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+#recipe-search-input {
+    width: 70%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#recipe-search-input:focus {
+    border-color: #ffae00;
+}
+
+button[type="submit"] {
+    padding: 12px 24px;
+    background-color: #ffae00;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.recipe-search-form {
+    margin-top: 20px;
+}
+
+#recipe-results {
+    margin-top: 30px;
+}
