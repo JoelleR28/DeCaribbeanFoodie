@@ -105,6 +105,7 @@ if ( $recipe_query->have_posts() ) : ?>
     <?php endif; ?>
 </div>
 
+<!-- // Style css inline as this is not my plugin, need to properly merge  -->
 <!-- Latest Daily Challenges Section -->
 <div style="color: white; margin-top: 40px;">
     <h2 style="font-size: 28px; font-weight: bold; margin-bottom: 20px;">Latest Daily Challenges</h2>
@@ -120,30 +121,12 @@ $challenge_query = new WP_Query(array(
 ));
 
 if ( $challenge_query->have_posts() ) : ?>
-    <div class="challenge-grid" style="
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 30px;
-        margin-top: 20px;
-    ">
+    <div class="challenge-grid">
         <?php while ( $challenge_query->have_posts() ) : $challenge_query->the_post(); ?>
-            <div class="challenge-card" style="
-                background: #fff; 
-                padding: 20px; 
-                border-radius: 12px; 
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-                overflow: hidden;
-                text-align: center;
-                position: relative;
-            ">
+            <div class="challenge-card" >
                 <!-- Challenge Thumbnail -->
                 <?php if (has_post_thumbnail()) : ?>
-                    <div class="challenge-thumbnail" style="
-                        margin-bottom: 15px;
-                        overflow: hidden;
-                        border-radius: 8px;
-                    ">
+                    <div class="challenge-thumbnail">
                         <?php the_post_thumbnail('medium', ['style' => 'width: 100%; height: auto; object-fit: cover;']); ?>
                     </div>
                 <?php endif; ?>
@@ -161,19 +144,6 @@ if ( $challenge_query->have_posts() ) : ?>
                         <?php echo wp_trim_words(get_the_excerpt(), 15); ?>
                     </p>
                 <?php endif; ?>
-
-                <!-- Hover Effect for Challenge Cards -->
-                <div class="challenge-hover" style="
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background: rgba(0, 0, 0, 0.2);
-                    opacity: 0;
-                    transition: opacity 0.3s ease-in-out;
-                    border-radius: 12px;
-                "></div>
             </div>
         <?php endwhile; ?>
     </div>
