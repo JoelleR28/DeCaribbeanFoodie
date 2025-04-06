@@ -34,16 +34,12 @@ function recipe_buddy_enqueue_script()
     wp_localize_script('save-recipe-button', 'save_recipe_button_obj', array(
         'ajax_url' => admin_url('admin-ajax.php'),
     ));
+
     // Localize the recipe editor script to pass the AJAX URL and nonce
     wp_localize_script('recipe-editor', 'recipeEditorParams', array(
         'ajaxurl' => admin_url('admin-ajax.php'),
         'security' => wp_create_nonce('edit_saved_recipe_nonce'), // Pass the nonce here
         'post_type' => 'saved-recipe' // Add the custom post type name
-    ));
-
-    // Localize the script to pass ajaxurl to JavaScript
-    wp_localize_script('save-recipe-button', 'recipeBuddyAjax', array(
-        'ajaxurl' => admin_url('admin-ajax.php'), // Pass admin-ajax.php URL
     ));
 }
 add_action('wp_enqueue_scripts', 'recipe_buddy_enqueue_script');
@@ -428,6 +424,9 @@ function update_recipe_callback()
     }
     exit;
 }
+
+add_action('wp_ajax_update_recipe', 'update_recipe_callback');
+add_action('wp_ajax_nopriv_update_recipe', 'update_recipe_callback');
 
 // Function to handle recipe-buddy searching, based on an ingredient inputted by the user/subscriber
 function handle_recipe_search_ajax()
