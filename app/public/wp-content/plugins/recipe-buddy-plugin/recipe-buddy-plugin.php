@@ -67,7 +67,7 @@ function recipe_buddy_like_button_shortcode($atts)
         $output .= '</div>';
     } else
         // If the user is not logged in, display a message to log in
-        $output = '<p>Please <a href="' . wp_login_url() . '">log in</a> to like this post.</p>';
+        $output = '<p class="user_warning">Please <a href="' . wp_login_url() . '">log in</a> to like this post.</p>';
     return $output;
 }
 add_shortcode('recipe_like_button', 'recipe_buddy_like_button_shortcode');
@@ -152,7 +152,7 @@ function recipe_buddy_save_recipe_button_shortcode($atts)
         $output .= '<button class="save-recipe-button" data-post-id="' . $post_id . '" data-user-id="' . $user_id . '">' . $button_text . '</button>';
         $output .= '</div>';
     } else {
-        $output = '<p>Hello Guest, please log in to save recipes to your favorites.</p>';
+        $output = '<p class="user_warning">Hello Guest, please log in to save recipes to your favorites.</p>';
     }
 
     return $output;
