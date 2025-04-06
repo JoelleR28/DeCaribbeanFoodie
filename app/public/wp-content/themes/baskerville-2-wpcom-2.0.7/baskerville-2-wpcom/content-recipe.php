@@ -39,7 +39,7 @@
 		<?php }
 
 		echo do_shortcode('[recipe_like_button]');
-		echo do_shortcode('[recipe_save_button]')
+		echo do_shortcode('[recipe_save_button]');
 
 		/**
 		 * Post Content / Excerpt
@@ -50,7 +50,7 @@
 			</br> </br>
 			<h3 class="recipe-subtitle">Ingredients</h3>
 			</br></br>
-			<ul class="recipe-list">
+			<ul class="blog-recipe-list">
 				<?php
 				// Get the ingredients from ACF
 				$ingredients = get_field('recipe_ingredients');
@@ -74,7 +74,7 @@
 		<div class="recipe-instructions">
 		</br></br></br>
 			<h3 class="recipe-subtitle">Instructions</h3>
-			<ul class="recipe-list">
+			<ul class="blog-recipe-list">
 				<?php
 				// Get the ingredients from ACF
 
@@ -98,6 +98,13 @@
 			<h3 class="recipe-subtitle">How To Cooking Guide</h3>
 			<?php echo get_field('how_to_cooking_guide') ?>
 			</div>
+
+			</br></br>
+			<div class = "link">
+			<h3 class="recipe-subtitle">Source Link</h3>
+			<?php echo get_field('source_link') ?>
+			</div>
+			</br></br>
 		<?php
 		/**
 		 * Post Meta
