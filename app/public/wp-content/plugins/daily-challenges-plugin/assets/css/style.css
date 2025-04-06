@@ -37,6 +37,7 @@
     color: #666;
 }
 
+/* Mark as Completed button Style */
 .dc-completed {
     color: green;
     font-weight: bold;
@@ -59,4 +60,65 @@
 .dc-user-progress p {
     font-size: 14px;
     margin: 5px 0;
+}
+
+/* Pagination custom styling */
+.dc-pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dc-pagination a, .dc-pagination span {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px 12px;
+    background-color: #f39c12;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.dc-pagination .current {
+    background-color: #e67e22;
+    font-weight: bold;
+}
+
+/* Leaderboard display styling */
+.dc-leaderboard {
+    margin: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.dc-leaderboard ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dc-leaderboard li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.dc-leaderboard .dc-rank {
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.dc-leaderboard .dc-user {
+    font-size: 16px;
+}
+
+.dc-leaderboard .dc-points {
+    color: #FF9800;
+}
+
+.dc-leaderboard .dc-badge {
+    font-style: italic;
 }
