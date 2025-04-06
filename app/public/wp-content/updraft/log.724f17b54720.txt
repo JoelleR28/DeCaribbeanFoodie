@@ -1,0 +1,195 @@
+0000.030 () Opened log file at time: Sun, 06 Apr 2025 20:18:17 +0000 on http://decaribbeanfoodie.local
+0000.032 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.3 WP: 6.7.2 PHP: 8.2.23 (cgi-fcgi, Windows NT LAPTOP-PT5FKSDA 10.0 build 19045 (Windows 10) AMD64) MySQL: 8.0.35 (max packet size=33554432) WPLANG: en_US Server: nginx/1.26.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 5.5M | 6M) multisite: N openssl: OpenSSL 3.0.13 30 Jan 2024 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.032 () Free space on disk containing Updraft's temporary directory: 8635.6 MB
+0000.390 () Restore setup, now closing connection and starting restore over AJAX.
+0000.020 () Opened log file at time: Sun, 06 Apr 2025 20:18:21 +0000 on http://decaribbeanfoodie.local
+0000.026 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.3 WP: 6.7.2 PHP: 8.2.23 (cgi-fcgi, Windows NT LAPTOP-PT5FKSDA 10.0 build 19045 (Windows 10) AMD64) MySQL: 8.0.35 (max packet size=33554432) WPLANG: en_US Server: nginx/1.26.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 4.6M | 8M) multisite: N openssl: OpenSSL 3.0.13 30 Jan 2024 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.027 () Free space on disk containing Updraft's temporary directory: 8635.1 MB
+0000.031 () Ensuring WP_Filesystem is setup for a restore
+0000.043 () WP_Filesystem is setup and ready for a restore
+0000.063 () Restore job started. Entities to restore: plugins, themes, uploads, mu-plugins, others, db. Restore options: {"updraft_restorer_replacesiteurl":"1","include_unspecified_tables":false,"tables_to_restore":["wp_options","wp_users","wp_usermeta","wp_commentmeta","wp_comments","wp_links","wp_postmeta","wp_posts","wp_term_relationships","wp_term_taxonomy","wp_termmeta","wp_terms","wp_simply_static_pages"],"tables_to_skip":[],"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.081 () PHP event: code E_WARNING: mkdir(): File exists (line 558, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.211 () Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.231 () Entity: db
+0000.231 () restore_backup(backup_file=backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-db.gz, type=db, info=a:0:{}, last_one=)
+0000.232 () Unpacking backup... (backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-db.gz, 0.4 Mb)
+0000.233 () PHP event: code E_WARNING: mkdir(): File exists (line 558, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-admin\includes\class-wp-filesystem-direct.php)
+0000.262 () Database successfully unpacked
+0000.268 () Restoring the database (on a large site this can take a long time - if it times out (which can happen if your web hosting company has configured your hosting to limit resources) then you should use a different method, such as phpMyAdmin)...
+0000.352 () Using direct MySQL access; value of use_mysqli is: 1
+0000.365 () SQL compatibility mode is: NO_AUTO_VALUE_ON_ZERO,NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+0001.280 () Max packet size: 32 MB
+0001.281 () Entering maintenance mode
+0001.281 () Enabling Maintenance mode&#8230;
+0001.470 () Backup of: http://localhost:10028
+0001.576 () Content URL: http://localhost:10028/wp-content
+0001.578 () Uploads URL: http://localhost:10028/wp-content/uploads
+0001.578 () Old table prefix: wp_
+0001.579 () Old ABSPATH: C:\Users\joell\Local Sites\decaribbeanfoodie-1\app\public/
+0001.580 () UpdraftPlus plugin slug: updraftplus/updraftplus.php
+0001.580 () Site information: multisite=0
+0001.581 () Site information: sql_mode=NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+0001.596 () Skipped execution of SQL statement (unwanted or internally handled type=18): /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+0001.599 () New table prefix: 3z_
+0001.626 () Processing table (InnoDB): wp_options - will restore as: 3z_options
+0006.012 () Atomic restore: dropping original table (wp_options)
+0006.162 () Atomic restore: renaming new table (3z_options) to final table name (wp_options)
+0006.353 () Restoring prior UD configuration (table: wp_options; keys: 102)
+0006.913 () PHP event: code E_DEPRECATED: substr(): Passing null to parameter #1 ($string) of type string is deprecated (line 169, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\includes\class-manipulation-functions.php)
+0006.913 () PHP event: code E_DEPRECATED: substr(): Passing null to parameter #1 ($string) of type string is deprecated (line 169, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\includes\class-manipulation-functions.php)
+0006.914 () PHP event: code E_DEPRECATED: preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated (line 169, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\includes\class-manipulation-functions.php)
+0006.915 () PHP event: code E_DEPRECATED: substr(): Passing null to parameter #1 ($string) of type string is deprecated (line 169, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\includes\class-manipulation-functions.php)
+0006.915 () PHP event: code E_DEPRECATED: substr(): Passing null to parameter #1 ($string) of type string is deprecated (line 169, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\includes\class-manipulation-functions.php)
+0006.915 () PHP event: code E_DEPRECATED: preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated (line 169, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\includes\class-manipulation-functions.php)
+0007.019 () PHP event: code E_DEPRECATED: preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated (line 48, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\includes\class-manipulation-functions.php)
+0007.077 () PHP event: code E_DEPRECATED: preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated (line 48, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\includes\class-manipulation-functions.php)
+0007.086 () PHP event: code E_DEPRECATED: preg_replace(): Passing null to parameter #3 ($subject) of type array|string is deprecated (line 48, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\includes\class-manipulation-functions.php)
+0007.365 () PHP event: code E_DEPRECATED: preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated (line 267, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\options.php)
+0007.383 () PHP event: code E_DEPRECATED: preg_match(): Passing null to parameter #2 ($subject) of type string is deprecated (line 267, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\options.php)
+0008.077 () Search and replacing table: wp_options: rows: 311
+0008.455 () Incomplete object detected in database: stdClass; Search and replace will be skipped for these entries
+0008.502 () Incomplete object detected in database: WpOrg\Requests\Utility\CaseInsensitiveDictionary; Search and replace will be skipped for these entries
+0008.567 () Processing table (InnoDB): wp_users - will restore as: 3z_users
+0009.052 () Atomic restore: dropping original table (wp_users)
+0009.168 () Atomic restore: renaming new table (3z_users) to final table name (wp_users)
+0009.534 () Search and replacing table: wp_users: rows: 3
+0009.536 () Processing table (InnoDB): wp_usermeta - will restore as: 3z_usermeta
+0010.018 () Atomic restore: dropping original table (wp_usermeta)
+0010.115 () Atomic restore: renaming new table (3z_usermeta) to final table name (wp_usermeta)
+0010.203 () Search and replacing table: wp_usermeta: rows: 69
+0010.215 () Processing table (InnoDB): wp_commentmeta - will restore as: 3z_commentmeta
+0010.447 () Atomic restore: dropping original table (wp_commentmeta)
+0010.535 () Atomic restore: renaming new table (3z_commentmeta) to final table name (wp_commentmeta)
+0010.636 () Search and replacing table: wp_commentmeta: rows: 0
+0010.637 () Processing table (InnoDB): wp_comments - will restore as: 3z_comments
+0010.866 () Atomic restore: dropping original table (wp_comments)
+0010.977 () Atomic restore: renaming new table (3z_comments) to final table name (wp_comments)
+0011.066 () Search and replacing table: wp_comments: rows: 4
+0011.069 () Processing table (InnoDB): wp_links - will restore as: 3z_links
+0011.284 () Atomic restore: dropping original table (wp_links)
+0011.369 () Atomic restore: renaming new table (3z_links) to final table name (wp_links)
+0011.463 () Search and replacing table: wp_links: rows: 0
+0011.463 () Processing table (InnoDB): wp_postmeta - will restore as: 3z_postmeta
+0011.832 () Atomic restore: dropping original table (wp_postmeta)
+0011.935 () Atomic restore: renaming new table (3z_postmeta) to final table name (wp_postmeta)
+0012.032 () Search and replacing table: wp_postmeta: rows: 8
+0012.075 () Processing table (InnoDB): wp_posts - will restore as: 3z_posts
+0014.662 () Atomic restore: dropping original table (wp_posts)
+0014.819 () Atomic restore: renaming new table (3z_posts) to final table name (wp_posts)
+0014.918 () Skipping search/replace on GUID column in posts table
+0014.930 () Search and replacing table: wp_posts: rows: 306
+0016.160 () Processing table (InnoDB): wp_term_relationships - will restore as: 3z_term_relationships
+0016.649 () Atomic restore: dropping original table (wp_term_relationships)
+0016.734 () Atomic restore: renaming new table (3z_term_relationships) to final table name (wp_term_relationships)
+0016.832 () Skipping this table: data in this table (wp_term_relationships) should not be search/replaced
+0016.833 () Processing table (InnoDB): wp_term_taxonomy - will restore as: 3z_term_taxonomy
+0017.132 () Atomic restore: dropping original table (wp_term_taxonomy)
+0017.199 () Atomic restore: renaming new table (3z_term_taxonomy) to final table name (wp_term_taxonomy)
+0017.607 () Search and replacing table: wp_term_taxonomy: rows: 16
+0017.611 () Processing table (InnoDB): wp_termmeta - will restore as: 3z_termmeta
+0017.803 () Atomic restore: dropping original table (wp_termmeta)
+0017.868 () Atomic restore: renaming new table (3z_termmeta) to final table name (wp_termmeta)
+0017.961 () Search and replacing table: wp_termmeta: rows: 0
+0017.962 () Processing table (InnoDB): wp_terms - will restore as: 3z_terms
+0018.159 () Atomic restore: dropping original table (wp_terms)
+0018.215 () Atomic restore: renaming new table (3z_terms) to final table name (wp_terms)
+0018.416 () Search and replacing table: wp_terms: rows: 16
+0018.419 () Processing table (InnoDB): wp_simply_static_pages - will restore as: 3z_simply_static_pages
+0021.145 () Database queries processed: 50 in 20.74 seconds
+0021.146 () Skipped execution of SQL statement (unwanted or internally handled type=18): /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+0021.151 () Unlocking database and leaving maintenance mode
+0021.152 () Disabling Maintenance mode&#8230;
+0021.156 () Atomic restore: dropping original table (wp_simply_static_pages)
+0021.164 () Atomic restore: renaming new table (3z_simply_static_pages) to final table name (wp_simply_static_pages)
+0021.303 () Search and replacing table: wp_simply_static_pages: rows: 3556
+0063.128 () Finished: lines processed: 52 in 62.72 seconds
+0063.130 () Cleaning up rubbish...
+0063.133 () Begin search and replace (updraftplus_restored_db)
+0063.133 () [Database-replace-site-url] Database: search and replace site URL
+0063.138 () Database search and replace: replace http://localhost:10028 in backup dump with http://decaribbeanfoodie.local
+0063.139 () Database search and replace: replace http://www.localhost:10028 in backup dump with http://decaribbeanfoodie.local
+0063.139 () Database search and replace: replace https://www.localhost:10028 in backup dump with http://decaribbeanfoodie.local
+0063.140 () Database search and replace: replace https://localhost:10028 in backup dump with http://decaribbeanfoodie.local
+0063.140 () Database search and replace: replace C:\Users\joell\Local Sites\decaribbeanfoodie-1\app\public in backup dump with C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public
+0063.192 () Search and replacing table: wp_commentmeta: already done
+0063.193 () Search and replacing table: wp_comments: already done
+0063.194 () Search and replacing table: wp_links: already done
+0063.196 () Search and replacing table: wp_options: already done
+0063.197 () Search and replacing table: wp_postmeta: already done
+0063.198 () Search and replacing table: wp_posts: already done
+0063.199 () Search and replacing table: wp_simply_static_pages: already done
+0063.200 () Search and replacing table: wp_term_relationships: already done
+0063.201 () Search and replacing table: wp_term_taxonomy: already done
+0063.203 () Search and replacing table: wp_termmeta: already done
+0063.204 () Search and replacing table: wp_terms: already done
+0063.205 () Search and replacing table: wp_usermeta: already done
+0063.206 () Search and replacing table: wp_users: already done
+0063.333 () Entity: mu-plugins
+0063.333 () restore_backup(backup_file=backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-mu-plugins.zip, type=mu-plugins, info=a:2:{s:4:"path";s:77:"C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public/wp-content/mu-plugins";s:11:"description";s:16:"Must-use plugins";}, last_one=)
+0063.343 () Unpacking backup... (backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-mu-plugins.zip, 0 MB)
+0063.543 () Unzipping backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-mu-plugins.zip to C:/Users/jibuk/Local Sites/decaribbeanfoodie/app/public/wp-content/upgrade/761ae0f1/ using UpdraftPlus_ZipArchive, starting index 0
+0064.133 () Unzip progress: 3 out of 3 files (8 KB, mu-plugins/local-by-flywheel-live-link-helper.php)
+0064.140 () Moving old data: filesystem method / updraft_dir is potentially possible
+0064.142 () Moving old data: can potentially use wp_filesystem method / -old
+0064.142 () Moving old data out of the way...
+0064.149 () Moving unpacked backup into place...
+0064.183 () Cleaning up rubbish...
+0064.348 () Entity: plugins
+0064.348 () restore_backup(backup_file=backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-plugins.zip, type=plugins, info=a:3:{s:4:"path";s:74:"C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public/wp-content/plugins";s:11:"description";s:7:"Plugins";s:20:"singular_description";s:6:"Plugin";}, last_one=)
+0064.357 () Unpacking backup... (backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-plugins.zip, 14.8 MB)
+0064.361 () Unzipping backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-plugins.zip to C:/Users/jibuk/Local Sites/decaribbeanfoodie/app/public/wp-content/upgrade/a297a84b/ using UpdraftPlus_ZipArchive, starting index 0
+0085.416 () Unzip progress: 1002 out of 2541 files (22.2 MB, plugins/all-in-one-wp-migration/lib/view/assets/img/schedules/backup-scheduler.png)
+0100.943 () Unzip progress: 1170 out of 2541 files (23.1 MB, plugins/members/addons/members-meta-box-integration/addon.php)
+0116.889 () Unzip progress: 1309 out of 2541 files (24.9 MB, plugins/updraftplus/central/commands.php)
+0132.860 () Unzip progress: 1496 out of 2541 files (27.7 MB, plugins/updraftplus/includes/Dropbox2/OAuth/Consumer/Curl.php)
+0149.087 () Unzip progress: 1793 out of 2541 files (45 MB, plugins/updraftplus/vendor/composer/ClassLoader.php)
+0164.794 () Unzip progress: 1892 out of 2541 files (45.4 MB, plugins/updraftplus/vendor/guzzle/guzzle/src/Guzzle/Http/Message/MessageInterface.php)
+0181.016 () Unzip progress: 2084 out of 2541 files (46.3 MB, plugins/updraftplus/vendor/guzzlehttp/guzzle/src/Cookie/CookieJarInterface.php)
+0197.704 () Unzip progress: 2320 out of 2541 files (48.3 MB, plugins/updraftplus/vendor/rackspace/php-opencloud/lib/OpenCloud/Common/Exceptions/InstanceCreateError.php)
+0212.989 () Unzip progress: 2393 out of 2541 files (48.4 MB, plugins/updraftplus/vendor/rackspace/php-opencloud/lib/OpenCloud/Common/Resource/BaseResource.php)
+0227.056 () Unzip progress: 2541 out of 2541 files (49.4 MB, plugins/wordpress-importer/wordpress-importer.php)
+0227.062 () Moving old data: filesystem method / updraft_dir is potentially possible
+0227.063 () Moving old data: can potentially use wp_filesystem method / -old
+0227.064 () Moving old data out of the way...
+0239.053 () Top-level entities being moved: advanced-custom-fields, all-in-one-wp-migration, daily-challenges-plugin, index.php, meal-planner-plugin, members, recipe-buddy-plugin, updraftplus, wordpress-importer
+0239.781 () Moving unpacked backup into place...
+0249.487 () Top-level entities being moved: advanced-custom-fields, all-in-one-wp-migration, daily-challenges-plugin, index.php, meal-planner-plugin, members, recipe-buddy-plugin, updraftplus, wordpress-importer
+0249.734 () PHP event: code E_WARNING: rename(C:/Users/jibuk/Local Sites/decaribbeanfoodie/app/public/wp-content/upgrade/a297a84b/plugins/updraftplus,C:/Users/jibuk/Local Sites/decaribbeanfoodie/app/public/wp-content/plugins/updraftplus): Access is denied (code: 5) (line 4646, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\restorer.php)
+0249.734 () [Updraftplus] There was an error when performing the move operation by renaming or copying C:/Users/jibuk/Local Sites/decaribbeanfoodie/app/public/wp-content/upgrade/a297a84b/plugins/updraftplus to C:/Users/jibuk/Local Sites/decaribbeanfoodie/app/public/wp-content/plugins/updraftplus: will attempt a recursive copy instead.
+0266.487 () Cleaning up rubbish...
+0266.546 () Entity: themes
+0266.546 () restore_backup(backup_file=backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-themes.zip, type=themes, info=a:3:{s:4:"path";s:73:"C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public/wp-content/themes";s:11:"description";s:6:"Themes";s:20:"singular_description";s:5:"Theme";}, last_one=)
+0266.550 () Unpacking backup... (backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-themes.zip, 2.4 MB)
+0266.554 () Unzipping backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-themes.zip to C:/Users/jibuk/Local Sites/decaribbeanfoodie/app/public/wp-content/upgrade/70d9574d/ using UpdraftPlus_ZipArchive, starting index 0
+0271.120 () Unzip progress: 114 out of 114 files (4.9 MB, themes/index.php)
+0271.130 () Moving old data: filesystem method / updraft_dir is potentially possible
+0271.132 () Moving old data: can potentially use wp_filesystem method / -old
+0271.132 () Moving old data out of the way...
+0271.555 () Top-level entities being moved: baskerville-2-wpcom-2.0.7, index.php
+0271.570 () Moving unpacked backup into place...
+0271.862 () Top-level entities being moved: baskerville-2-wpcom-2.0.7, index.php
+0271.969 () Cleaning up rubbish...
+0272.014 () Entity: uploads
+0272.014 () restore_backup(backup_file=backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-uploads.zip, type=uploads, info=a:2:{s:4:"path";s:74:"C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public/wp-content/uploads";s:11:"description";s:7:"Uploads";}, last_one=)
+0272.017 () Unpacking backup... (backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-uploads.zip, 33.9 MB)
+0272.022 () Unzipping backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-uploads.zip to C:/Users/jibuk/Local Sites/decaribbeanfoodie/app/public/wp-content/upgrade/c8aeac33/ using UpdraftPlus_ZipArchive, starting index 0
+0291.816 () Unzip progress: 468 out of 919 files (14.6 MB, uploads/simply-static/temp-files/simply-static-1-1742773238/wp-content/themes/healthy-food-blogger/assets/fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf)
+0307.748 () Unzip progress: 606 out of 919 files (32.3 MB, uploads/simply-static/temp-files/simply-static-1-1742773238/wp-content/themes/nook-wpcom-1.0.2/nook-wpcom/templates/index.html)
+0324.349 () Unzip progress: 683 out of 919 files (39 MB, uploads/simply-static/temp-files/simply-static-1-1742773238/wp-content/themes/twentytwentyfive/assets/images/parthenon-square.webp)
+0340.066 () Unzip progress: 900 out of 919 files (44.9 MB, uploads/simply-static/temp-files/simply-static-1-1742773238/wp-includes/js/tinymce/skins/lightgray/fonts/tinymce.woff)
+0345.918 () Unzip progress: 919 out of 919 files (44.9 MB, uploads/simply-static/temp-files/simply-static-1-1742773238/wp-includes/sodium_compat/src/Core32/Curve25519/README.md)
+0346.050 () Moving old data: filesystem method / updraft_dir is potentially possible
+0346.056 () Moving old data: can potentially use wp_filesystem method / -old
+0346.056 () Moving old data out of the way...
+0360.199 () PHP event: code E_WARNING: rename(C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public/wp-content/uploads/simply-static,C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public/wp-content/updraft/uploads-old/simply-static): Access is denied (code: 5) (line 4646, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\restorer.php)
+0360.199 () [Updraftplus] There was an error when performing the move operation by renaming or copying C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public/wp-content/uploads/simply-static to C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public/wp-content/updraft/uploads-old/simply-static: will attempt a recursive copy instead.
+0410.463 () Moving unpacked backup into place...
+0418.711 () Cleaning up rubbish...
+0420.292 () Entity: others
+0420.292 () restore_backup(backup_file=backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-others.zip, type=others, info=a:2:{s:4:"path";s:66:"C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public/wp-content";s:11:"description";s:6:"Others";}, last_one=1)
+0420.298 () Unpacking backup... (backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-others.zip, 0 MB)
+0420.308 () Unzipping backup_2025-04-06-0638_DeCaribbeanfoodie_8b3c3d1c6b1b-others.zip to C:/Users/jibuk/Local Sites/decaribbeanfoodie/app/public/wp-content/upgrade/6d323d6a/ using UpdraftPlus_ZipArchive, starting index 0
+0422.471 () Unzip progress: 1 out of 1 files (30 B, index.php)
+0422.511 () Cleaning up rubbish...
+0464.002 () Restore successful!
+0464.004 () Restore successful

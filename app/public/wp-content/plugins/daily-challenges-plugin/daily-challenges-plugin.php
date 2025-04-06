@@ -35,12 +35,9 @@ function dc_assign_badge($user_id) {
 
 // Display Challenges
 function dc_display_challenges() {
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
     $args = array(
         'post_type' => 'challenge',
-        'posts_per_page' => 5,
-        'paged' => $paged
+        'posts_per_page' => 5
     );
     $query = new WP_Query($args);
 
@@ -77,14 +74,6 @@ function dc_display_challenges() {
             $output .= '</div></div></div>';
         }
         $output .= '</div>'; 
-        $output .= '<div class="dc-pagination">';
-        $output .= paginate_links(array(
-            'total' => $query->max_num_pages,
-            'current' => $paged,
-            'prev_text' => __('« Prev'),
-            'next_text' => __('Next »'),
-        ));
-        $output .= '</div>';
         wp_reset_postdata();
         return $output;
     } else {
@@ -100,35 +89,6 @@ function dc_schedule_daily_challenge() {
     }
 }
 add_action('wp', 'dc_schedule_daily_challenge');
-
-// Schedule Weekly and Monthly Point Reset
-function dc_schedule_reset_events() {
-    if (!wp_next_scheduled('dc_reset_weekly_points')) {
-        wp_schedule_event(strtotime('next Monday'), 'weekly', 'dc_reset_weekly_points');
-    }
-    if (!wp_next_scheduled('dc_reset_monthly_points')) {
-        wp_schedule_event(strtotime('first day of next month midnight'), 'monthly', 'dc_reset_monthly_points');
-    }
-}
-add_action('wp', 'dc_schedule_reset_events');
-
-// Reset Weekly Points for All Users
-function dc_reset_weekly_points() {
-    $users = get_users();
-    foreach ($users as $user) {
-        delete_user_meta($user->ID, 'weekly_points');
-    }
-}
-add_action('dc_reset_weekly_points', 'dc_reset_weekly_points');
-
-// Reset Monthly Points for All Users
-function dc_reset_monthly_points() {
-    $users = get_users();
-    foreach ($users as $user) {
-        delete_user_meta($user->ID, 'monthly_points');
-    }
-}
-add_action('dc_reset_monthly_points', 'dc_reset_monthly_points');
 
 // Upload the Oldest Draft Challenge
 function dc_publish_daily_challenge() {
@@ -166,19 +126,9 @@ function dc_mark_challenge_completed() {
             if (!$already_completed) {
                 update_post_meta($challenge_id, 'completed_by_' . $user_id, true);
 
-                // Update Total Points
                 $current_points = get_user_meta($user_id, 'user_points', true);
                 $new_points = intval($current_points) + 1;
                 update_user_meta($user_id, 'user_points', $new_points);
-
-                $weekly_points = get_user_meta($user_id, 'weekly_points', true);
-                $monthly_points = get_user_meta($user_id, 'monthly_points', true);
-
-                $new_weekly = intval($weekly_points) + 1;
-                $new_monthly = intval($monthly_points) + 1;
-
-                update_user_meta($user_id, 'weekly_points', $new_weekly);
-                update_user_meta($user_id, 'monthly_points', $new_monthly);
 
                 // Assign Badge
                 dc_assign_badge($user_id);

@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress.com - Themes - Baskerville-2\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-06-04T01:07:11+00:00\n"
+"PO-Revision-Date: 2021-06-03 10:17:15+0000\n"
+"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+
+#. Template Name of the theme
+msgid "No Sidebar"
+msgstr "Ingen sidopanel"
+
+#. Template Name of the theme
+msgid "Full Width, No Sidebar"
+msgstr "Full bredd, ingen sidopanel"
+
+#. Template Name of the theme
+msgid "Contributors"
+msgstr "Bidragslämnare"
+
+#. Description of the theme
+msgid "Baskerville 2 is a dynamic, grid-based theme for curators. It's the perfect way to showcase your posts, videos, images and galleries, and share your favorite quotes and links."
+msgstr "Baskerville 2 är ett dynamiskt, rutnätbaserat tema för kuratorer. Det är det perfekta sättet att visa upp dina inlägg, videoklipp, bilder och gallerier och dela dina favoritcitat och länkar."

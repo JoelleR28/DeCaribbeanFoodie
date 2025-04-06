@@ -1,0 +1,167 @@
+0000.002 (0) Opened log file at time: Sun, 06 Apr 2025 20:36:15 +0000 on http://decaribbeanfoodie.local
+0000.025 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.25.3 WP: 6.7.2 PHP: 8.2.23 (cgi-fcgi, Windows NT LAPTOP-PT5FKSDA 10.0 build 19045 (Windows 10) AMD64) MySQL: 8.0.35 (max packet size=33554432) WPLANG: en_US Server: nginx/1.26.1 safe_mode: 0 max_execution_time: 900 memory_limit: 256M (used: 4.7M | 6M) multisite: N openssl: OpenSSL 3.0.13 30 Jan 2024 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.032 (0) Free space on disk containing Updraft's temporary directory: 8556 MB
+0000.061 (0) Tasks: Backup files: 1 (schedule: daily) Backup DB: 1 (schedule: daily)
+0000.093 (0) Requesting semaphore lock (fd) (apparently not via scheduler)
+0000.114 (0) Semaphore (fd, wp_options) was stuck, set lock time to 2025-04-06 20:36:16
+0000.137 (0) Semaphore (fd, wp_options) reset to 1
+0000.146 (0) Set semaphore last lock (fd) time to 2025-04-06 20:36:16
+0000.154 (0) Semaphore lock (fd) complete
+0000.192 (0) Backup run: resumption=0, nonce=163d184ff7ac, file_nonce=163d184ff7ac begun at=1743971775 (1s ago), job type=backup
+0000.216 (0) Scheduling a resumption (1) after 300 seconds (1743972076) in case this run gets aborted
+0000.308 (0) Checking if we have a zip executable available
+0000.341 (0) Creation of backups of directories: beginning
+0000.383 (0) Beginning creation of dump of plugins (split every: 25 MB)
+0003.941 (0) Total entities for the zip file: 357 directories, 2183 files (0 skipped as non-modified), 49.4 MB
+0003.977 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0004.364 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins.zip.tmp: 100 files added (on-disk size: 69 KB)
+0004.770 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins.zip.tmp: 200 files added (on-disk size: 69 KB)
+0004.987 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins.zip.tmp: 300 files added (on-disk size: 69 KB)
+0005.253 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins.zip.tmp: 400 files added (on-disk size: 69 KB)
+0005.482 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins.zip.tmp: 500 files added (on-disk size: 69 KB)
+0005.693 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins.zip.tmp: 600 files added (on-disk size: 69 KB)
+0005.879 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): possibly approaching split limit (22.7 MB, 685 (686) files added so far); last ratio: 1; re-opening (prior size: 69 KB)
+0012.407 (0) Zip size is at/near split limit (6.7 MB / 25 MB) - bumping index (from: 0)
+0012.725 (0) Creating zip file manifest (backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins.zip.list-temp.tmp)
+0012.759 (0) Successfully created zip file manifest (size: 56840)
+0012.796 (0) Created plugins zip (0) - 6886.1 KB in 12 s (573.2 KB/s) (checksums: sha1: e52eea34e10ae5823e28d0db1fe7c3ce7128e451, sha256: 9c45e238fdd3bd28dfc846f972b97605c9ba2cc0b7d132ccabb6d06cbf675bf9)
+0012.854 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0012.861 (0) No remote despatch: user chose no remote backup service
+0012.871 (0) Recording as successfully uploaded: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins.zip
+0012.896 (0) Deleting zip manifest (backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins.zip.list.tmp)
+0012.905 (0) Prune old backups from local store: nothing to do, since the user disabled local deletion and we are using local backups
+0012.955 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 700 files added (on-disk size: 0 KB)
+0013.244 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 800 files added (on-disk size: 0 KB)
+0013.944 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 900 files added (on-disk size: 0 KB)
+0014.427 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 1000 files added (on-disk size: 0 KB)
+0014.725 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 1100 files added (on-disk size: 0 KB)
+0015.037 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 2.0 seconds have passed since the last write (5.2 MB, 483 (1169) files added so far); re-opening (prior size: 0 KB)
+0017.625 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 1200 files added (on-disk size: 2439.6 KB)
+0017.827 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 1300 files added (on-disk size: 2439.6 KB)
+0018.037 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 1400 files added (on-disk size: 2439.6 KB)
+0018.268 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 1500 files added (on-disk size: 2439.6 KB)
+0018.475 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 1600 files added (on-disk size: 2439.6 KB)
+0018.689 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 1700 files added (on-disk size: 2439.6 KB)
+0018.893 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 1800 files added (on-disk size: 2439.6 KB)
+0019.096 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 1900 files added (on-disk size: 2439.6 KB)
+0019.294 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 2000 files added (on-disk size: 2439.6 KB)
+0019.503 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.tmp: 2100 files added (on-disk size: 2439.6 KB)
+0019.656 (0) Adding batch to zip file (UpdraftPlus_ZipArchive): over 1000 files added on this batch (21.4 MB, 2183 files batched, 1001 (2170) added so far); re-opening (prior size: 2439.6 KB)
+0028.680 (0) Creating zip file manifest (backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.list-temp.tmp)
+0029.014 (0) Successfully created zip file manifest (size: 126750)
+0029.868 (0) Created plugins zip (1) - 8223.1 KB in 16.9 s (486 KB/s) (sha1: 1353dc2b639a17c76e5cc7c9e8bbf850f213ed86, sha256: 4bf1a8a24258081a10cb3d99c669de320fe6d0253ea93fa2dc996d709a612926)
+0029.879 (0) Deleting old temporary file: log.724f17b54720-browser.txt
+0030.297 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0030.327 (0) No remote despatch: user chose no remote backup service
+0030.341 (0) Recording as successfully uploaded: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip
+0030.429 (0) Deleting zip manifest (backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip.list.tmp)
+0030.439 (0) Prune old backups from local store: nothing to do, since the user disabled local deletion and we are using local backups
+0030.480 (0) Beginning creation of dump of themes (split every: 25 MB)
+0030.772 (0) Total entities for the zip file: 10 directories, 104 files (0 skipped as non-modified), 4.9 MB
+0030.986 (0) Zip: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0032.255 (0) Creating zip file manifest (backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-themes.zip.list-temp.tmp)
+0032.273 (0) Successfully created zip file manifest (size: 8802)
+0032.419 (0) Created themes zip (0) - 2472.4 KB in 1.9 s (1306.1 KB/s) (sha1: 363238490d39df8b0479797d6d6130e2f54554f1, sha256: 6351adb9e051cde34492d6631fa679cfa6fbbd6d101039c85d241cb866562e56)
+0032.458 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0032.477 (0) No remote despatch: user chose no remote backup service
+0032.487 (0) Recording as successfully uploaded: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-themes.zip
+0032.509 (0) Deleting zip manifest (backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-themes.zip.list.tmp)
+0032.520 (0) Prune old backups from local store: nothing to do, since the user disabled local deletion and we are using local backups
+0032.555 (0) No backup of uploads: excluded by user's options
+0032.562 (0) No backup of mu-plugins: excluded by user's options
+0032.571 (0) No backup of others: excluded by user's options
+0032.619 (0) Saving backup status to database (elements: 5)
+0032.651 (0) Beginning creation of database dump (WordPress DB)
+0032.660 (0) SQL compatibility mode is: NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+0032.876 (0) Table wp_options: Total expected rows (via COUNT): 319
+0032.890 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0033.074 (0) Table wp_options: Rows added in this batch (next record: 2342): 313 (uncompressed bytes in this segment=1082302) in 0.31 seconds
+0033.256 (0) Table wp_options: finishing file(s) (2, 216.5 KB)
+0033.675 (0) Table wp_users: Total expected rows (via COUNT): 3
+0033.760 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0033.924 (0) Table wp_users: Rows added in this batch (next record: 4): 3 (uncompressed bytes in this segment=1796) in 0.29 seconds
+0034.056 (0) Table wp_users: finishing file(s) (2, 0.7 KB)
+0034.141 (0) Table wp_usermeta: Total expected rows (via COUNT): 69
+0034.147 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0034.174 (0) Table wp_usermeta: Rows added in this batch (next record: 86): 69 (uncompressed bytes in this segment=9074) in 0.05 seconds
+0034.293 (0) Table wp_usermeta: finishing file(s) (2, 2.8 KB)
+0034.413 (0) Table wp_commentmeta: Total expected rows (via COUNT): 0
+0034.433 (0) Table wp_commentmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=721) in 0.09 seconds
+0034.507 (0) Table wp_commentmeta: finishing file(s) (2, 0.4 KB)
+0034.554 (0) Table wp_comments: Total expected rows (via COUNT): 4
+0034.563 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0034.586 (0) Table wp_comments: Rows added in this batch (next record: 4): 4 (uncompressed bytes in this segment=3181) in 0.05 seconds
+0034.656 (0) Table wp_comments: finishing file(s) (2, 1 KB)
+0034.711 (0) Table wp_links: Total expected rows (via COUNT): 0
+0034.737 (0) Table wp_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1496) in 0.04 seconds
+0034.953 (0) Table wp_links: finishing file(s) (2, 0.5 KB)
+0035.622 (0) Table wp_postmeta: Total expected rows (via COUNT): 824
+0035.635 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0035.687 (0) Table wp_postmeta: Rows added in this batch (next record: 1281): 824 (uncompressed bytes in this segment=97011) in 0.43 seconds
+0035.946 (0) Table wp_postmeta: finishing file(s) (2, 13.8 KB)
+0036.249 (0) Table wp_posts: Total expected rows (via COUNT): 306
+0036.261 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0036.333 (0) Table wp_posts: Rows added in this batch (next record: 428): 306 (uncompressed bytes in this segment=607935) in 0.36 seconds
+0036.438 (0) Table wp_posts: finishing file(s) (2, 51 KB)
+0036.486 (0) Table wp_term_relationships: Total expected rows (approximate): 37
+0036.504 (0) Table wp_term_relationships: Rows added in this batch (next record: 100000): 37 (uncompressed bytes in this segment=1190) in 0.03 seconds
+0036.566 (0) Table wp_term_relationships: finishing file(s) (2, 0.5 KB)
+0036.742 (0) Table wp_term_taxonomy: Total expected rows (via COUNT): 16
+0036.751 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0036.774 (0) Table wp_term_taxonomy: Rows added in this batch (next record: 22): 16 (uncompressed bytes in this segment=1462) in 0.15 seconds
+0036.868 (0) Table wp_term_taxonomy: finishing file(s) (2, 0.6 KB)
+0036.920 (0) Table wp_termmeta: Total expected rows (via COUNT): 0
+0036.934 (0) Table wp_termmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=694) in 0.04 seconds
+0036.988 (0) Table wp_termmeta: finishing file(s) (2, 0.4 KB)
+0037.027 (0) Table wp_terms: Total expected rows (via COUNT): 16
+0037.033 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0037.053 (0) Table wp_terms: Rows added in this batch (next record: 22): 16 (uncompressed bytes in this segment=1306) in 0.04 seconds
+0037.103 (0) Table wp_terms: finishing file(s) (2, 0.6 KB)
+0037.146 (0) Table wp_simply_static_pages: Total expected rows (approximate): 3495
+0037.491 (0) Table wp_simply_static_pages: Rows added in this batch (next record: 33506): 3556 (uncompressed bytes in this segment=1397944) in 0.36 seconds
+0037.578 (0) Table wp_simply_static_pages: finishing file(s) (2, 86.3 KB)
+0037.587 (0) PHP event: code E_WARNING: filemtime(): stat failed for C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public/wp-content/updraft/backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db.gz (line 1923, C:\Users\jibuk\Local Sites\decaribbeanfoodie\app\public\wp-content\plugins\updraftplus\backup.php)
+0037.601 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_options.table.tmpr2343.gz (1/13/fopen): adding to final database dump
+0037.634 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_options.table.gz (2/13/fopen): adding to final database dump
+0037.641 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_users.table.tmpr5.gz (3/13/fopen): adding to final database dump
+0037.650 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_users.table.gz (4/13/fopen): adding to final database dump
+0037.659 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_usermeta.table.tmpr87.gz (5/13/fopen): adding to final database dump
+0037.666 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_usermeta.table.gz (6/13/fopen): adding to final database dump
+0037.676 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_commentmeta.table.tmpr0.gz (7/13/fopen): adding to final database dump
+0037.684 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_commentmeta.table.gz (8/13/fopen): adding to final database dump
+0037.694 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_comments.table.tmpr5.gz (9/13/fopen): adding to final database dump
+0037.701 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_comments.table.gz (10/13/fopen): adding to final database dump
+0037.709 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_links.table.tmpr0.gz (11/13/fopen): adding to final database dump
+0037.716 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_links.table.gz (12/13/fopen): adding to final database dump
+0037.739 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_postmeta.table.tmpr1282.gz (13/13/fopen): adding to final database dump
+0037.750 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_postmeta.table.gz (14/13/fopen): adding to final database dump
+0037.760 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_posts.table.tmpr429.gz (15/13/fopen): adding to final database dump
+0037.773 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_posts.table.gz (16/13/fopen): adding to final database dump
+0037.779 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_term_relationships.table.tmpr100001.gz (17/13/fopen): adding to final database dump
+0037.787 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_term_relationships.table.gz (18/13/fopen): adding to final database dump
+0037.793 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_term_taxonomy.table.tmpr23.gz (19/13/fopen): adding to final database dump
+0037.802 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_term_taxonomy.table.gz (20/13/fopen): adding to final database dump
+0037.808 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_termmeta.table.tmpr0.gz (21/13/fopen): adding to final database dump
+0037.815 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_termmeta.table.gz (22/13/fopen): adding to final database dump
+0037.821 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_terms.table.tmpr23.gz (23/13/fopen): adding to final database dump
+0037.828 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_terms.table.gz (24/13/fopen): adding to final database dump
+0037.834 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_simply_static_pages.table.tmpr33507.gz (25/13/fopen): adding to final database dump
+0037.851 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db-table-wp_simply_static_pages.table.gz (26/13/fopen): adding to final database dump
+0037.974 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db.gz: finished writing out complete database file (375.4 KB)
+0038.045 (0) Total database tables backed up: 13 (backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db.gz, size: 384508, sha1: 801678eefe7bf2ccd46468c45d2a6845a4125217, sha256: 6d801103b2a35d24588201fd62b5b87e694ce5d92fd755746cf076ba446a74f5)
+0038.077 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins.zip: plugins: This file has already been successfully processed
+0038.085 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-plugins2.zip: plugins: This file has already been successfully processed
+0038.091 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-themes.zip: themes: This file has already been successfully processed
+0038.098 (0) backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db.gz: db: This file has not yet been successfully uploaded: will queue
+0038.104 (0) Saving backup history. Total backup size: 17.5 MB
+0038.120 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0038.142 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0038.148 (0) No remote despatch: user chose no remote backup service
+0038.154 (0) Recording as successfully uploaded: backup_2025-04-06-2036_DeCaribbeanfoodie_163d184ff7ac-db.gz
+0038.170 (0) Prune old backups from local store: nothing to do, since the user disabled local deletion and we are using local backups
+0038.179 (0) Resume backup (163d184ff7ac, 0): finish run
+0038.199 (0) Decremented the semaphore (fd) by 1
+0038.210 (0) Semaphore (fd) unlocked
+0038.217 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0038.238 (0) No email will/can be sent - the user has not configured an email address.
+0038.246 (0) The backup succeeded and is now complete

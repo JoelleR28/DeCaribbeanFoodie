@@ -1,0 +1,299 @@
+
+/*
+ *
+ * Saved Recipe button customisation
+ * ----------------------------------------------------------------------------
+ */
+
+ .user_warning{
+    text-align: center;
+ }
+
+ .link {
+        justify-content: center;
+        text-align: center;
+ }
+
+.like-button-container {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.like-button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.like-button:hover {
+    background-color: #be5809;
+}
+
+.like-count {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.save-recipe-button-container {
+    display: flex;
+    flex-direction: row;  
+    align-items: center;     
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.save-recipe-button {
+    padding: 10px 20px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.save-recipe-button:hover {
+    background-color: #005bb5;
+}
+
+/*
+ *
+ * Saved Recipe Content customisation
+ * ----------------------------------------------------------------------------
+ */
+
+ .saved-recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+
+.saved-recipe-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.saved-recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+.saved-recipe-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.saved-recipe-content {
+    padding: 15px;
+}
+
+.saved-recipe-content h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.saved-recipe-content .btn {
+    padding: 8px 12px;
+    background: #051016;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.saved-recipe-content .btn:hover {
+    background: #e65500;
+}
+
+.saved-recipe-actions {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (optional) */
+}
+
+/*
+ *
+ * Saved Recipe Edit form customisation
+ * ----------------------------------------------------------------------------
+ */
+
+
+/* Modal Styles */
+#recipe-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed in place */
+    z-index: 10000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+/* Modal content styling */
+#recipe-modal .modal-content {
+    background-color: white;
+    padding: 20px;
+    margin: 10% auto;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#message {
+    margin-top: 20px;
+}
+
+
+/* Modal Title */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Field Styles */
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Textarea Specific Styling */
+form textarea {
+    height: 150px;
+    resize: vertical; /* Allows resizing the textarea vertically */
+}
+
+/* Save Button Styling */
+button[type="submit"] {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #ffa125;
+}
+
+/* Message */
+#message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: green; /* Green for success messages */
+}
+
+/* Optional: Add animations for modal */
+.modal-content {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#recipe-buddy {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#recipe-buddy h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#recipe-buddy p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+#recipe-search-input {
+    width: 70%;
+    padding: 12px;
+    font-size: 1.1rem;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#recipe-search-input:focus {
+    border-color: #ffae00;
+}
+
+button[type="submit"] {
+    padding: 12px 24px;
+    background-color: #ffae00;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.recipe-search-form {
+    margin-top: 20px;
+}
+
+#recipe-results {
+    margin-top: 30px;
+}
