@@ -405,8 +405,8 @@ function update_recipe_callback()
         $recipe_id = intval($_POST['recipe_id']);
         $title = sanitize_text_field($_POST['recipe_title']);
         // Use wp_kses_post to preserve allowed HTML tags (e.g., <ul>, <li>, <p>, etc.)
-        $ingredients = wp_kses_post($_POST['recipe_ingredients']);
-        $instructions = wp_kses_post($_POST['recipe_instructions']);
+        $ingredients = wp_strip_all_tags($_POST['recipe_ingredients']);
+        $instructions = wp_strip_all_tags($_POST['recipe_instructions']);
 
         // Update the post title and custom fields in one go
         $updated = wp_update_post(array(
