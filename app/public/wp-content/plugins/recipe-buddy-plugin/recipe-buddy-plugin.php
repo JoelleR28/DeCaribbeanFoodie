@@ -34,7 +34,11 @@ function recipe_buddy_enqueue_script()
     wp_localize_script('save-recipe-button', 'save_recipe_button_obj', array(
         'ajax_url' => admin_url('admin-ajax.php'),
     ));
-
+     // Localize the script to pass ajaxurl to JavaScript
+     wp_localize_script('save-recipe-button', 'recipeBuddyAjax', array(
+        'ajaxurl' => admin_url('admin-ajax.php'), // Pass admin-ajax.php URL
+    ));
+    
     // Localize the recipe editor script to pass the AJAX URL and nonce
     wp_localize_script('recipe-editor', 'recipeEditorParams', array(
         'ajaxurl' => admin_url('admin-ajax.php'),
