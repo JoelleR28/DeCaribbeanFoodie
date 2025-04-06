@@ -237,23 +237,24 @@ add_action('wp_ajax_nopriv_save_recipe_button_click', 'recipe_buddy_handle_save_
 function recipe_buddy_saved_recipes_shortcode() {
     $user_id = get_current_user_id(); // Get the current user id and store it in a variable
     $output = ''; // Declare a string variable 
-    //pagination
+
+    // Pagination setup
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
     if ($user_id) {
-        //Define array to store post information for the query
+        // Define array to store post information for the query
         $args = array(
-            'post_type' => 'saved_recipe', //CPT
-            'posts_per_page' => 2, //limits the posts on a page to 2
-            'paged' => $paged, //set the variable
-            'post_status' => 'publish', //publish
-            'author' => $user_id, //set author using current user id
+            'post_type' => 'saved_recipe', // Custom Post Type
+            'posts_per_page' => 2, // Limits the posts on a page to 2
+            'paged' => $paged, // Set the pagination variable
+            'post_status' => 'publish', // Only show published posts
+            'author' => $user_id, // Filter by current user ID
         );
 
-        //Define the WP Query and pass in the array with the post information required
+        // Define the WP Query and pass in the array with the post information required
         $saved_recipes_query = new WP_Query($args);
 
-        //if there are saved recipe posts output their content in a card format
+        // If there are saved recipe posts, output their content in a card format
         if ($saved_recipes_query->have_posts()) {
             $output .= '<div class="saved-recipe-grid">';  // Start the grid container
 
@@ -283,13 +284,13 @@ function recipe_buddy_saved_recipes_shortcode() {
             // Add pagination
             $output .= '<div class="pagination">';
             $total_pages = $saved_recipes_query->max_num_pages;
-            //Once there is more than 1 page, paginate links
-            if ($total_pages > 1) {
 
+            // Once there is more than 1 page, display pagination links
+            if ($total_pages > 1) {
                 $current_page = max(1, get_query_var('paged'));
-                
-                //Display the pagination links on the page
-                echo paginate_links(array(
+
+                // Capture the pagination HTML and append it to output
+                $output .= paginate_links(array(
                     'format' => '/page/%#%',
                     'current' => $current_page,
                     'total' => $total_pages,
@@ -300,14 +301,15 @@ function recipe_buddy_saved_recipes_shortcode() {
             $output .= '</div>';  // End pagination
             $output .= '</div>';  // End grid container
         } else {
-            $output .= '<p>You have no saved recipes.</p>'; //display message to the user for no saved_recipe posts
+            $output .= '<p>You have no saved recipes.</p>'; // Display message to the user for no saved_recipe posts
         }
+
         wp_reset_postdata();
     } else {
-        $output .= '<p>Please log in to see your saved recipes.</p>'; //display message to the user if they arent logged in
+        $output .= '<p>Please log in to see your saved recipes.</p>'; // Display message to the user if they aren't logged in
+    }
 
     return $output;
-    }
 }
 add_shortcode('recipe_saved_list', 'recipe_buddy_saved_recipes_shortcode');
 
