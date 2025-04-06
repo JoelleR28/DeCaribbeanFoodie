@@ -8,6 +8,13 @@ Author URI: N/A
 License: GPL2 
 */
 
+/*
+ * Plugin Notes:
+ * Recipe buddy search functionality needs to be further improved to handle more than just one term, for now only input one term at a time
+ * For updating the saved-reicpe on the front end, the html should be proeprly removed but the formatting will be messed up so that 
+ * needs some brainstorming still. For now the formatting tags <p>, <li>, <ul> will be seen in the update form for the time being. 
+ */
+
 // Prevent direct access to the plugin file
 if (!defined('ABSPATH')) {
     exit;
@@ -356,7 +363,7 @@ function recipe_buddy_handle_saved_recipe_deletion()
 }
 add_action('init', 'recipe_buddy_handle_saved_recipe_deletion');
 
-// Function to retrive recipe details
+// Function to retrieve recipe details
 function get_recipe_details_callback()
 {
     if (!isset($_GET['security']) || !wp_verify_nonce($_GET['security'], 'edit_saved_recipe_nonce')) {
@@ -366,14 +373,14 @@ function get_recipe_details_callback()
 
     if (isset($_GET['recipe_id']) && is_numeric($_GET['recipe_id'])) {
         $recipe_id = intval($_GET['recipe_id']);
-        $recipe = get_post($recipe_id); // Get the post object
+        $recipe = get_post($recipe_id); // Get the post object by id
 
         if ($recipe && $recipe->post_type === 'saved_recipe') {
             // Fetch custom fields (ingredients and instructions) associated with the recipe
             $ingredients = get_post_meta($recipe_id, 'recipe_ingredients', true);
             $instructions = get_post_meta($recipe_id, 'recipe_instructions', true);
 
-            // Return the recipe details as a JSON response
+            // Return the recipe details (only some fields were used) as a JSON response
             wp_send_json_success(array(
                 'title' => $recipe->post_title,
                 'ingredients' => $ingredients,
@@ -404,7 +411,8 @@ function update_recipe_callback()
     if (isset($_POST['recipe_id']) && isset($_POST['recipe_title']) && isset($_POST['recipe_ingredients']) && isset($_POST['recipe_instructions'])) {
         $recipe_id = intval($_POST['recipe_id']);
         $title = sanitize_text_field($_POST['recipe_title']);
-        // Use wp_kses_post to preserve allowed HTML tags (e.g., <ul>, <li>, <p>, etc.)
+        // Use wp_kses_post to preserve allowed HTML tags (e.g., <ul>, <li>, <p>, etc.), this was a limitation as removing the tags would
+        // affect the formatting which needs more testing, esc.html() would also remove paragraph formatting
         $ingredients = wp_strip_all_tags($_POST['recipe_ingredients']);
         $instructions = wp_strip_all_tags($_POST['recipe_instructions']);
 
@@ -415,7 +423,8 @@ function update_recipe_callback()
         ));
 
         if ($updated) {
-            // Update custom fields (ingredients and instructions) immediately after the post update
+            // Update custom fields (ingredients and instructions) immediately after the post update, resolved issue where only 
+            // first field would be updated but others wont
             update_post_meta($recipe_id, 'recipe_ingredients', $ingredients);
             update_post_meta($recipe_id, 'recipe_instructions', $instructions);
 
@@ -435,19 +444,25 @@ add_action('wp_ajax_nopriv_update_recipe', 'update_recipe_callback');
 // Function to handle recipe-buddy searching, based on an ingredient inputted by the user/subscriber
 function handle_recipe_search_ajax()
 {
+    //This if statement was needed to differentitate between the default search bar on the page
     if (isset($_GET['recipe_search']) && $_GET['recipe_search'] === '1') {
+        //remove any html that may affect the query and pass the input to lower case to remove case sensitivity 
         $search_term = sanitize_text_field($_GET['s']);
         $search_term_lower = strtolower($search_term);
 
+        //This was for error logging
         error_log('Search term: ' . $search_term_lower);
 
+        //Pass in the query arguements and return all recipes that match the search term inputted, hanldes mostly one term
         $args = array(
             'post_type' => 'recipe',
             'posts_per_page' => -1,
             's' => '', // Disable default WP search
         );
 
+        //Define the query and pass in the array with the defined arguements
         $query = new WP_Query($args);
+        //Initialise as false
         $found = false;
 
         if ($query->have_posts()) {
@@ -456,15 +471,20 @@ function handle_recipe_search_ajax()
 
                 // Get ingredients (HTML) from custom field
                 $ingredients_html = get_post_meta(get_the_ID(), 'recipe_ingredients', true);
+                // process the ingredients text to remove all html tags and pass to lower case to remove case sensitivity 
                 $ingredients_text = strtolower(wp_strip_all_tags($ingredients_html));
 
                 //for debugging puprposes
                 error_log("Checking recipe: " . get_the_title());
                 error_log("Ingredients (stripped): " . $ingredients_text);
 
+                //Handle what happens when the ingredient matches the seacrh term inputted by the user.
                 if (strpos($ingredients_text, $search_term_lower) !== false) {
+                    // change to reflect that the term was found
                     $found = true;
+                    // display the search results for the recipe that contains the ingredient term the user inputted
                     echo '<div class="recipe-result">';
+                    //Output selected recipe post content
                     if (has_post_thumbnail()) {
                         $thumbnail = get_the_post_thumbnail(get_the_ID(), 'medium'); // You can use 'thumbnail', 'medium', or custom size
                         echo '<div class="recipe-thumb">' . $thumbnail . '</div>';
@@ -475,10 +495,12 @@ function handle_recipe_search_ajax()
                 }
             }
             if (!$found) {
+                //display message to user is no recipes found
                 echo '<p>No recipes found for this ingredient.</p>';
             }
             wp_reset_postdata();
         } else {
+            //error handling, used for debugging 
             echo '<p>No recipes found.</p>';
         }
     }
