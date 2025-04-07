@@ -59,7 +59,7 @@ function dc_display_challenges() {
             }
             $output .= '<div class="dc-challenge-content">';
             $output .= '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
-            $output .= '<p>' . get_the_excerpt() . '</p>';
+            $output .= '<p>' . get_the_content() . '</p>';
             
             if ($completed) {
                 $output .= '<p class="dc-completed">✅ Completed</p>';
